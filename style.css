@@ -9,16 +9,55 @@ p {
     line-height: 1.5em;
 }
 
+hr {
+    border-top: 0.5px solid #EBEBE8;
+}
+
 
 h1 {
     margin: 10vh 0 2vh;
 }
 
-.btn-light {
+
+.method-button {
+    margin: 20px 0;
+}
+
+
+.jump-buttons .btn-light,
+.link-buttons .btn-light {
     background-color: #EBEBE8;
     color: #121212;
     padding: 10px 30px;
     margin: 10px 30px 10px 0;
 }
 
-.jump-buttons .btn {}
+
+.link-buttons {
+    width: fit-content;
+}
+
+
+.btn-light {
+    background-color: #ebebeb;
+    color: #121212;
+}
+
+.btn-light:hover {
+    background-color: #57747E;
+    color: #EBEBE8;
+}
+
+.btn-light a {
+    color: #121212;
+}
+
+.btn-light a:hover {
+    text-decoration: none;
+    color: #EBEBE8;
+}
+
+.btn-light:not(:disabled):not(.disabled).active {
+    background-color: #57747E;
+    color: #EBEBE8;
+}
