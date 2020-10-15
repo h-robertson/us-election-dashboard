@@ -61,3 +61,16 @@ h1 {
     background-color: #57747E;
     color: #EBEBE8;
 }
+
+.presidency-legend {
+    margin-top: 40px;
+}
+
+.legend-box {
+    margin: 5px 10px 15px;
+}
+
+.legend-label {
+    margin: 5px 10px;
+    text-align: center;
+}

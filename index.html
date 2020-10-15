@@ -9,11 +9,14 @@
     <link rel="stylesheet" href="style.css">
     <title>US election 2020</title>
 
+    <script src="https://d3js.org/d3.v6.min.js"></script>
 </head>
 
 <body>
     <div class="container">
-        <button type="button" class="btn btn-light float-right method-button">Methodology</button>
+        <div class="row float-right">
+            <button type="button" class="btn btn-light method-button">Methodology</button>
+        </div>
         <div class="row">
             <div class="col-sm-8">
                 <h1>US election 2020</h1>
@@ -25,14 +28,14 @@
         </div>
 
         <div class="jump-buttons">
-            <button type="button" class="btn btn-light"><a href="#presidency-jump">Presidency</a></button>
-            <button type="button" class="btn btn-light"><a href="#senate-jump">Senate</a></button>
-            <button type="button" class="btn btn-light"><a href="#house-jump">House</a></button>
+            <a href="#presidency-jump"><button type="button" class="btn btn-light">Presidency</button></a>
+            <a href="#senate-jump"><button type="button" class="btn btn-light">Senate</button></a>
+            <a href="#house-jump"><button type="button" class="btn btn-light">House</button></a>
         </div>
 
 
     </div>
-    <div class="container">
+    <div class="container presidency">
         <hr class="mt-5 mb-5" id="presidency-jump">
         <div class="row">
             <div class="col-sm-8">
@@ -44,8 +47,12 @@
             </div>
             <div class="col-sm-4">
                 <div class="link-buttons d-flex flex-column float-right">
-                    <button type="button" class="btn btn-light">Electoral college explainer</button>
-                    <button type="button" class="btn btn-light">Build your own election</button>
+                    <a href="https://www.theguardian.com/us-news/ng-interactive/2020/sep/02/electoral-college-explained-biden-uphill-battle-us-election"
+                        target="_blank"><button type="button" class="btn btn-light">Electoral college
+                            explainer</button></a>
+                    <a href="https://www.theguardian.com/us-news/ng-interactive/2020/sep/28/us-election-simulator-swing-states-biden-trump"
+                        target="_blank"><button type="button" class="btn btn-light">Build your own
+                            election</button></a>
                 </div>
             </div>
         </div>
@@ -59,7 +66,7 @@
         </div>
 
     </div>
-    <div class="container">
+    <div class="container senate">
         <hr class="mt-5 mb-5" id="senate-jump">
         <div class="row">
             <div class="col-sm-8">
@@ -71,7 +78,8 @@
             </div>
             <div class="col-sm-4">
                 <div class="link-buttons d-flex flex-column float-right">
-                    <button type="button" class="btn btn-light">Key Senate races</button>
+                    <a href="https://www.theguardian.com/us-news/2020/oct/09/us-senate-elections-key-races"
+                        target="_blank"><button type="button" class="btn btn-light">Key Senate races</button></a>
                 </div>
             </div>
         </div>
@@ -84,7 +92,7 @@
             </label>
         </div>
     </div>
-    <div class="container">
+    <div class="container house">
         <hr class="mt-5 mb-5" id="house-jump">
         <h2>House</h2>
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus quia et recusandae ipsa facere
@@ -98,7 +106,21 @@
                 <input type="radio" name="options" id="option2">Current breakdown
             </label>
         </div>
-        <hr class="mt-5 mb-5">
+    </div>
+    <div class="container">
+        <hr class="mt-5 mb-0" id="method-jump">
+        <hr class="mt-1 mb-5">
+        <h2>Methodology</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus quia et recusandae ipsa facere
+            accusantium non quasi excepturi hic, debitis reiciendis laborum at porro eum aliquid voluptatem facilis
+            labore saepe.</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem molestiae harum commodi vitae ipsum aliquid
+            exercitationem quasi illum at officia saepe quas, laborum reiciendis voluptatibus odio nemo, molestias
+            voluptatem adipisci!</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod dolor quo nisi soluta dolore id a at obcaecati
+            nam quasi, voluptas repellat, dolorum minus laudantium cupiditate modi vitae illum placeat.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt adipisci ipsam facilis error expedita,
+            porro beatae fugit! Dicta quidem sed dolorem error ullam ipsum eius, qui doloremque sint dolores non!</p>
     </div>
 
     <script src="index.js"></script>

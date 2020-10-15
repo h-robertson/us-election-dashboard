@@ -1,0 +1,281 @@
+[{
+    "rating": "SOLID DEMOCRAT",
+    "state": "California",
+    "ecvs": 55,
+    "2016_outcome": "D"
+}, {
+    "rating": "SOLID DEMOCRAT",
+    "state": "Connecticut",
+    "ecvs": 7,
+    "2016_outcome": "D"
+}, {
+    "rating": "SOLID DEMOCRAT",
+    "state": "Delaware",
+    "ecvs": 3,
+    "2016_outcome": "D"
+}, {
+    "rating": "SOLID DEMOCRAT",
+    "state": "District of Columbia",
+    "ecvs": 3,
+    "2016_outcome": "D"
+}, {
+    "rating": "SOLID DEMOCRAT",
+    "state": "Hawaii",
+    "ecvs": 4,
+    "2016_outcome": "D"
+}, {
+    "rating": "SOLID DEMOCRAT",
+    "state": "Illinois",
+    "ecvs": 20,
+    "2016_outcome": "D"
+}, {
+    "rating": "SOLID DEMOCRAT",
+    "state": "Maine 1st CD",
+    "ecvs": 1,
+    "2016_outcome": "D"
+}, {
+    "rating": "SOLID DEMOCRAT",
+    "state": "Maryland",
+    "ecvs": 10,
+    "2016_outcome": "D"
+}, {
+    "rating": "SOLID DEMOCRAT",
+    "state": "Massachusetts",
+    "ecvs": 11,
+    "2016_outcome": "D"
+}, {
+    "rating": "SOLID DEMOCRAT",
+    "state": "New Jersey",
+    "ecvs": 14,
+    "2016_outcome": "D"
+}, {
+    "rating": "SOLID DEMOCRAT",
+    "state": "New Mexico",
+    "ecvs": 5,
+    "2016_outcome": "D"
+}, {
+    "rating": "SOLID DEMOCRAT",
+    "state": "New York",
+    "ecvs": 29,
+    "2016_outcome": "D"
+}, {
+    "rating": "SOLID DEMOCRAT",
+    "state": "Oregon",
+    "ecvs": 7,
+    "2016_outcome": "D"
+}, {
+    "rating": "SOLID DEMOCRAT",
+    "state": "Rhode Island",
+    "ecvs": 4,
+    "2016_outcome": "D"
+}, {
+    "rating": "SOLID DEMOCRAT",
+    "state": "Vermont",
+    "ecvs": 3,
+    "2016_outcome": "D"
+}, {
+    "rating": "SOLID DEMOCRAT",
+    "state": "Washington",
+    "ecvs": 12,
+    "2016_outcome": "D"
+}, {
+    "rating": "LIKELY DEMOCRAT",
+    "state": "Colorado",
+    "ecvs": 9,
+    "2016_outcome": "D"
+}, {
+    "rating": "LIKELY DEMOCRAT",
+    "state": "Maine",
+    "ecvs": 2,
+    "2016_outcome": "D"
+}, {
+    "rating": "LIKELY DEMOCRAT",
+    "state": "Virginia",
+    "ecvs": 13,
+    "2016_outcome": "D"
+}, {
+    "rating": "LEAN DEMOCRAT",
+    "state": "Arizona",
+    "ecvs": 11,
+    "2016_outcome": "R"
+}, {
+    "rating": "LEAN DEMOCRAT",
+    "state": "Michigan",
+    "ecvs": 16,
+    "2016_outcome": "R"
+}, {
+    "rating": "LEAN DEMOCRAT",
+    "state": "Minnesota",
+    "ecvs": 10,
+    "2016_outcome": "D"
+}, {
+    "rating": "LEAN DEMOCRAT",
+    "state": "Nebraska 2nd CD",
+    "ecvs": 1,
+    "2016_outcome": "R"
+}, {
+    "rating": "LEAN DEMOCRAT",
+    "state": "Nevada",
+    "ecvs": 6,
+    "2016_outcome": "D"
+}, {
+    "rating": "LEAN DEMOCRAT",
+    "state": "New Hampshire",
+    "ecvs": 4,
+    "2016_outcome": "D"
+}, {
+    "rating": "LEAN DEMOCRAT",
+    "state": "Pennsylvania",
+    "ecvs": 20,
+    "2016_outcome": "R"
+}, {
+    "rating": "LEAN DEMOCRAT",
+    "state": "Wisconsin",
+    "ecvs": 10,
+    "2016_outcome": "R"
+}, {
+    "rating": "TOSS UP",
+    "state": "Florida",
+    "ecvs": 29,
+    "2016_outcome": "R"
+}, {
+    "rating": "TOSS UP",
+    "state": "Georgia",
+    "ecvs": 16,
+    "2016_outcome": "R"
+}, {
+    "rating": "TOSS UP",
+    "state": "Iowa",
+    "ecvs": 6,
+    "2016_outcome": "R"
+}, {
+    "rating": "TOSS UP",
+    "state": "Maine 2nd CD",
+    "ecvs": 1,
+    "2016_outcome": "R"
+}, {
+    "rating": "TOSS UP",
+    "state": "North Carolina",
+    "ecvs": 15,
+    "2016_outcome": "R"
+}, {
+    "rating": "TOSS UP",
+    "state": "Ohio",
+    "ecvs": 18,
+    "2016_outcome": "R"
+}, {
+    "rating": "LEAN REPUBLICAN",
+    "state": "Texas",
+    "ecvs": 38,
+    "2016_outcome": "R"
+}, {
+    "rating": "LIKELY REPUBLICAN",
+    "state": "Alaska",
+    "ecvs": 3,
+    "2016_outcome": "R"
+}, {
+    "rating": "LIKELY REPUBLICAN",
+    "state": "Indiana",
+    "ecvs": 11,
+    "2016_outcome": "R"
+}, {
+    "rating": "LIKELY REPUBLICAN",
+    "state": "Kansas",
+    "ecvs": 6,
+    "2016_outcome": "R"
+}, {
+    "rating": "LIKELY REPUBLICAN",
+    "state": "Missouri",
+    "ecvs": 10,
+    "2016_outcome": "R"
+}, {
+    "rating": "LIKELY REPUBLICAN",
+    "state": "Montana",
+    "ecvs": 3,
+    "2016_outcome": "R"
+}, {
+    "rating": "LIKELY REPUBLICAN",
+    "state": "South Carolina",
+    "ecvs": 9,
+    "2016_outcome": "R"
+}, {
+    "rating": "LIKELY REPUBLICAN",
+    "state": "Utah",
+    "ecvs": 6,
+    "2016_outcome": "R"
+}, {
+    "rating": "SOLID REPUBLICAN",
+    "state": "Alabama",
+    "ecvs": 9,
+    "2016_outcome": "R"
+}, {
+    "rating": "SOLID REPUBLICAN",
+    "state": "Arkansas",
+    "ecvs": 6,
+    "2016_outcome": "R"
+}, {
+    "rating": "SOLID REPUBLICAN",
+    "state": "Idaho",
+    "ecvs": 4,
+    "2016_outcome": "R"
+}, {
+    "rating": "SOLID REPUBLICAN",
+    "state": "Kentucky",
+    "ecvs": 8,
+    "2016_outcome": "R"
+}, {
+    "rating": "SOLID REPUBLICAN",
+    "state": "Louisiana",
+    "ecvs": 8,
+    "2016_outcome": "R"
+}, {
+    "rating": "SOLID REPUBLICAN",
+    "state": "Mississippi",
+    "ecvs": 6,
+    "2016_outcome": "R"
+}, {
+    "rating": "SOLID REPUBLICAN",
+    "state": "Nebraska",
+    "ecvs": 2,
+    "2016_outcome": "R"
+}, {
+    "rating": "SOLID REPUBLICAN",
+    "state": "Nebraska 1st CD",
+    "ecvs": 1,
+    "2016_outcome": "R"
+}, {
+    "rating": "SOLID REPUBLICAN",
+    "state": "Nebraska 3rd CD",
+    "ecvs": 1,
+    "2016_outcome": "R"
+}, {
+    "rating": "SOLID REPUBLICAN",
+    "state": "North Dakota",
+    "ecvs": 3,
+    "2016_outcome": "R"
+}, {
+    "rating": "SOLID REPUBLICAN",
+    "state": "Oklahoma",
+    "ecvs": 7,
+    "2016_outcome": "R"
+}, {
+    "rating": "SOLID REPUBLICAN",
+    "state": "South Dakota",
+    "ecvs": 3,
+    "2016_outcome": "R"
+}, {
+    "rating": "SOLID REPUBLICAN",
+    "state": "Tennessee",
+    "ecvs": 11,
+    "2016_outcome": "R"
+}, {
+    "rating": "SOLID REPUBLICAN",
+    "state": "West Virginia",
+    "ecvs": 5,
+    "2016_outcome": "R"
+}, {
+    "rating": "SOLID REPUBLICAN",
+    "state": "Wyoming",
+    "ecvs": 3,
+    "2016_outcome": "R"
+}]
