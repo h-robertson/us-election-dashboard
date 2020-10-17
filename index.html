@@ -10,12 +10,13 @@
     <title>US election 2020</title>
 
     <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="//d3js.org/topojson.v1.min.js"></script>
 </head>
 
 <body>
     <div class="container">
         <div class="row float-right">
-            <button type="button" class="btn btn-light method-button">Methodology</button>
+            <a href="#method-jump"><button type="button" class="btn btn-light method-button">Methodology</button></a>
         </div>
         <div class="row">
             <div class="col-sm-8">
@@ -56,14 +57,26 @@
                 </div>
             </div>
         </div>
-        <div class="btn-group btn-group-toggle" data-toggle="buttons">
-            <label class="btn btn-light active">
-                <input type="radio" name="options" id="option1" checked>2020 projection
-            </label>
-            <label class="btn btn-light">
-                <input type="radio" name="options" id="option2">2016 results
-            </label>
+        <div class="row mb-4">
+            <div class="pres-toggle col-sm-12">
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-light active">
+                        <input type="radio" name="options" id="option1" checked>2020 projection
+                    </label>
+                    <label class="btn btn-light">
+                        <input type="radio" name="options" id="option2">2016 results
+                    </label>
+                </div>
+            </div>
         </div>
+        <div class="row">
+            <div class="pres-graphics col-sm-12">
+                <div class="pres-leg mt-2 mb-5"></div>
+                <div class="pres-bar mt-5 mb-4 d-flex justify-content-center"></div>
+                <div class="pres-map mt-4 mb-4 d-flex justify-content-center"></div>
+            </div>
+        </div>
+
 
     </div>
     <div class="container senate">
@@ -71,7 +84,8 @@
         <div class="row">
             <div class="col-sm-8">
                 <h2>Senate</h2>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus quia et recusandae ipsa facere
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus quia et recusandae ipsa
+                    facere
                     accusantium non quasi excepturi hic, debitis reiciendis laborum at porro eum aliquid voluptatem
                     facilis
                     labore saepe.</p>
@@ -114,13 +128,16 @@
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus quia et recusandae ipsa facere
             accusantium non quasi excepturi hic, debitis reiciendis laborum at porro eum aliquid voluptatem facilis
             labore saepe.</p>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem molestiae harum commodi vitae ipsum aliquid
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem molestiae harum commodi vitae ipsum
+            aliquid
             exercitationem quasi illum at officia saepe quas, laborum reiciendis voluptatibus odio nemo, molestias
             voluptatem adipisci!</p>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod dolor quo nisi soluta dolore id a at obcaecati
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod dolor quo nisi soluta dolore id a at
+            obcaecati
             nam quasi, voluptas repellat, dolorum minus laudantium cupiditate modi vitae illum placeat.</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt adipisci ipsam facilis error expedita,
-            porro beatae fugit! Dicta quidem sed dolorem error ullam ipsum eius, qui doloremque sint dolores non!</p>
+            porro beatae fugit! Dicta quidem sed dolorem error ullam ipsum eius, qui doloremque sint dolores non!
+        </p>
     </div>
 
     <script src="index.js"></script>
