@@ -1,1 +1,601 @@
-[{"state":"DE","name":"Coons","held":"dem","projection":"solidD"},{"state":"IL","name":"Durbin","held":"dem","projection":"solidD"},{"state":"MA","name":"Markey","held":"dem","projection":"solidD"},{"state":"MN","name":"Smith","held":"dem","projection":"solidD"},{"state":"NH","name":"Shaheen","held":"dem","projection":"solidD"},{"state":"NJ","name":"Booker","held":"dem","projection":"solidD"},{"state":"NM","name":"Open","held":"dem","projection":"solidD"},{"state":"OR","name":"Merkley","held":"dem","projection":"solidD"},{"state":"RI","name":"Reed","held":"dem","projection":"solidD"},{"state":"VA","name":"Warner","held":"dem","projection":"solidD"},{"state":"MI","name":"Peters","held":"dem","projection":"leanD"},{"state":"AL","name":"Jones","held":"dem","projection":"leanR"},{"state":"AZ","name":"McSally","held":"rep","projection":"leanD"},{"state":"CO","name":"Gardner","held":"rep","projection":"leanD"},{"state":"GA","name":"Loeffler","held":"rep","projection":"tossup"},{"state":"GA","name":"Perdue","held":"rep","projection":"tossup"},{"state":"IA","name":"Ernst","held":"rep","projection":"tossup"},{"state":"ME","name":"Collins","held":"rep","projection":"tossup"},{"state":"MT","name":"Daines","held":"rep","projection":"tossup"},{"state":"NC","name":"Tillis","held":"rep","projection":"tossup"},{"state":"SC","name":"Graham","held":"rep","projection":"tossup"},{"state":"AK","name":"Sullivan","held":"rep","projection":"leanR"},{"state":"KS","name":"Open","held":"rep","projection":"leanR"},{"state":"TX","name":"Cornyn","held":"rep","projection":"leanR"},{"state":"KY","name":"McConnell","held":"rep","projection":"likelyR"},{"state":"AR","name":"Cotton","held":"rep","projection":"solidR"},{"state":"ID","name":"Risch","held":"rep","projection":"solidR"},{"state":"LA","name":"Cassidy","held":"rep","projection":"solidR"},{"state":"MS","name":"Hyde-Smith","held":"rep","projection":"solidR"},{"state":"NE","name":"Sasse","held":"rep","projection":"solidR"},{"state":"OK","name":"Inhofe","held":"rep","projection":"solidR"},{"state":"SD","name":"Rounds","held":"rep","projection":"solidR"},{"state":"TN","name":"Open","held":"rep","projection":"solidR"},{"state":"WV","name":"Moore Capito","held":"rep","projection":"solidR"},{"state":"WY","name":"Open","held":"rep","projection":"solidR"},{"state":"AZ","name":"Sinema","held":"dem","projection":"noelection"},{"state":"OH","name":"Brown","held":"dem","projection":"noelection"},{"state":"CA","name":"Feinstein","held":"dem","projection":"noelection"},{"state":"PA","name":"Casey Jr.","held":"dem","projection":"noelection"},{"state":"RI","name":"Whitehouse","held":"dem","projection":"noelection"},{"state":"VT","name":"Sanders*","held":"dem","projection":"noelection"},{"state":"VA","name":"Kaine","held":"dem","projection":"noelection"},{"state":"WI","name":"Baldwin","held":"dem","projection":"noelection"},{"state":"WA","name":"Murray","held":"dem","projection":"noelection"},{"state":"DE","name":"Carper","held":"dem","projection":"noelection"},{"state":"NJ","name":"Menendez","held":"dem","projection":"noelection"},{"state":"NV","name":"Rosen","held":"dem","projection":"noelection"},{"state":"NM","name":"Heinrich","held":"dem","projection":"noelection"},{"state":"NY","name":"Gillibrand","held":"dem","projection":"noelection"},{"state":"CT","name":"Murphy","held":"dem","projection":"noelection"},{"state":"CA","name":"Harris","held":"dem","projection":"noelection"},{"state":"MI","name":"Stabenow","held":"dem","projection":"noelection"},{"state":"CO","name":"Bennet","held":"dem","projection":"noelection"},{"state":"HI","name":"Mirono","held":"dem","projection":"noelection"},{"state":"CT","name":"Blumenthal","held":"dem","projection":"noelection"},{"state":"HI","name":"Schatz","held":"dem","projection":"noelection"},{"state":"IL","name":"Duckworth","held":"dem","projection":"noelection"},{"state":"MD","name":"Van Hollen","held":"dem","projection":"noelection"},{"state":"MD","name":"Cardin","held":"dem","projection":"noelection"},{"state":"MA","name":"Warren","held":"dem","projection":"noelection"},{"state":"NV","name":"Cortez Masto","held":"dem","projection":"noelection"},{"state":"MN","name":"Klobuchar","held":"dem","projection":"noelection"},{"state":"NH","name":"Hassan","held":"dem","projection":"noelection"},{"state":"MT","name":"Tester","held":"dem","projection":"noelection"},{"state":"NY","name":"Schumer","held":"dem","projection":"noelection"},{"state":"OR","name":"Wyden","held":"dem","projection":"noelection"},{"state":"VT","name":"Leahy","held":"dem","projection":"noelection"},{"state":"WA","name":"Cantwell","held":"dem","projection":"noelection"},{"state":"WV","name":"Manchin","held":"dem","projection":"noelection"},{"state":"ME","name":"King","held":"dem","projection":"noelection"},{"state":"FL","name":"Scott","held":"rep","projection":"noelection"},{"state":"ID","name":"Crapo","held":"rep","projection":"noelection"},{"state":"IN","name":"Braun","held":"rep","projection":"noelection"},{"state":"IN","name":"Young","held":"rep","projection":"noelection"},{"state":"IA","name":"Grassley","held":"rep","projection":"noelection"},{"state":"KS","name":"Moran","held":"rep","projection":"noelection"},{"state":"KY","name":"Paul","held":"rep","projection":"noelection"},{"state":"LA","name":"Kennedy","held":"rep","projection":"noelection"},{"state":"MO","name":"Blunt","held":"rep","projection":"noelection"},{"state":"MO","name":"Hawley","held":"rep","projection":"noelection"},{"state":"AK","name":"Murkowski","held":"rep","projection":"noelection"},{"state":"AL","name":"Shelby","held":"rep","projection":"noelection"},{"state":"AR","name":"Boozman","held":"rep","projection":"noelection"},{"state":"FL","name":"Rubio","held":"rep","projection":"noelection"},{"state":"MS","name":"Wicker","held":"rep","projection":"noelection"},{"state":"NC","name":"Burr","held":"rep","projection":"noelection"},{"state":"ND","name":"Cramer","held":"rep","projection":"noelection"},{"state":"ND","name":"Hoeven","held":"rep","projection":"noelection"},{"state":"NE","name":"Fischer","held":"rep","projection":"noelection"},{"state":"OH","name":"Portman","held":"rep","projection":"noelection"},{"state":"OK","name":"Lankford","held":"rep","projection":"noelection"},{"state":"PA","name":"Toomey","held":"rep","projection":"noelection"},{"state":"SD","name":"Thune","held":"rep","projection":"noelection"},{"state":"TN","name":"Blackburn","held":"rep","projection":"noelection"},{"state":"TX","name":"Cruz","held":"rep","projection":"noelection"},{"state":"UT","name":"Lee","held":"rep","projection":"noelection"},{"state":"UT","name":"Romney","held":"rep","projection":"noelection"},{"state":"WI","name":"Johnson","held":"rep","projection":"noelection"},{"state":"WY","name":"Barrasso","held":"rep","projection":"noelection"},{"state":"SC","name":"Scott","held":"rep","projection":"noelection"}]
+[{
+    "state": "MI",
+    "name": "Stabenow",
+    "held": "dem",
+    "projection": "noelectiondem",
+    "state_unique": "MIno"
+}, {
+    "state": "MT",
+    "name": "Tester",
+    "held": "dem",
+    "projection": "noelectiondem",
+    "state_unique": "MTno"
+}, {
+    "state": "MN",
+    "name": "Klobuchar",
+    "held": "dem",
+    "projection": "noelectiondem",
+    "state_unique": "MNno"
+}, {
+    "state": "ME",
+    "name": "King",
+    "held": "dem",
+    "projection": "noelectiondem",
+    "state_unique": "MEno"
+}, {
+    "state": "MD",
+    "name": "Cardin",
+    "held": "dem",
+    "projection": "noelectiondem",
+    "state_unique": "MDno2"
+}, {
+    "state": "MD",
+    "name": "Van Hollen",
+    "held": "dem",
+    "projection": "noelectiondem",
+    "state_unique": "MDno"
+}, {
+    "state": "MA",
+    "name": "Warren",
+    "held": "dem",
+    "projection": "noelectiondem",
+    "state_unique": "MAno"
+}, {
+    "state": "NH",
+    "name": "Hassan",
+    "held": "dem",
+    "projection": "noelectiondem",
+    "state_unique": "NHno"
+}, {
+    "state": "IL",
+    "name": "Duckworth",
+    "held": "dem",
+    "projection": "noelectiondem",
+    "state_unique": "ILno"
+}, {
+    "state": "HI",
+    "name": "Mirono",
+    "held": "dem",
+    "projection": "noelectiondem",
+    "state_unique": "HIno"
+}, {
+    "state": "DE",
+    "name": "Carper",
+    "held": "dem",
+    "projection": "noelectiondem",
+    "state_unique": "DEno"
+}, {
+    "state": "CT",
+    "name": "Blumenthal",
+    "held": "dem",
+    "projection": "noelectiondem",
+    "state_unique": "CTno2"
+}, {
+    "state": "CT",
+    "name": "Murphy",
+    "held": "dem",
+    "projection": "noelectiondem",
+    "state_unique": "CTno"
+}, {
+    "state": "CO",
+    "name": "Bennet",
+    "held": "dem",
+    "projection": "noelectiondem",
+    "state_unique": "COno"
+}, {
+    "state": "CA",
+    "name": "Harris",
+    "held": "dem",
+    "projection": "noelectiondem",
+    "state_unique": "CAno2"
+}, {
+    "state": "HI",
+    "name": "Schatz",
+    "held": "dem",
+    "projection": "noelectiondem",
+    "state_unique": "HIno2"
+}, {
+    "state": "CA",
+    "name": "Feinstein",
+    "held": "dem",
+    "projection": "noelectiondem",
+    "state_unique": "CAno"
+}, {
+    "state": "NJ",
+    "name": "Menendez",
+    "held": "dem",
+    "projection": "noelectiondem",
+    "state_unique": "NJno"
+}, {
+    "state": "NV",
+    "name": "Rosen",
+    "held": "dem",
+    "projection": "noelectiondem",
+    "state_unique": "NVno"
+}, {
+    "state": "WV",
+    "name": "Manchin",
+    "held": "dem",
+    "projection": "noelectiondem",
+    "state_unique": "WVno"
+}, {
+    "state": "WI",
+    "name": "Baldwin",
+    "held": "dem",
+    "projection": "noelectiondem",
+    "state_unique": "WIno"
+}, {
+    "state": "WA",
+    "name": "Cantwell",
+    "held": "dem",
+    "projection": "noelectiondem",
+    "state_unique": "WAno2"
+}, {
+    "state": "WA",
+    "name": "Murray",
+    "held": "dem",
+    "projection": "noelectiondem",
+    "state_unique": "WAno"
+}, {
+    "state": "VT",
+    "name": "Leahy",
+    "held": "dem",
+    "projection": "noelectiondem",
+    "state_unique": "VTno2"
+}, {
+    "state": "VT",
+    "name": "Sanders*",
+    "held": "dem",
+    "projection": "noelectiondem",
+    "state_unique": "VTno"
+}, {
+    "state": "NM",
+    "name": "Heinrich",
+    "held": "dem",
+    "projection": "noelectiondem",
+    "state_unique": "NMno"
+}, {
+    "state": "VA",
+    "name": "Kaine",
+    "held": "dem",
+    "projection": "noelectiondem",
+    "state_unique": "VAno"
+}, {
+    "state": "PA",
+    "name": "Casey Jr.",
+    "held": "dem",
+    "projection": "noelectiondem",
+    "state_unique": "PAno"
+}, {
+    "state": "OR",
+    "name": "Wyden",
+    "held": "dem",
+    "projection": "noelectiondem",
+    "state_unique": "ORno"
+}, {
+    "state": "OH",
+    "name": "Brown",
+    "held": "dem",
+    "projection": "noelectiondem",
+    "state_unique": "OHno"
+}, {
+    "state": "NY",
+    "name": "Schumer",
+    "held": "dem",
+    "projection": "noelectiondem",
+    "state_unique": "NYno2"
+}, {
+    "state": "NY",
+    "name": "Gillibrand",
+    "held": "dem",
+    "projection": "noelectiondem",
+    "state_unique": "NYno"
+}, {
+    "state": "NV",
+    "name": "Cortez Masto",
+    "held": "dem",
+    "projection": "noelectiondem",
+    "state_unique": "NVno2"
+}, {
+    "state": "RI",
+    "name": "Whitehouse",
+    "held": "dem",
+    "projection": "noelectiondem",
+    "state_unique": "RIno"
+}, {
+    "state": "AZ",
+    "name": "Sinema",
+    "held": "dem",
+    "projection": "noelectiondem",
+    "state_unique": "AZno"
+}, {
+    "state": "DE",
+    "name": "Coons",
+    "held": "dem",
+    "projection": "SOLID_DEMOCRAT",
+    "state_unique": "DE20"
+}, {
+    "state": "MN",
+    "name": "Smith",
+    "held": "dem",
+    "projection": "SOLID_DEMOCRAT",
+    "state_unique": "MN20"
+}, {
+    "state": "IL",
+    "name": "Durbin",
+    "held": "dem",
+    "projection": "SOLID_DEMOCRAT",
+    "state_unique": "IL20"
+}, {
+    "state": "MA",
+    "name": "Markey",
+    "held": "dem",
+    "projection": "SOLID_DEMOCRAT",
+    "state_unique": "MA20"
+}, {
+    "state": "NH",
+    "name": "Shaheen",
+    "held": "dem",
+    "projection": "SOLID_DEMOCRAT",
+    "state_unique": "NH20"
+}, {
+    "state": "NJ",
+    "name": "Booker",
+    "held": "dem",
+    "projection": "SOLID_DEMOCRAT",
+    "state_unique": "NJ20"
+}, {
+    "state": "NM",
+    "name": "Open",
+    "held": "dem",
+    "projection": "SOLID_DEMOCRAT",
+    "state_unique": "NM20"
+}, {
+    "state": "OR",
+    "name": "Merkley",
+    "held": "dem",
+    "projection": "SOLID_DEMOCRAT",
+    "state_unique": "OR20"
+}, {
+    "state": "RI",
+    "name": "Reed",
+    "held": "dem",
+    "projection": "SOLID_DEMOCRAT",
+    "state_unique": "RI20"
+}, {
+    "state": "VA",
+    "name": "Warner",
+    "held": "dem",
+    "projection": "SOLID_DEMOCRAT",
+    "state_unique": "VA20"
+}, {
+    "state": "AZ",
+    "name": "McSally",
+    "held": "rep",
+    "projection": "LEAN_DEMOCRAT",
+    "state_unique": "AZ20"
+}, {
+    "state": "CO",
+    "name": "Gardner",
+    "held": "rep",
+    "projection": "LEAN_DEMOCRAT",
+    "state_unique": "CO20"
+}, {
+    "state": "MI",
+    "name": "Peters",
+    "held": "dem",
+    "projection": "LEAN_DEMOCRAT",
+    "state_unique": "MI20"
+}, {
+    "state": "SC",
+    "name": "Graham",
+    "held": "rep",
+    "projection": "TOSS_UP",
+    "state_unique": "SC20"
+}, {
+    "state": "NC",
+    "name": "Tillis",
+    "held": "rep",
+    "projection": "TOSS_UP",
+    "state_unique": "NC20"
+}, {
+    "state": "MT",
+    "name": "Daines",
+    "held": "rep",
+    "projection": "TOSS_UP",
+    "state_unique": "MT20"
+}, {
+    "state": "ME",
+    "name": "Collins",
+    "held": "rep",
+    "projection": "TOSS_UP",
+    "state_unique": "ME20"
+}, {
+    "state": "IA",
+    "name": "Ernst",
+    "held": "rep",
+    "projection": "TOSS_UP",
+    "state_unique": "IA20"
+}, {
+    "state": "GA",
+    "name": "Perdue",
+    "held": "rep",
+    "projection": "TOSS_UP",
+    "state_unique": "GA20"
+}, {
+    "state": "GAsp",
+    "name": "Loeffler",
+    "held": "rep",
+    "projection": "TOSS_UP",
+    "state_unique": "GAsp"
+}, {
+    "state": "AL",
+    "name": "Jones",
+    "held": "dem",
+    "projection": "LEAN_REPUBLICAN",
+    "state_unique": "AL20"
+}, {
+    "state": "TX",
+    "name": "Cornyn",
+    "held": "rep",
+    "projection": "LEAN_REPUBLICAN",
+    "state_unique": "TX20"
+}, {
+    "state": "KS",
+    "name": "Open",
+    "held": "rep",
+    "projection": "LEAN_REPUBLICAN",
+    "state_unique": "KS20"
+}, {
+    "state": "AK",
+    "name": "Sullivan",
+    "held": "rep",
+    "projection": "LEAN_REPUBLICAN",
+    "state_unique": "AK20"
+}, {
+    "state": "KY",
+    "name": "McConnell",
+    "held": "rep",
+    "projection": "LIKELY_REPUBLICAN",
+    "state_unique": "KY20"
+}, {
+    "state": "WY",
+    "name": "Open",
+    "held": "rep",
+    "projection": "SOLID_REPUBLICAN",
+    "state_unique": "WY20"
+}, {
+    "state": "WV",
+    "name": "Moore Capito",
+    "held": "rep",
+    "projection": "SOLID_REPUBLICAN",
+    "state_unique": "WV20"
+}, {
+    "state": "AR",
+    "name": "Cotton",
+    "held": "rep",
+    "projection": "SOLID_REPUBLICAN",
+    "state_unique": "AR20"
+}, {
+    "state": "ID",
+    "name": "Risch",
+    "held": "rep",
+    "projection": "SOLID_REPUBLICAN",
+    "state_unique": "ID20"
+}, {
+    "state": "LA",
+    "name": "Cassidy",
+    "held": "rep",
+    "projection": "SOLID_REPUBLICAN",
+    "state_unique": "LA20"
+}, {
+    "state": "MS",
+    "name": "Hyde-Smith",
+    "held": "rep",
+    "projection": "SOLID_REPUBLICAN",
+    "state_unique": "MS20"
+}, {
+    "state": "NE",
+    "name": "Sasse",
+    "held": "rep",
+    "projection": "SOLID_REPUBLICAN",
+    "state_unique": "NE20"
+}, {
+    "state": "OK",
+    "name": "Inhofe",
+    "held": "rep",
+    "projection": "SOLID_REPUBLICAN",
+    "state_unique": "OK20"
+}, {
+    "state": "SD",
+    "name": "Rounds",
+    "held": "rep",
+    "projection": "SOLID_REPUBLICAN",
+    "state_unique": "SD20"
+}, {
+    "state": "TN",
+    "name": "Open",
+    "held": "rep",
+    "projection": "SOLID_REPUBLICAN",
+    "state_unique": "TN20"
+}, {
+    "state": "ND",
+    "name": "Cramer",
+    "held": "rep",
+    "projection": "noelectionrep",
+    "state_unique": "NDno"
+}, {
+    "state": "ND",
+    "name": "Hoeven",
+    "held": "rep",
+    "projection": "noelectionrep",
+    "state_unique": "NDno2"
+}, {
+    "state": "NE",
+    "name": "Fischer",
+    "held": "rep",
+    "projection": "noelectionrep",
+    "state_unique": "NEno"
+}, {
+    "state": "OH",
+    "name": "Portman",
+    "held": "rep",
+    "projection": "noelectionrep",
+    "state_unique": "OHno2"
+}, {
+    "state": "OK",
+    "name": "Lankford",
+    "held": "rep",
+    "projection": "noelectionrep",
+    "state_unique": "OKno"
+}, {
+    "state": "PA",
+    "name": "Toomey",
+    "held": "rep",
+    "projection": "noelectionrep",
+    "state_unique": "PAno2"
+}, {
+    "state": "TX",
+    "name": "Cruz",
+    "held": "rep",
+    "projection": "noelectionrep",
+    "state_unique": "TXno"
+}, {
+    "state": "SD",
+    "name": "Thune",
+    "held": "rep",
+    "projection": "noelectionrep",
+    "state_unique": "SDno"
+}, {
+    "state": "TN",
+    "name": "Blackburn",
+    "held": "rep",
+    "projection": "noelectionrep",
+    "state_unique": "TNno"
+}, {
+    "state": "NC",
+    "name": "Burr",
+    "held": "rep",
+    "projection": "noelectionrep",
+    "state_unique": "NCno"
+}, {
+    "state": "UT",
+    "name": "Lee",
+    "held": "rep",
+    "projection": "noelectionrep",
+    "state_unique": "UTno"
+}, {
+    "state": "UT",
+    "name": "Romney",
+    "held": "rep",
+    "projection": "noelectionrep",
+    "state_unique": "UTno2"
+}, {
+    "state": "SC",
+    "name": "Scott",
+    "held": "rep",
+    "projection": "noelectionrep",
+    "state_unique": "SCno"
+}, {
+    "state": "MS",
+    "name": "Wicker",
+    "held": "rep",
+    "projection": "noelectionrep",
+    "state_unique": "MSno"
+}, {
+    "state": "KY",
+    "name": "Paul",
+    "held": "rep",
+    "projection": "noelectionrep",
+    "state_unique": "KYno"
+}, {
+    "state": "MO",
+    "name": "Blunt",
+    "held": "rep",
+    "projection": "noelectionrep",
+    "state_unique": "MOno"
+}, {
+    "state": "LA",
+    "name": "Kennedy",
+    "held": "rep",
+    "projection": "noelectionrep",
+    "state_unique": "LAno"
+}, {
+    "state": "WI",
+    "name": "Johnson",
+    "held": "rep",
+    "projection": "noelectionrep",
+    "state_unique": "WIno2"
+}, {
+    "state": "KS",
+    "name": "Moran",
+    "held": "rep",
+    "projection": "noelectionrep",
+    "state_unique": "KSno"
+}, {
+    "state": "IN",
+    "name": "Young",
+    "held": "rep",
+    "projection": "noelectionrep",
+    "state_unique": "INno2"
+}, {
+    "state": "IN",
+    "name": "Braun",
+    "held": "rep",
+    "projection": "noelectionrep",
+    "state_unique": "INno"
+}, {
+    "state": "ID",
+    "name": "Crapo",
+    "held": "rep",
+    "projection": "noelectionrep",
+    "state_unique": "IDno"
+}, {
+    "state": "IA",
+    "name": "Grassley",
+    "held": "rep",
+    "projection": "noelectionrep",
+    "state_unique": "IAno"
+}, {
+    "state": "FL",
+    "name": "Rubio",
+    "held": "rep",
+    "projection": "noelectionrep",
+    "state_unique": "FLno2"
+}, {
+    "state": "FL",
+    "name": "Scott",
+    "held": "rep",
+    "projection": "noelectionrep",
+    "state_unique": "FLno"
+}, {
+    "state": "AR",
+    "name": "Boozman",
+    "held": "rep",
+    "projection": "noelectionrep",
+    "state_unique": "ARno"
+}, {
+    "state": "AL",
+    "name": "Shelby",
+    "held": "rep",
+    "projection": "noelectionrep",
+    "state_unique": "ALno"
+}, {
+    "state": "AK",
+    "name": "Murkowski",
+    "held": "rep",
+    "projection": "noelectionrep",
+    "state_unique": "AKno"
+}, {
+    "state": "MO",
+    "name": "Hawley",
+    "held": "rep",
+    "projection": "noelectionrep",
+    "state_unique": "MOno2"
+}, {
+    "state": "WY",
+    "name": "Barrasso",
+    "held": "rep",
+    "projection": "noelectionrep",
+    "state_unique": "WYno"
+}]

@@ -6,7 +6,9 @@ const projDict = {
     "TOSS UP": "#C0C2C5",
     "LEAN REPUBLICAN": "#E79090",
     "LIKELY REPUBLICAN": "#C74343",
-    "SOLID REPUBLICAN": "#9C1515"
+    "SOLID REPUBLICAN": "#9C1515",
+    "noelectiondem": "#EBEBE8",
+    "noelectionrep": "#EBEBE8"
 }
 
 var getCol = function (myKey) {
@@ -40,8 +42,9 @@ const partyCols = {
     "R": "#124683"
 }
 
-// Presidency legend
 
+// PRESIDENCY ------------------------------------
+// Presidency legend
 var presidencyLeg = d3.select('.pres-leg')
 
 presidencyLeg
@@ -80,12 +83,30 @@ const barBase = d3.select('.pres-bar')
     .style('background-color', '#dcdcdc')
     .attr("class", "d-flex justify-content-center")
 
-var tooltip = barBase
+barBase
+    .append('div')
+    .html('<b>270 to win</b>')
+    .style('position', 'absolute')
+    .style('left', '46%')
+    .style('top', '74px')
+
+barBase
+    .append('div')
+    .style('height', '80px')
+    .style('width', '2px')
+    .style('background-color', '#EBEBE8')
+    .style('position', 'absolute')
+    .style('left', '50%')
+    .style('top', '100px')
+
+
+var presTooltip = barBase
     .append("div")
     .attr("class", "tooltip")
     .style("opacity", 0)
     .style("position", "absolute")
     .style("top", "10%")
+    .style("left", "3%")
 
 function sum(a, b) {
     return a + b;
@@ -107,15 +128,15 @@ d3.json('/data/ec.json').then(function (d) {
             .style('background-color', getCol(el.rating))
             .on("mouseover", function () {
                 d3.select(this).style("border", "1px solid #EBEBE8");
-                tooltip.transition()
+                presTooltip.transition()
                     .duration(200)
                     .style("opacity", 0.9);
-                tooltip.html(el.state + "<br/>" + el.ecvs + " electoral vote" + (el.ecvs == 1 ? "" : "s"))
+                presTooltip.html(el.state + "<br/>" + el.ecvs + " electoral vote" + (el.ecvs == 1 ? "" : "s"))
 
             })
             .on("mouseout", function (d) {
                 d3.select(this).style("border", "none");
-                tooltip.transition()
+                presTooltip.transition()
                     .duration(400)
                     .style('opacity', 0)
             })
@@ -141,6 +162,14 @@ d3.json('/data/ec.json').then(function (d) {
     const g = mapSvg
         .append('g')
 
+    var colourByState = {};
+
+
+    d.forEach(el => (colourByState[el.state] = getCol(el.rating)));
+
+    var getStateCol = function (myKey) {
+        return colourByState[myKey];
+    };
 
     d3.json("data/counties-10m.json")
         .then(function (us) {
@@ -148,17 +177,10 @@ d3.json('/data/ec.json').then(function (d) {
 
             const states = topojson.feature(us, us.objects.states)
 
-            const colourByState = {};
-
-            // Create property for each ID, give it value from rate
-            d.forEach(el => (colourByState[el.state] = getCol(el.rating)));
-
-            var getStateCol = function (myKey) {
-                return colourByState[myKey];
-            };
 
 
-            console.log(colourByState)
+
+            // console.log(colourByState)
             const proj = d3.geoAlbersUsa().scale(900).translate([350.5, 225])
             const path = d3.geoPath()
                 .projection(proj)
@@ -181,15 +203,9 @@ d3.json('/data/ec.json').then(function (d) {
 })
 
 
-
-
-
+// SENATE ------------------------------------
 // Senate legend
-var senateLeg = d3.select('.senate')
-    .append('div')
-    .attr('class', 'row')
-    .append('div')
-    .attr('class', 'presidency-legend col-sm-12')
+var senateLeg = d3.select('.sen-leg')
 
 senateLeg
     .append('div')
@@ -218,3 +234,86 @@ senateLeg
     .style('background-color', function (d) {
         return d
     })
+
+// Senate waffle chart
+// Waffle chart example: https://bl.ocks.org/JulienAssouline/b98116bb991e13beb5418c45a2e64a14
+
+var wafWidth = 800
+var wafHeight = 400
+var numRows = 5
+
+var senWaf = d3.select('.sen-graphics')
+    .append('div')
+    .attr('class', 'sen-waffle d-flex justify-content-center')
+
+var senTooltip = senWaf
+    .append("div")
+    .attr("class", "sen-tooltip")
+    .style("opacity", 0)
+
+var senWafSvg = senWaf
+    .append("svg")
+    .attr("id", "chart")
+    .attr("width", wafWidth)
+    .attr("height", wafHeight)
+    .attr("viewBox", "0 0 " + wafWidth + " " + wafHeight)
+    .attr("preserveAspectRatio", "xMinYMin")
+
+
+
+d3.json('/data/senate.json').then(function (data) {
+
+    var colourByState = {}
+
+    data.forEach(el => (colourByState[el.state_unique] = getCol(el.projection.replace('_', ' '))));
+
+    var getStateCol = function (myKey) {
+        return colourByState[myKey];
+    };
+
+    senWafSvg
+        .append("g")
+        .selectAll("rect")
+        .data(data)
+        .enter()
+        .append("rect")
+        .attr("width", 32)
+        .attr("height", 32)
+        .attr("class", d => d.state_unique)
+        .attr("y", function (d, i) {
+            var rowIndex = i % numRows
+            return rowIndex * 40
+        })
+        .attr("x", function (d, i) {
+            var colIndex = Math.floor(i / numRows)
+            return colIndex * 40
+        })
+        .attr("r", 6)
+        .style("fill", d => getStateCol(d.state_unique))
+        .on("mouseover", function (d) {
+            senTooltip.transition()
+                .duration(100)
+                .style("opacity", 1)
+            d3.select(this)
+                .style("stroke", "#dcdcdc")
+                .style("stroke-width", "3px")
+            senTooltip
+                .html(d.state_unique)
+            console.log(d) //can't access data?? 'd' here = mouseevent not data...
+        })
+
+        .on("mouseout", function (d) {
+            senTooltip.transition()
+                .duration(300)
+                .style('opacity', 0)
+            d3.select(this).style("stroke", "none")
+        })
+
+    // var senCurrent = document.getElementById('senCur')
+    //     .onclick(function () {
+    //     })
+})
+
+
+
+// HOUSE ------------------------------------
