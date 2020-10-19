@@ -14,6 +14,14 @@
 </head>
 
 <body>
+    <a id="top"></a>
+    <div class="sidenav d-flex flex-column">
+        <a href="#top"><button type="button" class="btn btn-light sidenav-button">&#8593;</button></a>
+        <a href="#presidency-jump"><button type="button" class="btn btn-light sidenav-button">P</button></a>
+        <a href="#senate-jump"><button type="button" class="btn btn-light sidenav-button">S</button></a>
+        <a href="#house-jump"><button type="button" class="btn btn-light sidenav-button">H</button></a>
+        <a href="#method-jump"><button type="button" class="btn btn-light sidenav-button">m</button></a>
+    </div>
     <div class="container">
         <div class="row float-right">
             <a href="#method-jump"><button type="button" class="btn btn-light method-button">Methodology</button></a>
@@ -114,17 +122,27 @@
     </div>
     <div class="container house">
         <hr class="mt-5 mb-5" id="house-jump">
-        <h2>House</h2>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus quia et recusandae ipsa facere
-            accusantium non quasi excepturi hic, debitis reiciendis laborum at porro eum aliquid voluptatem facilis
-            labore saepe.</p>
-        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+        <div class="row">
+            <div class="col-sm-8">
+                <h2>House</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus quia et recusandae ipsa facere
+                    accusantium non quasi excepturi hic, debitis reiciendis laborum at porro eum aliquid voluptatem
+                    facilis
+                    labore saepe.</p>
+            </div>
+        </div>
+        <div id="house-toggle" class="btn-group btn-group-toggle" data-toggle="buttons">
             <label class="btn btn-light active">
                 <input type="radio" name="options" id="house2020" checked>2020 projection
             </label>
             <label class="btn btn-light">
                 <input type="radio" name="options" id="houseCur">Current breakdown
             </label>
+        </div>
+        <div class="row">
+            <div class="house-graphics col-sm-12">
+                <div class="house-leg mt-2 mb-5"></div>
+            </div>
         </div>
     </div>
     <div class="container">

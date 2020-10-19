@@ -17,7 +17,10 @@ var projCol = function (myKey) {
 
 const resultDict = {
     "D": "#124683",
-    "R": "#9C1515"
+    "R": "#9C1515",
+    "L": "#E5BB25", //L = libertarian
+    "E": "#dcdcdc", //E = vacant previously democrat (used for ordering reasons)
+    "Q": "#dcdcdc" //Q = vacant previously republican (used for ordering reasons)
 }
 
 var resultCol = function (myKey) {
@@ -89,7 +92,6 @@ const barBase = d3.select('.pres-bar')
     .append('div')
     .style('height', '40px')
     .style("width", "75vw")
-    .style('background-color', '#dcdcdc')
     .attr("class", "d-flex justify-content-center")
 
 barBase
@@ -215,14 +217,28 @@ d3.json('/data/ec.json').then(function (d) {
                 })
 
             $("#pres-toggle :input").on('change', function () {
-                d.sort(function (a, b) {
-                    return a.result_2016 < b.result_2016 ? -1 : a.result_2016 > b.result_2016 ? 1 : 0;
-                });
 
-                d.reduce((acc, cur) => {
-                    cur.start = acc;
-                    return acc + (cur.ecvs);
-                }, 0);
+                if (this.id == "pres2020") {
+                    d.sort(function (a, b) {
+                        return a.index < b.index ? -1 : a.index > b.index ? 1 : 0;
+                    });
+
+                    d.reduce((acc, cur) => {
+                        cur.start = acc;
+                        return acc + (cur.ecvs);
+                    }, 0);
+
+                } else if (this.id == "pres2016") {
+                    d.sort(function (a, b) {
+                        return a.result_2016 < b.result_2016 ? -1 : a.result_2016 > b.result_2016 ? 1 : 0;
+                    });
+
+                    d.reduce((acc, cur) => {
+                        cur.start = acc;
+                        return acc + (cur.ecvs);
+                    }, 0);
+
+                }
 
                 console.log(d)
 
@@ -282,7 +298,7 @@ senateLeg
 
 var wafWidth = 800
 var wafHeight = 200
-var numRows = 5
+var senNumRows = 5
 
 var senWaf = d3.select('.sen-graphics')
     .append('div')
@@ -349,11 +365,11 @@ d3.json('/data/senate.json').then(function (data) {
         .attr("height", 32)
         .attr("class", d => d.state_unique)
         .attr("y", function (d, i) {
-            var rowIndex = i % numRows
+            var rowIndex = i % senNumRows
             return rowIndex * 40
         })
         .attr("x", function (d, i) {
-            var colIndex = Math.floor(i / numRows)
+            var colIndex = Math.floor(i / senNumRows)
             return colIndex * 40
         })
         .style("fill", d => getProjCol(d.state_unique))
@@ -378,10 +394,15 @@ d3.json('/data/senate.json').then(function (data) {
 
     $("#sen-toggle :input").on('change', function () {
         // console.log(data)
-        data.sort(function (a, b) {
-            return a.held < b.held ? -1 : a.held > b.held ? 1 : 0;
-        })
-        console.log(data)
+        if (this.id == "sen2020") {
+            data.sort(function (a, b) {
+                return a.index < b.index ? -1 : a.index > b.index ? 1 : 0;
+            })
+        } else if (this.id == "senCur") {
+            data.sort(function (a, b) {
+                return a.held < b.held ? -1 : a.held > b.held ? 1 : 0;
+            })
+        }
 
         senWafSvg
             .selectAll("rect")
@@ -389,11 +410,11 @@ d3.json('/data/senate.json').then(function (data) {
             .transition()
             .duration(300)
             .attr("y", function (d, i) {
-                var rowIndex = i % numRows
+                var rowIndex = i % senNumRows
                 return rowIndex * 40
             })
             .attr("x", function (d, i) {
-                var colIndex = Math.floor(i / numRows)
+                var colIndex = Math.floor(i / senNumRows)
                 return colIndex * 40
             })
             .style("fill", d => this.id == "sen2020" ? getProjCol(d.state_unique) : getCurCol(d.state_unique))
@@ -403,3 +424,176 @@ d3.json('/data/senate.json').then(function (data) {
 
 
 // HOUSE ------------------------------------
+
+// Senate legend
+var houseLeg = d3.select('.house-leg')
+
+houseLeg
+    .append('div')
+    .attr('class', 'legend-labels  d-flex  justify-content-center')
+    .selectAll('div')
+    .data(projNames)
+    .enter()
+    .append('div')
+    .attr('class', 'legend-label')
+    .style('width', "100px")
+    .style('height', '15px')
+    .text(function (d) {
+        return d
+    })
+
+houseLeg
+    .append('div')
+    .attr('class', 'legend-boxes  d-flex  justify-content-center')
+    .selectAll('div')
+    .data(projCols)
+    .enter()
+    .append('div')
+    .attr('class', 'legend-box')
+    .style('width', "100px")
+    .style('height', '15px')
+    .style('background-color', function (d) {
+        return d
+    })
+
+
+var houseNumRows = 10
+
+var houseWaf = d3.select('.house-graphics')
+    .append('div')
+    .attr('class', 'house-waffle d-flex justify-content-center')
+
+houseWaf
+    .append('div')
+    .html('<b>218</b>')
+    .style('position', 'absolute')
+    .style('font-size', '1.2em')
+    .style('left', '48%')
+    .style('top', '70px')
+
+houseWaf
+    .append('div')
+    .style('height', "45.7%")
+    .style('width', '2px')
+    .style('background-color', '#EBEBE8')
+    .style('position', 'absolute')
+    .style('left', '49.4%')
+    .style('top', '31%')
+
+houseWaf
+    .append('div')
+    .style('height', "2px")
+    .style('width', '1.6%')
+    .style('background-color', '#EBEBE8')
+    .style('position', 'absolute')
+    .style('left', '47.9%')
+    .style('top', '76%')
+
+houseWaf
+    .append('div')
+    .style('height', "20%")
+    .style('width', '2px')
+    .style('background-color', '#EBEBE8')
+    .style('position', 'absolute')
+    .style('left', '47.9%')
+    .style('top', '76%')
+
+var houseTooltip = houseWaf
+    .append("div")
+    .attr("class", "house-tooltip")
+    .style("opacity", 0)
+
+var houseWafSvg = houseWaf
+    .append("svg")
+    .attr("id", "chart")
+    .attr("width", wafWidth)
+    .attr("height", wafHeight)
+    .attr("viewBox", "0 0 " + wafWidth + " " + wafHeight)
+    .attr("preserveAspectRatio", "xMinYMin")
+
+d3.json('/data/house.json').then(function (data) {
+    console.log(data)
+
+    var projByState = {}
+
+    data.forEach(el => (projByState[el.seat] = projCol(el.rating.replace('_', ' '))));
+
+    var getProjCol = function (myKey) {
+        return projByState[myKey];
+    };
+
+    var curByState = {}
+
+    data.forEach(el => (curByState[el.seat] = resultCol(el.held)));
+
+    var getCurCol = function (myKey) {
+        return curByState[myKey];
+    }
+
+    console.log(data[0].seat, resultCol(data[0].held))
+
+    houseWafSvg
+        .append("g")
+        .selectAll("rect")
+        .data(data)
+        .enter()
+        .append("rect")
+        .attr("width", 14)
+        .attr("height", 14)
+        .attr("class", d => d.seat)
+        .attr("y", function (d, i) {
+            var rowIndex = i % houseNumRows
+            return rowIndex * 18
+        })
+        .attr("x", function (d, i) {
+            var colIndex = Math.floor(i / houseNumRows)
+            return colIndex * 18
+        })
+        .style("fill", d => getProjCol(d.seat))
+        .on("mouseover", function (d) {
+            senTooltip.transition()
+                .duration(100)
+                .style("opacity", 1)
+            d3.select(this)
+                .style("stroke", "#dcdcdc")
+                .style("stroke-width", "1.5px")
+            senTooltip
+                .html(d.seat)
+            // console.log(d) //can't access data?? 'd' here = mouseevent not data...
+        })
+
+        .on("mouseout", function (d) {
+            houseTooltip.transition()
+                .duration(300)
+                .style('opacity', 0)
+            d3.select(this).style("stroke", "none")
+        })
+
+    $("#house-toggle :input").on('change', function () {
+        // console.log(data)
+        if (this.id == "house2020") {
+            data.sort(function (a, b) {
+                return a.index < b.index ? -1 : a.index > b.index ? 1 : 0;
+            })
+        } else if (this.id == "houseCur") {
+            data.sort(function (a, b) {
+                return a.held < b.held ? -1 : a.held > b.held ? 1 : 0;
+            })
+        }
+
+        houseWafSvg
+            .selectAll("rect")
+            .data(data)
+            .transition()
+            .duration(300)
+            .attr("y", function (d, i) {
+                var rowIndex = i % houseNumRows
+                return rowIndex * 18
+            })
+            .attr("x", function (d, i) {
+                var colIndex = Math.floor(i / houseNumRows)
+                return colIndex * 18
+            })
+            .style("fill", d => this.id == "house2020" ? getProjCol(d.seat) : getCurCol(d.seat))
+    })
+})
