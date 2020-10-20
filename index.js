@@ -49,17 +49,59 @@ const projNames = [
 
 
 // Main party colours
-const partyCols = {
-    "D": "#124683",
-    "R": "#124683"
-}
+const resNames = [
+    "Democrat",
+    "Republican"
+]
+
+const resCols = [
+    "#124683",
+    "#9C1515"
+]
+
+// senate legend data
+const senProjCols = [
+    "#EBEBE8",
+    "#124683",
+    "#337FD8",
+    "#8EBDF3",
+    "#C0C2C5",
+    "#E79090",
+    "#C74343",
+    "#9C1515"
+]
+
+const senProjNames = [
+    "No election",
+    "Solid Dem",
+    "Likely Dem",
+    "Lean Dem",
+    "Toss-up",
+    "Lean Rep",
+    "Likely Rep",
+    "Solid Rep"
+]
+
+// house legend data
+const houseCurCols = [
+    "#124683",
+    "#9C1515",
+    "#E5BB25",
+    "#dcdcdc",
+]
+
+const houseCurNames = [
+    "Democrat", "Republican", "Libertarian", "Vacant"
+]
 
 
 // PRESIDENCY ------------------------------------
 // Presidency legend
-var presidencyLeg = d3.select('.pres-leg')
+var presidencyProjLeg = d3.select('.pres-leg')
+    .append('div')
+    .attr('class', 'presidency-projection-legend')
 
-presidencyLeg
+presidencyProjLeg
     .append('div')
     .attr('class', 'legend-labels  d-flex  justify-content-center')
     .selectAll('div')
@@ -73,11 +115,45 @@ presidencyLeg
         return d
     })
 
-presidencyLeg
+presidencyProjLeg
     .append('div')
     .attr('class', 'legend-boxes  d-flex  justify-content-center')
     .selectAll('div')
     .data(projCols)
+    .enter()
+    .append('div')
+    .attr('class', 'legend-box')
+    .style('width', "100px")
+    .style('height', '15px')
+    .style('background-color', function (d) {
+        return d
+    })
+
+var presidencyResLeg = d3.select('.pres-leg')
+    .append('div')
+    .attr('class', 'presidency-2016-legend')
+    .style('opacity', 0)
+    .style('display', 'none')
+
+presidencyResLeg
+    .append('div')
+    .attr('class', 'legend-labels  d-flex  justify-content-center')
+    .selectAll('div')
+    .data(resNames)
+    .enter()
+    .append('div')
+    .attr('class', 'legend-label')
+    .style('width', "100px")
+    .style('height', '15px')
+    .text(function (d) {
+        return d
+    })
+
+presidencyResLeg
+    .append('div')
+    .attr('class', 'legend-boxes  d-flex  justify-content-center')
+    .selectAll('div')
+    .data(resCols)
     .enter()
     .append('div')
     .attr('class', 'legend-box')
@@ -192,7 +268,7 @@ d3.json('/data/ec.json').then(function (d) {
     const g = mapSvg
         .append('g')
 
-    d3.json("data/counties-10m.json")
+    d3.json("data/us-states.json")
         .then(function (us) {
             const states = topojson.feature(us, us.objects.states)
 
@@ -200,12 +276,11 @@ d3.json('/data/ec.json').then(function (d) {
             const path = d3.geoPath()
                 .projection(proj)
 
-
             g.selectAll("path") //this week using paths instead of "rects" to create bar charts
                 .data(states.features) //using .features to bind the data this time. GeoJSON that is an object that has two features, features are what we actually want to access the array of objects
                 .enter() //this then propogates into our group
                 .append("path") //path per geoemtry
-                .attr("fill", d => getProjCol(d.properties.name)) //then applying a fill color. can be hex colors or actual colors
+                .attr("fill", d => getProjCol(d.properties.NAME)) //then applying a fill color. can be hex colors or actual colors
                 .attr("stroke", "#EBEBE8")
                 .attr("stroke-width", "0.3px") //defining the stroke color, in this case black
                 .attr("d", path)
@@ -228,6 +303,18 @@ d3.json('/data/ec.json').then(function (d) {
                         return acc + (cur.ecvs);
                     }, 0);
 
+                    presidencyProjLeg
+                        .transition()
+                        .duration(300)
+                        .style('opacity', 1)
+                        .style('display', 'block')
+
+                    presidencyResLeg
+                        .transition()
+                        .duration(300)
+                        .style('opacity', 0)
+                        .style('display', 'none')
+
                 } else if (this.id == "pres2016") {
                     d.sort(function (a, b) {
                         return a.result_2016 < b.result_2016 ? -1 : a.result_2016 > b.result_2016 ? 1 : 0;
@@ -238,6 +325,17 @@ d3.json('/data/ec.json').then(function (d) {
                         return acc + (cur.ecvs);
                     }, 0);
 
+                    presidencyResLeg
+                        .transition()
+                        .duration(300)
+                        .style('opacity', 1)
+                        .style('display', 'block')
+
+                    presidencyProjLeg
+                        .transition()
+                        .duration(300)
+                        .style('opacity', 0)
+                        .style('display', 'none')
                 }
 
                 console.log(d)
@@ -246,7 +344,7 @@ d3.json('/data/ec.json').then(function (d) {
                 g.selectAll("path")
                     .transition()
                     .duration(300)
-                    .attr("fill", d => this.id == "pres2020" ? getProjCol(d.properties.name) : getResultCol(d.properties.name))
+                    .attr("fill", d => this.id == "pres2020" ? getProjCol(d.properties.NAME) : getResultCol(d.properties.NAME))
 
                 barBase
                     .selectAll('.state-votes')
@@ -263,13 +361,15 @@ d3.json('/data/ec.json').then(function (d) {
 
 // SENATE ------------------------------------
 // Senate legend
-var senateLeg = d3.select('.sen-leg')
+var senateProjLeg = d3.select('.sen-leg')
+    .append('div')
+    .attr('class', 'senate-projection-legend')
 
-senateLeg
+senateProjLeg
     .append('div')
     .attr('class', 'legend-labels  d-flex  justify-content-center')
     .selectAll('div')
-    .data(projNames)
+    .data(senProjNames)
     .enter()
     .append('div')
     .attr('class', 'legend-label')
@@ -279,11 +379,45 @@ senateLeg
         return d
     })
 
-senateLeg
+senateProjLeg
     .append('div')
     .attr('class', 'legend-boxes  d-flex  justify-content-center')
     .selectAll('div')
-    .data(projCols)
+    .data(senProjCols)
+    .enter()
+    .append('div')
+    .attr('class', 'legend-box')
+    .style('width', "100px")
+    .style('height', '15px')
+    .style('background-color', function (d) {
+        return d
+    })
+
+var senateCurLeg = d3.select('.sen-leg')
+    .append('div')
+    .attr('class', 'senate-current-legend')
+    .style('opacity', 0)
+    .style('display', 'none')
+
+senateCurLeg
+    .append('div')
+    .attr('class', 'legend-labels  d-flex  justify-content-center')
+    .selectAll('div')
+    .data(resNames)
+    .enter()
+    .append('div')
+    .attr('class', 'legend-label')
+    .style('width', "100px")
+    .style('height', '15px')
+    .text(function (d) {
+        return d
+    })
+
+senateCurLeg
+    .append('div')
+    .attr('class', 'legend-boxes  d-flex  justify-content-center')
+    .selectAll('div')
+    .data(resCols)
     .enter()
     .append('div')
     .attr('class', 'legend-box')
@@ -398,10 +532,35 @@ d3.json('/data/senate.json').then(function (data) {
             data.sort(function (a, b) {
                 return a.index < b.index ? -1 : a.index > b.index ? 1 : 0;
             })
+
+            senateProjLeg
+                .transition()
+                .duration(300)
+                .style('opacity', 1)
+                .style('display', 'block')
+
+            senateCurLeg
+                .transition()
+                .duration(300)
+                .style('opacity', 0)
+                .style('display', 'none')
+
         } else if (this.id == "senCur") {
             data.sort(function (a, b) {
                 return a.held < b.held ? -1 : a.held > b.held ? 1 : 0;
             })
+
+            senateCurLeg
+                .transition()
+                .duration(300)
+                .style('opacity', 1)
+                .style('display', 'block')
+
+            senateProjLeg
+                .transition()
+                .duration(300)
+                .style('opacity', 0)
+                .style('display', 'none')
         }
 
         senWafSvg
@@ -425,10 +584,12 @@ d3.json('/data/senate.json').then(function (data) {
 
 // HOUSE ------------------------------------
 
-// Senate legend
-var houseLeg = d3.select('.house-leg')
+// House legend
+var houseProjLeg = d3.select('.house-leg')
+    .append('div')
+    .attr('class', 'house-projection-legend')
 
-houseLeg
+houseProjLeg
     .append('div')
     .attr('class', 'legend-labels  d-flex  justify-content-center')
     .selectAll('div')
@@ -442,7 +603,7 @@ houseLeg
         return d
     })
 
-houseLeg
+houseProjLeg
     .append('div')
     .attr('class', 'legend-boxes  d-flex  justify-content-center')
     .selectAll('div')
@@ -455,6 +616,42 @@ houseLeg
     .style('background-color', function (d) {
         return d
     })
+
+var houseCurLeg = d3.select('.house-leg')
+    .append('div')
+    .attr('class', 'house-current-legend')
+    .style('opacity', 0)
+    .style('display', 'none')
+
+houseCurLeg
+    .append('div')
+    .attr('class', 'legend-labels  d-flex  justify-content-center')
+    .selectAll('div')
+    .data(houseCurNames)
+    .enter()
+    .append('div')
+    .attr('class', 'legend-label')
+    .style('width', "100px")
+    .style('height', '15px')
+    .text(function (d) {
+        return d
+    })
+
+houseCurLeg
+    .append('div')
+    .attr('class', 'legend-boxes  d-flex  justify-content-center')
+    .selectAll('div')
+    .data(houseCurCols)
+    .enter()
+    .append('div')
+    .attr('class', 'legend-box')
+    .style('width', "100px")
+    .style('height', '15px')
+    .style('background-color', function (d) {
+        return d
+    })
+
+
 
 
 var houseNumRows = 10
@@ -575,10 +772,34 @@ d3.json('/data/house.json').then(function (data) {
             data.sort(function (a, b) {
                 return a.index < b.index ? -1 : a.index > b.index ? 1 : 0;
             })
+            houseProjLeg
+                .transition()
+                .duration(300)
+                .style('opacity', 1)
+                .style('display', 'block')
+
+            houseCurLeg
+                .transition()
+                .duration(300)
+                .style('opacity', 0)
+                .style('display', 'none')
+
         } else if (this.id == "houseCur") {
             data.sort(function (a, b) {
                 return a.held < b.held ? -1 : a.held > b.held ? 1 : 0;
             })
+
+            houseCurLeg
+                .transition()
+                .duration(300)
+                .style('opacity', 1)
+                .style('display', 'block')
+
+            houseProjLeg
+                .transition()
+                .duration(300)
+                .style('opacity', 0)
+                .style('display', 'none')
         }
 
         houseWafSvg
