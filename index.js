@@ -507,8 +507,8 @@ var senTooltip = senWaf
     .style("opacity", 0)
     .style("position", "absolute")
     .style('background-color', '#57747E')
-    .style("top", "30%")
-    .style("left", "-3%")
+    .style("top", "37%")
+    .style("left", "0%")
     .attr('class', 'senate-tooltip')
 
 var senWafSvg = senWaf
@@ -718,9 +718,6 @@ houseCurLeg
         return d
     })
 
-
-
-
 var houseNumRows = 10
 
 var houseWaf = d3.select('.house-graphics')
@@ -733,8 +730,8 @@ var houseTooltip = houseWaf
     .style("opacity", 0)
     .style("position", "absolute")
     .style('background-color', '#57747E')
-    .style("top", "30%")
-    .style("left", "-3%")
+    .style("top", "37%")
+    .style("left", "0")
     .attr('class', 'house-tooltip')
 
 var houseWafSvg = houseWaf
