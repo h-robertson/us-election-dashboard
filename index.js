@@ -41,7 +41,7 @@ const projNames = [
     "Solid Dem",
     "Likely Dem",
     "Lean Dem",
-    "Toss-up",
+    "Toss Up",
     "Lean Rep",
     "Likely Rep",
     "Solid Rep"
@@ -76,7 +76,7 @@ const senProjNames = [
     "Solid Dem",
     "Likely Dem",
     "Lean Dem",
-    "Toss-up",
+    "Toss Up",
     "Lean Rep",
     "Likely Rep",
     "Solid Rep"
@@ -175,8 +175,11 @@ var presTooltip = barBase
     .attr("class", "tooltip")
     .style("opacity", 0)
     .style("position", "absolute")
-    .style("top", "10%")
-    .style("left", "3%")
+    .style('background-color', '#57747E')
+    .style("top", "30%")
+    .style("left", "-3%")
+    .attr('class', 'presidency-tooltip')
+
 
 function sum(a, b) {
     return a + b;
@@ -205,7 +208,7 @@ d3.json('/data/ec.json').then(function (d) {
     function highlightSameClass(className) {
         var classto = d3.selectAll(className)
         var otherDivs = d3.selectAll('.state-votes:not(' + className + ")")
-        classto.on("mouseover", function () {
+        classto.on("mouseover", function (m, d) {
             otherDivs
                 // .transition()
                 // .duration(10)
@@ -213,6 +216,15 @@ d3.json('/data/ec.json').then(function (d) {
 
             classto.style("stroke-width", "2px")
                 .style('border', '2px solid #EBEBE8')
+
+            presTooltip.transition()
+                .duration(200)
+                .style("opacity", 0.9);
+
+            this.tagName == "DIV" ?
+                (presTooltip.html("<b>" + d.state + "</b><br/>" + d.ecvs + " electoral vote" + (d.ecvs == 1 ? "" : "s"))) :
+                (presTooltip.html("<b>" + d.properties.NAME + "</b><br/>" + d.properties.ecvs + " electoral vote" + (d.properties.ecvs == 1 ? "" : "s")))
+
         })
         classto.on('mouseleave', function () {
             otherDivs
@@ -221,6 +233,10 @@ d3.json('/data/ec.json').then(function (d) {
                 .style('opacity', 1)
             classto.style("stroke-width", "0.3px")
                 .style('border', 'none');
+
+            presTooltip.transition()
+                .duration(400)
+                .style('opacity', 0)
         });
     }
 
@@ -238,18 +254,6 @@ d3.json('/data/ec.json').then(function (d) {
         .style('height', '40px')
         .style('width', d => (d.ecvs / 538 * 100) + "%")
         .style('background-color', d => (getProjCol(d.state)))
-        // .on("mouseover", function (d) {
-        //     presTooltip.transition()
-        //         .duration(200)
-        //         .style("opacity", 0.9);
-        //     presTooltip.html(d.state + "<br/>" + d.ecvs + " electoral vote" + (d.ecvs == 1 ? "" : "s"))
-
-        // })
-        // .on("mouseout", function (d) {
-        //     presTooltip.transition()
-        //         .duration(400)
-        //         .style('opacity', 0)
-        // })
         .attr("class", d => `state-votes-${d.state.replace(' ', '-')} state-votes`)
 
 
@@ -277,6 +281,20 @@ d3.json('/data/ec.json').then(function (d) {
 
             // Used https://geoman.io/geojson-editor to add circles for congressional districts
             const states = topojson.feature(us, us.objects.states)
+
+            // https://stackoverflow.com/questions/56432468/how-to-combine-key-values-from-a-json-file-to-a-geojson-map-file
+            states.features.forEach(val => {
+                let {
+                    properties
+                } = val
+                let stateName = val.properties.NAME
+                let newProps = d.filter((d => d.state == stateName))
+                let newPropsFirst = newProps[0]
+                val.properties = {
+                    ...properties,
+                    ...newPropsFirst
+                }
+            })
 
             const proj = d3.geoAlbersUsa().scale(900).translate([350.5, 225])
             const path = d3.geoPath()
@@ -487,6 +505,11 @@ var senTooltip = senWaf
     .append("div")
     .attr("class", "sen-tooltip")
     .style("opacity", 0)
+    .style("position", "absolute")
+    .style('background-color', '#57747E')
+    .style("top", "30%")
+    .style("left", "-3%")
+    .attr('class', 'senate-tooltip')
 
 var senWafSvg = senWaf
     .append("svg")
@@ -534,7 +557,8 @@ d3.json('/data/senate.json').then(function (data) {
             return colIndex * 40
         })
         .style("fill", d => getProjCol(d.state_unique))
-        .on("mouseover", function (d) {
+        .on("mouseover", function (m, d) {
+            console.log(m, d)
             senTooltip.transition()
                 .duration(100)
                 .style("opacity", 1)
@@ -707,6 +731,11 @@ var houseTooltip = houseWaf
     .append("div")
     .attr("class", "house-tooltip")
     .style("opacity", 0)
+    .style("position", "absolute")
+    .style('background-color', '#57747E')
+    .style("top", "30%")
+    .style("left", "-3%")
+    .attr('class', 'house-tooltip')
 
 var houseWafSvg = houseWaf
     .append("svg")
@@ -752,14 +781,14 @@ d3.json('/data/house.json').then(function (data) {
             return colIndex * 18
         })
         .style("fill", d => getProjCol(d.seat))
-        .on("mouseover", function (d) {
-            senTooltip.transition()
+        .on("mouseover", function (m, d) {
+            houseTooltip.transition()
                 .duration(100)
                 .style("opacity", 1)
             d3.select(this)
                 .style("stroke", "#dcdcdc")
                 .style("stroke-width", "1.5px")
-            senTooltip
+            houseTooltip
                 .html(d.seat)
             // console.log(d) //can't access data?? 'd' here = mouseevent not data...
         })
