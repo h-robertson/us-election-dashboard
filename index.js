@@ -170,23 +170,6 @@ const barBase = d3.select('.pres-bar')
     .style("width", "75vw")
     .attr("class", "d-flex justify-content-center")
 
-barBase
-    .append('div')
-    .html('<b>270 to win</b>')
-    .style('position', 'absolute')
-    .style('left', '46%')
-    .style('top', '74px')
-
-barBase
-    .append('div')
-    .style('height', '80px')
-    .style('width', '2px')
-    .style('background-color', '#EBEBE8')
-    .style('position', 'absolute')
-    .style('left', '50%')
-    .style('top', '100px')
-
-
 var presTooltip = barBase
     .append("div")
     .attr("class", "tooltip")
@@ -198,7 +181,6 @@ var presTooltip = barBase
 function sum(a, b) {
     return a + b;
 }
-
 
 d3.json('/data/ec.json').then(function (d) {
 
@@ -229,7 +211,7 @@ d3.json('/data/ec.json').then(function (d) {
                 // .duration(10)
                 .style('opacity', 0.5)
 
-            classto.style("stroke-width", "3px")
+            classto.style("stroke-width", "2px")
                 .style('border', '2px solid #EBEBE8')
         })
         classto.on('mouseleave', function () {
@@ -292,6 +274,8 @@ d3.json('/data/ec.json').then(function (d) {
 
     d3.json("data/us-states.json")
         .then(function (us) {
+
+            // Used https://geoman.io/geojson-editor to add circles for congressional districts
             const states = topojson.feature(us, us.objects.states)
 
             const proj = d3.geoAlbersUsa().scale(900).translate([350.5, 225])
@@ -400,6 +384,22 @@ d3.json('/data/ec.json').then(function (d) {
             })
         });
 
+    barBase
+        .append('div')
+        .html('<b>270 to win</b>')
+        .style('position', 'absolute')
+        .style('left', '46%')
+        .style('top', '74px')
+
+    barBase
+        .append('div')
+        .style('height', '80px')
+        .style('width', '2px')
+        .style('background-color', '#EBEBE8')
+        .style('position', 'absolute')
+        .style('left', '50%')
+        .style('top', '100px')
+
 
 })
 
@@ -482,23 +482,6 @@ var senNumRows = 5
 var senWaf = d3.select('.sen-graphics')
     .append('div')
     .attr('class', 'sen-waffle d-flex justify-content-center')
-
-senWaf
-    .append('div')
-    .html('<b>50</b>')
-    .style('position', 'absolute')
-    .style('font-size', '1.2em')
-    .style('left', '48.6%')
-    .style('top', '72px')
-
-senWaf
-    .append('div')
-    .style('height', "220px")
-    .style('width', '2px')
-    .style('background-color', '#EBEBE8')
-    .style('position', 'absolute')
-    .style('left', '49.5%')
-    .style('top', '100px')
 
 var senTooltip = senWaf
     .append("div")
@@ -621,6 +604,23 @@ d3.json('/data/senate.json').then(function (data) {
             })
             .style("fill", d => this.id == "sen2020" ? getProjCol(d.state_unique) : getCurCol(d.state_unique))
     })
+
+    senWaf
+        .append('div')
+        .html('<b>50</b>')
+        .style('position', 'absolute')
+        .style('font-size', '1.2em')
+        .style('left', '48.6%')
+        .style('top', '72px')
+
+    senWaf
+        .append('div')
+        .style('height', "220px")
+        .style('width', '2px')
+        .style('background-color', '#EBEBE8')
+        .style('position', 'absolute')
+        .style('left', '49.5%')
+        .style('top', '100px')
 })
 
 
@@ -702,41 +702,6 @@ var houseNumRows = 10
 var houseWaf = d3.select('.house-graphics')
     .append('div')
     .attr('class', 'house-waffle d-flex justify-content-center')
-
-houseWaf
-    .append('div')
-    .html('<b>218</b>')
-    .style('position', 'absolute')
-    .style('font-size', '1.2em')
-    .style('left', '48%')
-    .style('top', '70px')
-
-houseWaf
-    .append('div')
-    .style('height', "45.7%")
-    .style('width', '2px')
-    .style('background-color', '#EBEBE8')
-    .style('position', 'absolute')
-    .style('left', '49.4%')
-    .style('top', '31%')
-
-houseWaf
-    .append('div')
-    .style('height', "2px")
-    .style('width', '1.6%')
-    .style('background-color', '#EBEBE8')
-    .style('position', 'absolute')
-    .style('left', '47.9%')
-    .style('top', '76%')
-
-houseWaf
-    .append('div')
-    .style('height', "20%")
-    .style('width', '2px')
-    .style('background-color', '#EBEBE8')
-    .style('position', 'absolute')
-    .style('left', '47.9%')
-    .style('top', '76%')
 
 var houseTooltip = houseWaf
     .append("div")
@@ -856,4 +821,40 @@ d3.json('/data/house.json').then(function (data) {
             })
             .style("fill", d => this.id == "house2020" ? getProjCol(d.seat) : getCurCol(d.seat))
     })
+
+    houseWaf
+        .append('div')
+        .html('<b>218</b>')
+        .style('position', 'absolute')
+        .style('font-size', '1.2em')
+        .style('left', '48%')
+        .style('top', '70px')
+
+    houseWaf
+        .append('div')
+        .style('height', "45.7%")
+        .style('width', '2px')
+        .style('background-color', '#EBEBE8')
+        .style('position', 'absolute')
+        .style('left', '49.4%')
+        .style('top', '31%')
+
+    houseWaf
+        .append('div')
+        .style('height', "2px")
+        .style('width', '1.6%')
+        .style('background-color', '#EBEBE8')
+        .style('position', 'absolute')
+        .style('left', '47.9%')
+        .style('top', '76%')
+
+    houseWaf
+        .append('div')
+        .style('height', "20%")
+        .style('width', '2px')
+        .style('background-color', '#EBEBE8')
+        .style('position', 'absolute')
+        .style('left', '47.9%')
+        .style('top', '76%')
+
 })
