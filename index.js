@@ -219,34 +219,56 @@ d3.json('/data/ec.json').then(function (d) {
         return resultsByState[myKey];
     };
 
-    // console.log(projByState)
-    // console.log(resultsByState)
+    // http://jsfiddle.net/aZXRM/
+    function highlightSameClass(className) {
+        var classto = d3.selectAll(className)
+        var otherDivs = d3.selectAll('.state-votes:not(' + className + ")")
+        classto.on("mouseover", function () {
+            otherDivs
+                // .transition()
+                // .duration(10)
+                .style('opacity', 0.5)
 
+            classto.style("stroke-width", "3px")
+                .style('border', '2px solid #EBEBE8')
+        })
+        classto.on('mouseleave', function () {
+            otherDivs
+                // .transition()
+                // .duration(10)
+                .style('opacity', 1)
+            classto.style("stroke-width", "0.3px")
+                .style('border', 'none');
+        });
+    }
 
-    barBase
+    var barDiv = barBase
+        .append('div')
+        .style('height', '40px')
+        .style("width", "75vw")
+        .attr("class", "state-bars d-flex justify-content-center")
+
+    barDiv
         .selectAll('.state-votes')
         .data(d)
         .enter()
         .append('div')
         .style('height', '40px')
         .style('width', d => (d.ecvs / 538 * 100) + "%")
-        // console.log((d.ecvs / 538 * 100) + "%")
         .style('background-color', d => (getProjCol(d.state)))
-        .on("mouseover", function () {
-            d3.select(this).style("border", "1px solid #EBEBE8");
-            presTooltip.transition()
-                .duration(200)
-                .style("opacity", 0.9);
-            presTooltip.html(d.state + "<br/>" + d.ecvs + " electoral vote" + (d.ecvs == 1 ? "" : "s"))
+        // .on("mouseover", function (d) {
+        //     presTooltip.transition()
+        //         .duration(200)
+        //         .style("opacity", 0.9);
+        //     presTooltip.html(d.state + "<br/>" + d.ecvs + " electoral vote" + (d.ecvs == 1 ? "" : "s"))
 
-        })
-        .on("mouseout", function (d) {
-            d3.select(this).style("border", "none");
-            presTooltip.transition()
-                .duration(400)
-                .style('opacity', 0)
-        })
-        .attr("class", "state-votes")
+        // })
+        // .on("mouseout", function (d) {
+        //     presTooltip.transition()
+        //         .duration(400)
+        //         .style('opacity', 0)
+        // })
+        .attr("class", d => `state-votes-${d.state.replace(' ', '-')} state-votes`)
 
 
 
@@ -265,7 +287,7 @@ d3.json('/data/ec.json').then(function (d) {
         .attr('width', width)
         .attr('height', height)
 
-    const g = mapSvg
+    const statesFill = mapSvg
         .append('g')
 
     d3.json("data/us-states.json")
@@ -276,7 +298,7 @@ d3.json('/data/ec.json').then(function (d) {
             const path = d3.geoPath()
                 .projection(proj)
 
-            g.selectAll("path") //this week using paths instead of "rects" to create bar charts
+            statesFill.selectAll("path") //this week using paths instead of "rects" to create bar charts
                 .data(states.features) //using .features to bind the data this time. GeoJSON that is an object that has two features, features are what we actually want to access the array of objects
                 .enter() //this then propogates into our group
                 .append("path") //path per geoemtry
@@ -284,12 +306,25 @@ d3.json('/data/ec.json').then(function (d) {
                 .attr("stroke", "#EBEBE8")
                 .attr("stroke-width", "0.3px") //defining the stroke color, in this case black
                 .attr("d", path)
-                .on("mouseover", function () {
-                    d3.select(this).style("stroke-width", "2px"); //stroke behind other polygons?
-                })
-                .on("mouseout", function (d) {
-                    d3.select(this).style("stroke-width", "0.3px");
-                })
+                .attr("class", d => `state-votes-${d.properties.NAME.replace(' ', '-')} state-votes`)
+
+            const statesStroke = mapSvg
+                .append('g')
+
+            statesStroke.selectAll("path") //this week using paths instead of "rects" to create bar charts
+                .data(states.features) //using .features to bind the data this time. GeoJSON that is an object that has two features, features are what we actually want to access the array of objects
+                .enter() //this then propogates into our group
+                .append("path") //path per geoemtry
+                .attr("fill", '#ffffff')
+                .style('fill-opacity', 0)
+                .style('stroke-opacity', 1)
+                //then applying a fill color. can be hex colors or actual colors
+                .attr("stroke", "#EBEBE8")
+                .attr("stroke-width", "0.3px") //defining the stroke color, in this case black
+                .attr("d", path)
+                .attr("class", d => `state-votes-${d.properties.NAME.replace(' ', '-')} state-votes`)
+
+
 
             $("#pres-toggle :input").on('change', function () {
 
@@ -338,15 +373,14 @@ d3.json('/data/ec.json').then(function (d) {
                         .style('display', 'none')
                 }
 
-                console.log(d)
 
 
-                g.selectAll("path")
+                statesFill.selectAll("path")
                     .transition()
                     .duration(300)
                     .attr("fill", d => this.id == "pres2020" ? getProjCol(d.properties.NAME) : getResultCol(d.properties.NAME))
 
-                barBase
+                barDiv
                     .selectAll('.state-votes')
                     .data(d)
                     .transition()
@@ -355,7 +389,18 @@ d3.json('/data/ec.json').then(function (d) {
                     .style('background-color', d => this.id == "pres2020" ? getProjCol(d.state) : getResultCol(d.state))
 
             })
+            var stateDivs = $('.state-votes')
+            var stateClasses = []
+            stateDivs.each(function (index, element) {
+                stateClasses.push('.' + element.classList[0])
+
+            })
+            stateClasses.forEach(function (e) {
+                highlightSameClass(e)
+            })
         });
+
+
 })
 
 
@@ -471,7 +516,6 @@ var senWafSvg = senWaf
 
 
 d3.json('/data/senate.json').then(function (data) {
-    console.log(data)
 
     var projByState = {}
 
@@ -527,7 +571,6 @@ d3.json('/data/senate.json').then(function (data) {
         })
 
     $("#sen-toggle :input").on('change', function () {
-        // console.log(data)
         if (this.id == "sen2020") {
             data.sort(function (a, b) {
                 return a.index < b.index ? -1 : a.index > b.index ? 1 : 0;
@@ -709,7 +752,6 @@ var houseWafSvg = houseWaf
     .attr("preserveAspectRatio", "xMinYMin")
 
 d3.json('/data/house.json').then(function (data) {
-    console.log(data)
 
     var projByState = {}
 
@@ -726,8 +768,6 @@ d3.json('/data/house.json').then(function (data) {
     var getCurCol = function (myKey) {
         return curByState[myKey];
     }
-
-    console.log(data[0].seat, resultCol(data[0].held))
 
     houseWafSvg
         .append("g")
@@ -767,7 +807,6 @@ d3.json('/data/house.json').then(function (data) {
         })
 
     $("#house-toggle :input").on('change', function () {
-        // console.log(data)
         if (this.id == "house2020") {
             data.sort(function (a, b) {
                 return a.index < b.index ? -1 : a.index > b.index ? 1 : 0;
