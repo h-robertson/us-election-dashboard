@@ -103,7 +103,7 @@ var presidencyProjLeg = d3.select('.pres-leg')
 
 presidencyProjLeg
     .append('div')
-    .attr('class', 'legend-labels  d-flex  justify-content-center')
+    .attr('class', 'legend-labels  d-flex justify-content-center')
     .selectAll('div')
     .data(projNames)
     .enter()
@@ -167,17 +167,13 @@ presidencyResLeg
 const barBase = d3.select('.pres-bar')
     .append('div')
     .style('height', '40px')
-    .style("width", "75vw")
-    .attr("class", "d-flex justify-content-center")
+    .attr("class", "bar-wrapper d-flex justify-content-center")
 
 var presTooltip = barBase
     .append("div")
     .attr("class", "tooltip")
     .style("opacity", 0)
-    .style("position", "absolute")
     .style('background-color', '#57747E')
-    .style("top", "30%")
-    .style("left", "-3%")
     .attr('class', 'presidency-tooltip')
 
 
@@ -243,7 +239,6 @@ d3.json('/data/ec.json').then(function (d) {
     var barDiv = barBase
         .append('div')
         .style('height', '40px')
-        .style("width", "75vw")
         .attr("class", "state-bars d-flex justify-content-center")
 
     barDiv
@@ -269,12 +264,13 @@ d3.json('/data/ec.json').then(function (d) {
         .attr('class', 'states-map')
 
 
-    mapSvg
-        .attr('width', width)
-        .attr('height', height)
+    // mapSvg
+    //     .attr('width', width)
+    //     .attr('height', height)
 
     const statesFill = mapSvg
         .append('g')
+        .attr('transform', 'translate(10)')
 
     d3.json("data/us-states.json")
         .then(function (us) {
@@ -312,6 +308,7 @@ d3.json('/data/ec.json').then(function (d) {
 
             const statesStroke = mapSvg
                 .append('g')
+                .attr('transform', 'translate(10)')
 
             statesStroke.selectAll("path") //this week using paths instead of "rects" to create bar charts
                 .data(states.features) //using .features to bind the data this time. GeoJSON that is an object that has two features, features are what we actually want to access the array of objects
@@ -405,20 +402,13 @@ d3.json('/data/ec.json').then(function (d) {
     barBase
         .append('div')
         .html('<b>270 to win</b>')
-        .style('position', 'absolute')
-        .style('left', '46%')
-        .style('top', '74px')
+        .attr('class', 'pres-finish-label')
 
     barBase
         .append('div')
-        .style('height', '80px')
         .style('width', '2px')
+        .attr('class', 'pres-finish-line')
         .style('background-color', '#EBEBE8')
-        .style('position', 'absolute')
-        .style('left', '50%')
-        .style('top', '100px')
-
-
 })
 
 
@@ -503,21 +493,16 @@ var senWaf = d3.select('.sen-graphics')
 
 var senTooltip = senWaf
     .append("div")
-    .attr("class", "sen-tooltip")
     .style("opacity", 0)
-    .style("position", "absolute")
     .style('background-color', '#57747E')
-    .style("top", "37%")
-    .style("left", "0%")
     .attr('class', 'senate-tooltip')
 
 var senWafSvg = senWaf
     .append("svg")
     .attr("id", "chart")
-    .attr("width", wafWidth)
-    .attr("height", wafHeight)
     .attr("viewBox", "0 0 " + wafWidth + " " + wafHeight)
     .attr("preserveAspectRatio", "xMinYMin")
+    .attr("class", "senate-svg")
 
 
 
@@ -558,7 +543,6 @@ d3.json('/data/senate.json').then(function (data) {
         })
         .style("fill", d => getProjCol(d.state_unique))
         .on("mouseover", function (m, d) {
-            console.log(m, d)
             senTooltip.transition()
                 .duration(100)
                 .style("opacity", 1)
@@ -632,19 +616,14 @@ d3.json('/data/senate.json').then(function (data) {
     senWaf
         .append('div')
         .html('<b>50</b>')
-        .style('position', 'absolute')
+        .attr("class", "sen-finish-label")
         .style('font-size', '1.2em')
-        .style('left', '48.6%')
-        .style('top', '72px')
 
     senWaf
         .append('div')
-        .style('height', "220px")
         .style('width', '2px')
         .style('background-color', '#EBEBE8')
-        .style('position', 'absolute')
-        .style('left', '49.5%')
-        .style('top', '100px')
+        .attr("class", "sen-finish-line")
 })
 
 
@@ -726,21 +705,19 @@ var houseWaf = d3.select('.house-graphics')
 
 var houseTooltip = houseWaf
     .append("div")
-    .attr("class", "house-tooltip")
     .style("opacity", 0)
     .style("position", "absolute")
     .style('background-color', '#57747E')
-    .style("top", "37%")
-    .style("left", "0")
     .attr('class', 'house-tooltip')
 
 var houseWafSvg = houseWaf
     .append("svg")
     .attr("id", "chart")
-    .attr("width", wafWidth)
-    .attr("height", wafHeight)
+    // .attr("width", wafWidth)
+    // .attr("height", wafHeight)
     .attr("viewBox", "0 0 " + wafWidth + " " + wafHeight)
     .attr("preserveAspectRatio", "xMinYMin")
+    .attr("class", "house-svg")
 
 d3.json('/data/house.json').then(function (data) {
 
@@ -853,34 +830,29 @@ d3.json('/data/house.json').then(function (data) {
         .html('<b>218</b>')
         .style('position', 'absolute')
         .style('font-size', '1.2em')
-        .style('left', '48%')
-        .style('top', '70px')
+        .attr("class", "house-finish-label")
+
 
     houseWaf
         .append('div')
-        .style('height', "45.7%")
         .style('width', '2px')
         .style('background-color', '#EBEBE8')
         .style('position', 'absolute')
-        .style('left', '49.4%')
-        .style('top', '31%')
+        .attr("class", "house-finish-line-topdown")
+
 
     houseWaf
         .append('div')
         .style('height', "2px")
-        .style('width', '1.6%')
         .style('background-color', '#EBEBE8')
+        .attr("class", "house-finish-line-horiz")
         .style('position', 'absolute')
-        .style('left', '47.9%')
-        .style('top', '76%')
 
     houseWaf
         .append('div')
-        .style('height', "20%")
         .style('width', '2px')
         .style('background-color', '#EBEBE8')
+        .attr("class", "house-finish-line-bottomdown")
         .style('position', 'absolute')
-        .style('left', '47.9%')
-        .style('top', '76%')
 
 })
