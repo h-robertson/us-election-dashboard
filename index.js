@@ -284,7 +284,7 @@ d3.json('/us-election-dashboard/data/ec.json').then(function (d) {
         .attr("viewBox", "0 0 " + width + " " + height)
         .attr("preserveAspectRatio", "xMinYMin")
         .attr('class', 'states-map')
-        .attr("height", 0.66 * width + "px")
+    // .attr("height", 0.66 * width + "px")
 
 
     // mapSvg
