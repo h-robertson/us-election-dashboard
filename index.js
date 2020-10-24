@@ -434,7 +434,7 @@ d3.json('/us-election-dashboard/data/ec.json').then(function (d) {
 
     barBase
         .append('div')
-        .style('width', '2px')
+        .style('width', '3px')
         .attr('class', 'pres-finish-line')
         .style('background-color', '#EBEBE8')
 })
