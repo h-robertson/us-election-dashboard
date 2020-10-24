@@ -30,12 +30,17 @@
             <a href="#method-jump"><button type="button" class="btn btn-light method-button">Methodology</button></a>
         </div>
         <div class="row">
-            <div class="col-md col-lg-8">
+            <div class="intro col-md col-lg-10">
                 <h1>US election 2020</h1>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus quia et recusandae ipsa facere
-                    accusantium non quasi excepturi hic, debitis reiciendis laborum at porro eum aliquid voluptatem
-                    facilis
-                    labore saepe.</p>
+                <p>On November 3rd, Americans will cast their ballots for the next US President, and will also vote
+                    for members of Congress in the Senate and House elections.</p>
+                <p>This dashboard provides an overview of the elections taking place this year, including projections
+                    for the Presidency, Senate and House, as well as showing results from 2016 and the current
+                    breakdown of Congress.</p>
+                <p class="text-italic">Projections are taken from the latest <a class="text-link"
+                        href="https://cookpolitical.com/index.php/ratings">Cook
+                        Political Ratings</a>. For more information, click the
+                    'Methodology' button above.</p>
             </div>
         </div>
 
@@ -52,10 +57,14 @@
         <div class="row">
             <div class="col-sm col-md-8">
                 <h2>Presidency</h2>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus quia et recusandae ipsa facere
-                    accusantium non quasi excepturi hic, debitis reiciendis laborum at porro eum aliquid voluptatem
-                    facilis
-                    labore saepe.</p>
+                <p>Donald Trump faces Joe Biden in the Presidential race, in which a candidate needs to obtain a
+                    majority of 270 of the 538 electoral votes that are divided between states.</p>
+                <p>Current polling has Biden ahead, but 2020 has brought new dynamics such as coronavirus and the
+                    increased importance of mail-in ballots. These challenges bring more uncertainty, and with Trump
+                    pulling off an unexpected win in 2016, pollsters are wary of underestimating his ability to make a
+                    comeback in 2020.</p>
+                <p class="text-italic">Explore the graphics below of showing 2020 projections, or use the toggle button
+                    to view results from 2016.</p>
             </div>
             <div class="col-sm col-md-4">
                 <div class="link-buttons d-flex flex-column mb-4">
@@ -86,11 +95,12 @@
                 <div class="pres-bar mt-5 mb-4 d-flex justify-content-center"></div>
                 <div class="pres-map mt-4 mb-4 d-flex justify-content-center"></div>
             </div>
-            <div class="cook-datestamp">Source: <a
-                    href="https://cookpolitical.com/sites/default/files/2020-09/EC%20Ratings.092920.2.pdf"
-                    target="_blank"> Cook
-                    Political Electoral College Ratings. Last updated 29 September 2020.</a></div>
         </div>
+        <div class="cook-datestamp">Source: <a
+                href="https://cookpolitical.com/sites/default/files/2020-09/EC%20Ratings.092920.2.pdf" target="_blank">
+                Cook
+                Political Electoral College Ratings. Last updated 29 September 2020.</a></div>
+    </div>
 
 
     </div>
@@ -99,11 +109,17 @@
         <div class="row">
             <div class="col-sm col-md-8">
                 <h2>Senate</h2>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus quia et recusandae ipsa
-                    facere
-                    accusantium non quasi excepturi hic, debitis reiciendis laborum at porro eum aliquid voluptatem
-                    facilis
-                    labore saepe.</p>
+                <p>It's not all about the Presidential race. For a bill to be made into law, it must pass through both
+                    the Senate and the House. Therefore, having control of both parts of Congress in addition to the
+                    Presidency provides ultimate power in Washington - something the Democrats will be hoping to gain in
+                    2020.</p>
+                <p>Made up of 100 Senators (two for each State), the Senate is currently held by the Republicans with a
+                    majority of 53-47. Only a third of Senate seats are up for election every two years. This year there
+                    are 35 seats up for
+                    election, with the Democrats needing to pick up three or four to gain a majority.</p>
+
+                <p class="text-italic">Explore the Senate projections in the graphic below, or use the toggle button to
+                    view the current breakdown.</p>
             </div>
             <div class="col-sm col-md-4">
                 <div class="link-buttons d-flex flex-column mb-4">
@@ -115,7 +131,7 @@
         <div class="row mb-4">
             <div class='senate-toggle col-sm-12'>
                 <div id="sen-toggle" class="btn-group btn-group-toggle" data-toggle="buttons">
-                    <label class="btn btn-light active">
+                    <label id="sen2020label" class="btn btn-light active">
                         <input type="radio" name="options" id="sen2020" checked>2020 projection
                     </label>
                     <label class="btn btn-light">
@@ -124,14 +140,22 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div class="row justify-content-center">
             <div class="sen-graphics col-sm-12">
                 <div class="sen-leg mt-2 mb-5"></div>
             </div>
-            <div class="cook-datestamp">Source: <a href="https://cookpolitical.com/ratings/senate-race-ratings"
-                    target="_blank"> Cook
-                    Political Senate Ratings. Last updated 13 October 2020.</a></div>
         </div>
+        <div class="row justify-content-center">
+            <div class="col-sm col-md-2"></div>
+            <div class="col-sm col-md-8 sen-graphics sen-waffle">
+            </div>
+        </div>
+        <div class="cook-datestamp">Source: <a href="https://cookpolitical.com/ratings/senate-race-ratings"
+                target="_blank"> Cook
+                Political Senate Ratings. Last updated 13 October 2020.</a></div>
+        <div class='text-italic' style="font-size: 0.8em">*The two Independent seats held by Senators Bernie Sanders and
+            Angus King are shown alongside Democratic seats with whom they currently caucus.</div>
+    </div>
 
     </div>
     <div class="container house">
@@ -139,16 +163,18 @@
         <div class="row">
             <div class="col-sm ol-md-8">
                 <h2>House</h2>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus quia et recusandae ipsa facere
-                    accusantium non quasi excepturi hic, debitis reiciendis laborum at porro eum aliquid voluptatem
-                    facilis
-                    labore saepe.</p>
+                <p>The House of Representatives has 435 voting members, divided between states by population, with each
+                    district represented by one member.</p>
+                <p>Currently held with a 232-197 majority by the Democrats, it looks as though they will retain control
+                    in 2020 when all seats go up for election on November 3rd.</p>
+                <p class="text-italic">Explore the House projections in the graphic below, or use the toggle button to
+                    view the current breakdown.</p>
             </div>
         </div>
         <div class="row mb-4">
             <div class='house-toggle col-sm-12'>
                 <div id="house-toggle" class="btn-group btn-group-toggle" data-toggle="buttons">
-                    <label class="btn btn-light active">
+                    <label id="house2020label" class="btn btn-light active">
                         <input type="radio" name="options" id="house2020" checked>2020 projection
                     </label>
                     <label class="btn btn-light">
@@ -157,36 +183,45 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div class="row justify-content-center">
             <div class="house-graphics col-sm-12">
                 <div class="house-leg mt-2 mb-5"></div>
             </div>
-            <div class="cook-datestamp">Source: <a href="https://cookpolitical.com/ratings/house-race-ratings"
-                    target="_blank"> Cook
-                    Political House Ratings. Last updated 21 October 2020.</a></div>
         </div>
+        <div class="row justify-content-center">
+            <div class="col-sm col-md-2">
+            </div>
+            <div class="col-sm col-md-8 house-graphics house-waff"></div>
+        </div>
+
+        <div class="cook-datestamp">Source: <a href="https://cookpolitical.com/ratings/house-race-ratings"
+                target="_blank"> Cook
+                Political House Ratings. Last updated 21 October 2020.</a></div>
     </div>
-    <div class="container">
+    </div>
+    <div class="container methodology">
         <hr class="mt-5 mb-0" id="method-jump">
         <hr class="mt-1 mb-5">
         <h2>Methodology</h2>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus quia et recusandae ipsa facere
-            accusantium non quasi excepturi hic, debitis reiciendis laborum at porro eum aliquid voluptatem
-            facilis
-            labore saepe.</p>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem molestiae harum commodi vitae ipsum
-            aliquid
-            exercitationem quasi illum at officia saepe quas, laborum reiciendis voluptatibus odio nemo,
-            molestias
-            voluptatem adipisci!</p>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod dolor quo nisi soluta dolore id a at
-            obcaecati
-            nam quasi, voluptas repellat, dolorum minus laudantium cupiditate modi vitae illum placeat.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt adipisci ipsam facilis error
-            expedita,
-            porro beatae fugit! Dicta quidem sed dolorem error ullam ipsum eius, qui doloremque sint dolores
-            non!
+        <p class="text-italic">Projections are sourced from <a class="method-link"
+                href="https://cookpolitical.com/ratings">Cook
+                Political
+                Ratings</a>, correct to the
+            date displayed below each graphic. Electoral College Ratings are scraped from the PDF provided by Cook,
+            using <a class="method-link" href="https://tabula.technology/">Tabula</a>, while Senate and House projects
+            are scraped using Python with BeautifulSoup. The scripts for Senate and House web scraping can be found in
+            the GitHub repo for this project.</p>
+        <p class="text-italic">2016 Presidential results and electoral college vote counts for each state are sourced
+            from the <a class="method-link"
+                href="https://www.fec.gov/introduction-campaign-finance/election-and-voting-information/federal-elections-2016/">Federal
+                Election Commission</a>.</p>
+        <p class="text-italic">Information on the current breakdowns of the House and Senate are sourced from <a
+                class="method-link"
+                href="https://www.congress.gov/members?q=%7B%22congress%22%3A116%7D">Congress.gov</a>.
         </p>
+        <hr>
+        <p>If you have any questions or would like more information about this project, please contact me at
+            <a href="mailto:h.robertson@icloud.com">h.robertson@icloud.com</a>.</p>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

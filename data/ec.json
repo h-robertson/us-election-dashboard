@@ -3,335 +3,447 @@
     "state": "California",
     "ecvs": 55,
     "result_2016": "D",
+    "margin_2016": 30.1,
+    "absmargin_2016": -30.1,
     "index": 0
 }, {
     "rating": "SOLID DEMOCRAT",
     "state": "Connecticut",
     "ecvs": 7,
     "result_2016": "D",
+    "margin_2016": 13.6,
+    "absmargin_2016": -13.6,
     "index": 1
 }, {
     "rating": "SOLID DEMOCRAT",
     "state": "Delaware",
     "ecvs": 3,
     "result_2016": "D",
+    "margin_2016": 11.4,
+    "absmargin_2016": -11.4,
     "index": 2
 }, {
     "rating": "SOLID DEMOCRAT",
     "state": "District of Columbia",
     "ecvs": 3,
     "result_2016": "D",
+    "margin_2016": 86.8,
+    "absmargin_2016": -86.8,
     "index": 3
 }, {
     "rating": "SOLID DEMOCRAT",
     "state": "Hawaii",
     "ecvs": 4,
     "result_2016": "D",
+    "margin_2016": 32.2,
+    "absmargin_2016": -32.2,
     "index": 4
 }, {
     "rating": "SOLID DEMOCRAT",
     "state": "Illinois",
     "ecvs": 20,
     "result_2016": "D",
+    "margin_2016": 17.1,
+    "absmargin_2016": -17.1,
     "index": 5
 }, {
     "rating": "SOLID DEMOCRAT",
     "state": "Maine 1st CD",
     "ecvs": 1,
     "result_2016": "D",
+    "margin_2016": 14.8,
+    "absmargin_2016": -14.8,
     "index": 6
 }, {
     "rating": "SOLID DEMOCRAT",
     "state": "Maryland",
     "ecvs": 10,
     "result_2016": "D",
+    "margin_2016": 26.4,
+    "absmargin_2016": -26.4,
     "index": 7
 }, {
     "rating": "SOLID DEMOCRAT",
     "state": "Massachusetts",
     "ecvs": 11,
     "result_2016": "D",
+    "margin_2016": 27.2,
+    "absmargin_2016": -27.2,
     "index": 8
 }, {
     "rating": "SOLID DEMOCRAT",
     "state": "New Jersey",
     "ecvs": 14,
     "result_2016": "D",
+    "margin_2016": 14.1,
+    "absmargin_2016": -14.1,
     "index": 9
 }, {
     "rating": "SOLID DEMOCRAT",
     "state": "New Mexico",
     "ecvs": 5,
     "result_2016": "D",
+    "margin_2016": 8.2,
+    "absmargin_2016": -8.2,
     "index": 10
 }, {
     "rating": "SOLID DEMOCRAT",
     "state": "New York",
     "ecvs": 29,
     "result_2016": "D",
+    "margin_2016": 22.5,
+    "absmargin_2016": -22.5,
     "index": 11
 }, {
     "rating": "SOLID DEMOCRAT",
     "state": "Oregon",
     "ecvs": 7,
     "result_2016": "D",
+    "margin_2016": 11.0,
+    "absmargin_2016": -11.0,
     "index": 12
 }, {
     "rating": "SOLID DEMOCRAT",
     "state": "Rhode Island",
     "ecvs": 4,
     "result_2016": "D",
+    "margin_2016": 15.5,
+    "absmargin_2016": -15.5,
     "index": 13
 }, {
     "rating": "SOLID DEMOCRAT",
     "state": "Vermont",
     "ecvs": 3,
     "result_2016": "D",
+    "margin_2016": 26.4,
+    "absmargin_2016": -26.4,
     "index": 14
 }, {
     "rating": "SOLID DEMOCRAT",
     "state": "Washington",
     "ecvs": 12,
     "result_2016": "D",
+    "margin_2016": 15.7,
+    "absmargin_2016": -15.7,
     "index": 15
 }, {
     "rating": "LIKELY DEMOCRAT",
     "state": "Colorado",
     "ecvs": 9,
     "result_2016": "D",
+    "margin_2016": 4.9,
+    "absmargin_2016": -4.9,
     "index": 16
 }, {
     "rating": "LIKELY DEMOCRAT",
     "state": "Maine",
     "ecvs": 2,
     "result_2016": "D",
+    "margin_2016": 3.0,
+    "absmargin_2016": -3.0,
     "index": 17
 }, {
     "rating": "LIKELY DEMOCRAT",
     "state": "Virginia",
     "ecvs": 13,
     "result_2016": "D",
+    "margin_2016": 5.3,
+    "absmargin_2016": -5.3,
     "index": 18
 }, {
     "rating": "LEAN DEMOCRAT",
     "state": "Arizona",
     "ecvs": 11,
     "result_2016": "R",
+    "margin_2016": 3.5,
+    "absmargin_2016": 3.5,
     "index": 19
 }, {
     "rating": "LEAN DEMOCRAT",
     "state": "Michigan",
     "ecvs": 16,
     "result_2016": "R",
+    "margin_2016": 0.2,
+    "absmargin_2016": 0.2,
     "index": 20
 }, {
     "rating": "LEAN DEMOCRAT",
     "state": "Minnesota",
     "ecvs": 10,
     "result_2016": "D",
+    "margin_2016": 1.5,
+    "absmargin_2016": -1.5,
     "index": 21
 }, {
     "rating": "LEAN DEMOCRAT",
     "state": "Nebraska 2nd CD",
     "ecvs": 1,
     "result_2016": "R",
+    "margin_2016": 2.2,
+    "absmargin_2016": 2.2,
     "index": 22
 }, {
     "rating": "LEAN DEMOCRAT",
     "state": "Nevada",
     "ecvs": 6,
     "result_2016": "D",
+    "margin_2016": 2.4,
+    "absmargin_2016": -2.4,
     "index": 23
 }, {
     "rating": "LEAN DEMOCRAT",
     "state": "New Hampshire",
     "ecvs": 4,
     "result_2016": "D",
+    "margin_2016": 0.4,
+    "absmargin_2016": -0.4,
     "index": 24
 }, {
     "rating": "LEAN DEMOCRAT",
     "state": "Pennsylvania",
     "ecvs": 20,
     "result_2016": "R",
+    "margin_2016": 0.7,
+    "absmargin_2016": 0.7,
     "index": 25
 }, {
     "rating": "LEAN DEMOCRAT",
     "state": "Wisconsin",
     "ecvs": 10,
     "result_2016": "R",
+    "margin_2016": 0.8,
+    "absmargin_2016": 0.8,
     "index": 26
 }, {
     "rating": "TOSS UP",
     "state": "Florida",
     "ecvs": 29,
     "result_2016": "R",
+    "margin_2016": 1.2,
+    "absmargin_2016": 1.2,
     "index": 27
 }, {
     "rating": "TOSS UP",
     "state": "Georgia",
     "ecvs": 16,
     "result_2016": "R",
+    "margin_2016": 5.1,
+    "absmargin_2016": 5.1,
     "index": 28
 }, {
     "rating": "TOSS UP",
     "state": "Iowa",
     "ecvs": 6,
     "result_2016": "R",
+    "margin_2016": 9.4,
+    "absmargin_2016": 9.4,
     "index": 29
 }, {
     "rating": "TOSS UP",
     "state": "Maine 2nd CD",
     "ecvs": 1,
     "result_2016": "R",
+    "margin_2016": 10.3,
+    "absmargin_2016": 10.3,
     "index": 30
 }, {
     "rating": "TOSS UP",
     "state": "North Carolina",
     "ecvs": 15,
     "result_2016": "R",
+    "margin_2016": 3.7,
+    "absmargin_2016": 3.7,
     "index": 31
 }, {
     "rating": "TOSS UP",
     "state": "Ohio",
     "ecvs": 18,
     "result_2016": "R",
+    "margin_2016": 8.1,
+    "absmargin_2016": 8.1,
     "index": 32
 }, {
     "rating": "LEAN REPUBLICAN",
     "state": "Texas",
     "ecvs": 38,
     "result_2016": "R",
+    "margin_2016": 9.0,
+    "absmargin_2016": 9.0,
     "index": 33
 }, {
     "rating": "LIKELY REPUBLICAN",
     "state": "Alaska",
     "ecvs": 3,
     "result_2016": "R",
+    "margin_2016": 14.7,
+    "absmargin_2016": 14.7,
     "index": 34
 }, {
     "rating": "LIKELY REPUBLICAN",
     "state": "Indiana",
     "ecvs": 11,
     "result_2016": "R",
+    "margin_2016": 19.2,
+    "absmargin_2016": 19.2,
     "index": 35
 }, {
     "rating": "LIKELY REPUBLICAN",
     "state": "Kansas",
     "ecvs": 6,
     "result_2016": "R",
+    "margin_2016": 20.6,
+    "absmargin_2016": 20.6,
     "index": 36
 }, {
     "rating": "LIKELY REPUBLICAN",
     "state": "Missouri",
     "ecvs": 10,
     "result_2016": "R",
+    "margin_2016": 18.6,
+    "absmargin_2016": 18.6,
     "index": 37
 }, {
     "rating": "LIKELY REPUBLICAN",
     "state": "Montana",
     "ecvs": 3,
     "result_2016": "R",
+    "margin_2016": 20.4,
+    "absmargin_2016": 20.4,
     "index": 38
 }, {
     "rating": "LIKELY REPUBLICAN",
     "state": "South Carolina",
     "ecvs": 9,
     "result_2016": "R",
+    "margin_2016": 14.3,
+    "absmargin_2016": 14.3,
     "index": 39
 }, {
     "rating": "LIKELY REPUBLICAN",
     "state": "Utah",
     "ecvs": 6,
     "result_2016": "R",
+    "margin_2016": 18.1,
+    "absmargin_2016": 18.1,
     "index": 40
 }, {
     "rating": "SOLID REPUBLICAN",
     "state": "Alabama",
     "ecvs": 9,
     "result_2016": "R",
+    "margin_2016": 27.7,
+    "absmargin_2016": 27.7,
     "index": 41
 }, {
     "rating": "SOLID REPUBLICAN",
     "state": "Arkansas",
     "ecvs": 6,
     "result_2016": "R",
+    "margin_2016": 26.9,
+    "absmargin_2016": 26.9,
     "index": 42
 }, {
     "rating": "SOLID REPUBLICAN",
     "state": "Idaho",
     "ecvs": 4,
     "result_2016": "R",
+    "margin_2016": 31.8,
+    "absmargin_2016": 31.8,
     "index": 43
 }, {
     "rating": "SOLID REPUBLICAN",
     "state": "Kentucky",
     "ecvs": 8,
     "result_2016": "R",
+    "margin_2016": 29.8,
+    "absmargin_2016": 29.8,
     "index": 44
 }, {
     "rating": "SOLID REPUBLICAN",
     "state": "Louisiana",
     "ecvs": 8,
     "result_2016": "R",
+    "margin_2016": 19.6,
+    "absmargin_2016": 19.6,
     "index": 45
 }, {
     "rating": "SOLID REPUBLICAN",
     "state": "Mississippi",
     "ecvs": 6,
     "result_2016": "R",
+    "margin_2016": 17.8,
+    "absmargin_2016": 17.8,
     "index": 46
 }, {
     "rating": "SOLID REPUBLICAN",
     "state": "Nebraska",
     "ecvs": 2,
     "result_2016": "R",
+    "margin_2016": 25.0,
+    "absmargin_2016": 25.0,
     "index": 47
 }, {
     "rating": "SOLID REPUBLICAN",
     "state": "Nebraska 1st CD",
     "ecvs": 1,
     "result_2016": "R",
+    "margin_2016": 21.3,
+    "absmargin_2016": 21.3,
     "index": 48
 }, {
     "rating": "SOLID REPUBLICAN",
     "state": "Nebraska 3rd CD",
     "ecvs": 1,
     "result_2016": "R",
+    "margin_2016": 55.9,
+    "absmargin_2016": 55.9,
     "index": 49
 }, {
     "rating": "SOLID REPUBLICAN",
     "state": "North Dakota",
     "ecvs": 3,
     "result_2016": "R",
+    "margin_2016": 35.7,
+    "absmargin_2016": 35.7,
     "index": 50
 }, {
     "rating": "SOLID REPUBLICAN",
     "state": "Oklahoma",
     "ecvs": 7,
     "result_2016": "R",
+    "margin_2016": 36.4,
+    "absmargin_2016": 36.4,
     "index": 51
 }, {
     "rating": "SOLID REPUBLICAN",
     "state": "South Dakota",
     "ecvs": 3,
     "result_2016": "R",
+    "margin_2016": 29.8,
+    "absmargin_2016": 29.8,
     "index": 52
 }, {
     "rating": "SOLID REPUBLICAN",
     "state": "Tennessee",
     "ecvs": 11,
     "result_2016": "R",
+    "margin_2016": 26.0,
+    "absmargin_2016": 26.0,
     "index": 53
 }, {
     "rating": "SOLID REPUBLICAN",
     "state": "West Virginia",
     "ecvs": 5,
     "result_2016": "R",
+    "margin_2016": 42.1,
+    "absmargin_2016": 42.1,
     "index": 54
 }, {
     "rating": "SOLID REPUBLICAN",
     "state": "Wyoming",
     "ecvs": 3,
     "result_2016": "R",
+    "margin_2016": 46.3,
+    "absmargin_2016": 46.3,
     "index": 55
 }]

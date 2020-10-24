@@ -20,7 +20,8 @@ const resultDict = {
     "R": "#9C1515",
     "L": "#E5BB25", //L = libertarian
     "E": "#dcdcdc", //E = vacant previously democrat (used for ordering reasons)
-    "Q": "#dcdcdc" //Q = vacant previously republican (used for ordering reasons)
+    "Q": "#dcdcdc", //Q = vacant previously republican (used for ordering reasons)
+    "I": "#dcdcdc"
 }
 
 var resultCol = function (myKey) {
@@ -60,6 +61,14 @@ const resCols = [
 ]
 
 // senate legend data
+const senResNames = [
+    "Democrat", "Independent", "Republican"
+]
+
+const senResCols = [
+    "#124683", "#dcdcdc", "#9C1515"
+]
+
 const senProjCols = [
     "#EBEBE8",
     "#124683",
@@ -181,6 +190,10 @@ function sum(a, b) {
     return a + b;
 }
 
+function lowerThenCap(text) {
+    return text.toLowerCase().replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase())))
+}
+
 d3.json('/data/ec.json').then(function (d) {
 
     d.reduce((acc, cur) => {
@@ -217,11 +230,19 @@ d3.json('/data/ec.json').then(function (d) {
                 .duration(200)
                 .style("opacity", 0.9);
 
-            this.tagName == "DIV" ?
-                (presTooltip.html("<b>" + d.state + "</b><br/>" + d.ecvs + " electoral vote" + (d.ecvs == 1 ? "" : "s"))) :
-                (presTooltip.html("<b>" + d.properties.NAME + "</b><br/>" + d.properties.ecvs + " electoral vote" + (d.properties.ecvs == 1 ? "" : "s")))
+            $('#pres2020label')[0].classList.contains('active') ?
+                (this.tagName == "DIV" ?
+                    // bar 2020
+                    (presTooltip.html("<b>" + d.state + "</b><br/>" + lowerThenCap(d.rating) + "</br>" + d.ecvs + " electoral vote" + (d.ecvs == 1 ? "" : "s"))) :
+                    // map 2020
+                    (presTooltip.html("<b>" + d.properties.NAME + "</b><br/>" + lowerThenCap(d.properties.rating) + "</br>" + d.properties.ecvs + " electoral vote" + (d.properties.ecvs == 1 ? "" : "s")))) :
+                (this.tagName == "DIV" ?
+                    // bar 2016
+                    (presTooltip.html("<b>" + d.state + "</b><br/>" + (d.result_2016 == "D" ? "Democrat</br>" : "Republican</br>") + "<i>2016 margin:</i> +" + d.margin_2016 + "</br>" + d.ecvs + " electoral vote" + (d.ecvs == 1 ? "" : "s"))) :
+                    // map 2016
+                    (presTooltip.html("<b>" + d.properties.NAME + "</b><br/>" + (d.properties.result_2016 == "D" ? "Democrat</br>" : "Republican</br>") + "<i>2016 margin:</i> +" + d.properties.margin_2016 + "</br>" + d.properties.ecvs + " electoral vote" + (d.properties.ecvs == 1 ? "" : "s"))));
 
-        })
+        });
         classto.on('mouseleave', function () {
             otherDivs
                 // .transition()
@@ -351,7 +372,7 @@ d3.json('/data/ec.json').then(function (d) {
 
                 } else if (this.id == "pres2016") {
                     d.sort(function (a, b) {
-                        return a.result_2016 < b.result_2016 ? -1 : a.result_2016 > b.result_2016 ? 1 : 0;
+                        return a.absmargin_2016 < b.absmargin_2016 ? -1 : a.absmargin_2016 > b.absmargin_2016 ? 1 : 0;
                     });
 
                     d.reduce((acc, cur) => {
@@ -456,7 +477,7 @@ senateCurLeg
     .append('div')
     .attr('class', 'legend-labels  d-flex  justify-content-center')
     .selectAll('div')
-    .data(resNames)
+    .data(senResNames)
     .enter()
     .append('div')
     .attr('class', 'legend-label')
@@ -470,7 +491,7 @@ senateCurLeg
     .append('div')
     .attr('class', 'legend-boxes  d-flex  justify-content-center')
     .selectAll('div')
-    .data(resCols)
+    .data(senResCols)
     .enter()
     .append('div')
     .attr('class', 'legend-box')
@@ -487,7 +508,7 @@ var wafWidth = 800
 var wafHeight = 200
 var senNumRows = 5
 
-var senWaf = d3.select('.sen-graphics')
+var senWaf = d3.select('.sen-waffle')
     .append('div')
     .attr('class', 'sen-waffle d-flex justify-content-center')
 
@@ -551,7 +572,13 @@ d3.json('/data/senate.json').then(function (data) {
                 .style("stroke-width", "3px")
             senTooltip
                 .html(d.state_unique)
-            // console.log(d) //can't access data?? 'd' here = mouseevent not data...
+
+            $('#sen2020label')[0].classList.contains('active') ?
+                // 2020
+                (senTooltip.html("<b>" + d.state_name + "</b><br/>" + d.rating + "</br><i>Incumbent: </i>" + d.incumbent + "</br>" + (d.challenger ? "<i>Challenger(s): </i>" + d.challenger : ""))) :
+                // 2016
+                (senTooltip.html("<b>" + d.state_name + "</b><br/>" + (d.held == "D" ? "Democrat" : (d.held == "R" ? "Republican" : "Independent")) + "</br><i>Held by: </i>" + d.held_name))
+
         })
 
         .on("mouseout", function (d) {
@@ -699,7 +726,7 @@ houseCurLeg
 
 var houseNumRows = 10
 
-var houseWaf = d3.select('.house-graphics')
+var houseWaf = d3.select('.house-waff')
     .append('div')
     .attr('class', 'house-waffle d-flex justify-content-center')
 
@@ -762,9 +789,14 @@ d3.json('/data/house.json').then(function (data) {
             d3.select(this)
                 .style("stroke", "#dcdcdc")
                 .style("stroke-width", "1.5px")
-            houseTooltip
-                .html(d.seat)
-            // console.log(d) //can't access data?? 'd' here = mouseevent not data...
+
+            $('#house2020label')[0].classList.contains('active') ?
+                // 2020
+                (houseTooltip.html("<b>" + d.seat + "</b><br/>" + lowerThenCap(d.rating.replace('_', ' ')) + "</br><i>Incumbent: </i>" + d.name)) :
+                // 2016
+                (houseTooltip.html("<b>" + d.seat + "</b><br/>" + (d.held == "D" ? "Democrat" : (d.held == "R" ? "Republican" : (d.held == "L" ? "Libertarian" : "Vacant"))) + (d.held_name ? ("</br><i>Held by: </i>" + d.held_name) : "")))
+            // houseTooltip
+            //     .html(d.seat)
         })
 
         .on("mouseout", function (d) {
