@@ -195,7 +195,8 @@ function lowerThenCap(text) {
     return text.toLowerCase().replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase())))
 }
 
-d3.json('/us-election-dashboard/data/ec.json').then(function (d) {
+// d3.json('/us-election-dashboard/data/ec.json').then(function (d) {
+d3.json('data/ec.json').then(function (d) {
 
     d.reduce((acc, cur) => {
         cur.start = acc;
@@ -295,7 +296,8 @@ d3.json('/us-election-dashboard/data/ec.json').then(function (d) {
         .append('g')
         .attr('transform', 'translate(10)')
 
-    d3.json("/us-election-dashboard/data/us-states.json")
+    // d3.json("/us-election-dashboard/data/us-states.json")
+    d3.json("data/us-states.json")
         .then(function (us) {
 
             // Used https://geoman.io/geojson-editor to add circles for congressional districts
@@ -399,8 +401,6 @@ d3.json('/us-election-dashboard/data/ec.json').then(function (d) {
                         .style('display', 'none')
                 }
 
-
-
                 statesFill.selectAll("path")
                     .transition()
                     .duration(300)
@@ -429,7 +429,7 @@ d3.json('/us-election-dashboard/data/ec.json').then(function (d) {
 
     barBase
         .append('div')
-        .html('<b>270 to win</b>')
+        .html('<b>270</b>')
         .attr('class', 'pres-finish-label')
 
     barBase
@@ -512,7 +512,7 @@ senateCurLeg
 // Waffle chart example: https://bl.ocks.org/JulienAssouline/b98116bb991e13beb5418c45a2e64a14
 
 var wafWidth = 800
-var wafHeight = 200
+var wafHeight = 280
 var senNumRows = 5
 
 var senWaf = d3.select('.sen-waffle')
@@ -533,8 +533,8 @@ var senWafSvg = senWaf
     .attr("class", "senate-svg")
 
 
-
-d3.json('/us-election-dashboard/data/senate.json').then(function (data) {
+// d3.json('/us-election-dashboard/data/senate.json').then(function (data) {
+d3.json('data/senate.json').then(function (data) {
 
     var projByState = {}
 
@@ -563,7 +563,7 @@ d3.json('/us-election-dashboard/data/senate.json').then(function (data) {
         .attr("class", d => d.state_unique)
         .attr("y", function (d, i) {
             var rowIndex = i % senNumRows
-            return rowIndex * 40
+            return rowIndex * 40 + 60
         })
         .attr("x", function (d, i) {
             var colIndex = Math.floor(i / senNumRows)
@@ -638,7 +638,7 @@ d3.json('/us-election-dashboard/data/senate.json').then(function (data) {
             .duration(300)
             .attr("y", function (d, i) {
                 var rowIndex = i % senNumRows
-                return rowIndex * 40
+                return rowIndex * 40 + 60
             })
             .attr("x", function (d, i) {
                 var colIndex = Math.floor(i / senNumRows)
@@ -647,17 +647,36 @@ d3.json('/us-election-dashboard/data/senate.json').then(function (data) {
             .style("fill", d => this.id == "sen2020" ? getProjCol(d.state_unique) : getCurCol(d.state_unique))
     })
 
-    senWaf
-        .append('div')
-        .html('<b>50</b>')
-        .attr("class", "sen-finish-label")
-        .style('font-size', '1.2em')
 
-    senWaf
-        .append('div')
-        .style('width', '2px')
-        .style('background-color', '#EBEBE8')
-        .attr("class", "sen-finish-line")
+    senWafSvg
+        .append('text')
+        .attr('x', '47.4%')
+        .attr('y', '11%')
+        .text('50')
+        .style('fill', '#EBEBE8')
+        .attr('class', 'finish-label')
+
+    senWafSvg
+        .append('line')
+        .attr('x1', '49.5%')
+        .attr('x2', '49.5%')
+        .attr('y1', '14%')
+        .attr('y2', '100%')
+        .style('stroke-width', "4px")
+        .style('stroke', '#EBEBE8')
+
+
+    // senWaf
+    //     .append('div')
+    //     .html('<b>50</b>')
+    //     .attr("class", "sen-finish-label")
+    //     .style('font-size', '1.2em')
+
+    // senWaf
+    //     .append('div')
+    //     .style('width', '2px')
+    //     .style('background-color', '#EBEBE8')
+    //     .attr("class", "sen-finish-line")
 })
 
 
@@ -747,13 +766,12 @@ var houseTooltip = houseWaf
 var houseWafSvg = houseWaf
     .append("svg")
     .attr("id", "chart")
-    // .attr("width", wafWidth)
-    // .attr("height", wafHeight)
     .attr("viewBox", "0 0 " + wafWidth + " " + wafHeight)
     .attr("preserveAspectRatio", "xMinYMin")
     .attr("class", "house-svg")
 
-d3.json("/us-election-dashboard/data/house.json").then(function (data) {
+// d3.json("/us-election-dashboard/data/house.json").then(function (data) {
+d3.json("data/house.json").then(function (data) {
 
     var projByState = {}
 
@@ -782,7 +800,7 @@ d3.json("/us-election-dashboard/data/house.json").then(function (data) {
         .attr("class", d => d.seat)
         .attr("y", function (d, i) {
             var rowIndex = i % houseNumRows
-            return rowIndex * 18
+            return rowIndex * 18 + 60
         })
         .attr("x", function (d, i) {
             var colIndex = Math.floor(i / houseNumRows)
@@ -855,7 +873,7 @@ d3.json("/us-election-dashboard/data/house.json").then(function (data) {
             .duration(300)
             .attr("y", function (d, i) {
                 var rowIndex = i % houseNumRows
-                return rowIndex * 18
+                return rowIndex * 18 + 60
             })
             .attr("x", function (d, i) {
                 var colIndex = Math.floor(i / houseNumRows)
@@ -864,34 +882,70 @@ d3.json("/us-election-dashboard/data/house.json").then(function (data) {
             .style("fill", d => this.id == "house2020" ? getProjCol(d.seat) : getCurCol(d.seat))
     })
 
-    houseWaf
-        .append('div')
-        .html('<b>218</b>')
-        .style('position', 'absolute')
-        .style('font-size', '1.2em')
-        .attr("class", "house-finish-label")
+
+    houseWafSvg
+        .append('text')
+        .attr('x', '46.4%')
+        .attr('y', '11%')
+        .text('218')
+        .style('fill', '#EBEBE8')
+        .attr('class', 'finish-label')
+
+    houseWafSvg
+        .append('line')
+        .attr('x1', '49.3%')
+        .attr('x2', '49.3%')
+        .attr('y1', '14%')
+        .attr('y2', '72.6%')
+        .style('stroke-width', "4px")
+        .style('stroke', '#EBEBE8')
+
+    houseWafSvg
+        .append('line')
+        .attr('x1', '46.8%')
+        .attr('x2', '49.5%')
+        .attr('y1', '72.2%')
+        .attr('y2', '72.2%')
+        .style('stroke-width', "4px")
+        .style('stroke', '#EBEBE8')
+
+    houseWafSvg
+        .append('line')
+        .attr('x1', '47%')
+        .attr('x2', '47%')
+        .attr('y1', '72.2%')
+        .attr('y2', '92%')
+        .style('stroke-width', "4px")
+        .style('stroke', '#EBEBE8')
+
+    // houseWaf
+    //     .append('div')
+    //     .html('<b>218</b>')
+    //     .style('position', 'absolute')
+    //     .style('font-size', '1.2em')
+    //     .attr("class", "house-finish-label")
 
 
-    houseWaf
-        .append('div')
-        .style('width', '2px')
-        .style('background-color', '#EBEBE8')
-        .style('position', 'absolute')
-        .attr("class", "house-finish-line-topdown")
+    // houseWaf
+    //     .append('div')
+    //     .style('width', '2px')
+    //     .style('background-color', '#EBEBE8')
+    //     .style('position', 'absolute')
+    //     .attr("class", "house-finish-line-topdown")
 
 
-    houseWaf
-        .append('div')
-        .style('height', "2px")
-        .style('background-color', '#EBEBE8')
-        .attr("class", "house-finish-line-horiz")
-        .style('position', 'absolute')
+    // houseWaf
+    //     .append('div')
+    //     .style('height', "2px")
+    //     .style('background-color', '#EBEBE8')
+    //     .attr("class", "house-finish-line-horiz")
+    //     .style('position', 'absolute')
 
-    houseWaf
-        .append('div')
-        .style('width', '2px')
-        .style('background-color', '#EBEBE8')
-        .attr("class", "house-finish-line-bottomdown")
-        .style('position', 'absolute')
+    // houseWaf
+    //     .append('div')
+    //     .style('width', '2px')
+    //     .style('background-color', '#EBEBE8')
+    //     .attr("class", "house-finish-line-bottomdown")
+    //     .style('position', 'absolute')
 
 })

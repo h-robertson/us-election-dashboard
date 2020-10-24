@@ -134,7 +134,7 @@ h1 {
 
 .pres-finish-label {
     position: absolute;
-    left: 46%;
+    left: 48.5%;
     top: 74px;
 }
 
@@ -143,6 +143,11 @@ h1 {
     height: 80px;
     left: 50%;
     top: 100px;
+}
+
+.finish-label {
+    font-size: 1.8em;
+    font-weight: 600
 }
 
 .presidency-legend {
@@ -202,7 +207,7 @@ h1 {
     padding-bottom: 20px;
 }
 
-.sen-finish-label {
+/* .sen-finish-label {
     position: absolute;
     left: 48%;
     top: -24%;
@@ -213,7 +218,7 @@ h1 {
     height: 210px;
     left: 49.4%;
     top: -10%;
-}
+} */
 
 .senate-tooltip {
     position: absolute;
@@ -228,7 +233,7 @@ h1 {
     padding-bottom: 20px;
 }
 
-.house-finish-label {
+/* .house-finish-label {
     left: 47%;
     top: -25%;
 }
@@ -249,7 +254,7 @@ h1 {
     left: 46.9%;
     top: 62.8%;
     height: 23%;
-}
+} */
 
 .house-tooltip {
     position: absolute;
@@ -303,7 +308,7 @@ h1 {
     }
 
     .pres-finish-label {
-        left: 44%;
+        left: 48%;
         top: 55px;
     }
 
@@ -328,7 +333,7 @@ h1 {
         padding: 5px;
     }
 
-    .sen-finish-label {
+    /* .sen-finish-label {
         left: 47.3%;
         top: -20%;
     }
@@ -337,7 +342,7 @@ h1 {
         height: 95%;
         left: 49.3%;
         top: -4%;
-    }
+    } */
 
     .senate-tooltip {
         top: 6%;
@@ -353,7 +358,7 @@ h1 {
         font-size: 0.8em;
     }
 
-    .house-finish-label {
+    /* .house-finish-label {
         left: 46%;
         top: -22%;
     }
@@ -374,7 +379,7 @@ h1 {
         left: 47%;
         top: 59%;
         height: 23%;
-    }
+    } */
 
 }
 
@@ -421,7 +426,7 @@ h1 {
     }
 
     .pres-finish-label {
-        left: 40%;
+        left: 47.9%;
         top: 65px;
     }
 
@@ -461,7 +466,7 @@ h1 {
         width: 240px;
     }
 
-    .sen-finish-label {
+    /* .sen-finish-label {
         left: 47.3%;
         top: -18%
     }
@@ -470,7 +475,7 @@ h1 {
         height: 93%;
         left: 49.3%;
         top: -3%;
-    }
+    } */
 
     .house-tooltip {
         top: 94%;
@@ -478,6 +483,7 @@ h1 {
         font-size: 0.8em;
     }
 
+    /* 
     .house-finish-label {
         left: 46.3%;
         top: -24%;
@@ -499,7 +505,7 @@ h1 {
         left: 46.8%;
         top: 60.5%;
         height: 20%;
-    }
+    } */
 
     /* .cook-datestamp {
         padding-top: 12vh;
