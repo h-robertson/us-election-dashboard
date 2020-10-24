@@ -185,7 +185,7 @@ h1 {
 
 .states-map {
     width: 700px;
-    /* height: 462px; */
+    height: 462px;
     /* height: auto; */
 }
 
@@ -315,6 +315,7 @@ h1 {
 
     .states-map {
         padding-top: 10vh;
+        height: 396px;
     }
 
     .presidency-tooltip {
@@ -439,7 +440,8 @@ h1 {
     }
 
     .states-map {
-        overflow: hidden
+        /* overflow: hidden; */
+        height: 356px;
     }
 
     .presidency-tooltip {
