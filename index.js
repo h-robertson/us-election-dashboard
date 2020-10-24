@@ -195,7 +195,7 @@ function lowerThenCap(text) {
     return text.toLowerCase().replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase())))
 }
 
-d3.json('https://github.com/h-robertson/us-election-dashboard/blob/main/data/ec.json').then(function (d) {
+d3.json('/us-election-dashboard/blob/main/data/ec.json').then(function (d) {
 
     d.reduce((acc, cur) => {
         cur.start = acc;
