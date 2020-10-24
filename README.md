@@ -13,4 +13,6 @@ The 'Methodology' section at the bottom of the project provides information abou
 * Current breakdowns of the House and Senate: [Congress.gov](https://www.congress.gov/members?q=%7B%22congress%22%3A116%7D)
 
 ## Methodology
-This repo contains scripts for scraping Cook Political projections of the House and Senate using Python and BeautifulSoup. 
+This repo contains scripts for scraping Cook Political projections of the House and Senate using Python and BeautifulSoup:
+* [House - scraping script](house.ipynb)
+* [Senate - scraping script](senate.ipynb)
