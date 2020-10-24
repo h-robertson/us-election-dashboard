@@ -190,6 +190,7 @@ function sum(a, b) {
     return a + b;
 }
 
+// https://www.digitalocean.com/community/tutorials/js-capitalizing-strings
 function lowerThenCap(text) {
     return text.toLowerCase().replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase())))
 }
