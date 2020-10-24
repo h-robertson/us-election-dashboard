@@ -445,7 +445,7 @@ h1 {
     }
 
     .presidency-tooltip {
-        top: 95%;
+        top: 60vh;
         left: 30%
     }
 
@@ -502,6 +502,6 @@ h1 {
     }
 
     .cook-datestamp {
-        padding-top: 22vh;
+        padding-top: 12vh;
     }
 }
