@@ -285,12 +285,6 @@ d3.json('/us-election-dashboard/data/ec.json').then(function (d) {
         .attr("viewBox", "0 0 " + width + " " + height)
         .attr("preserveAspectRatio", "xMinYMin")
         .attr('class', 'states-map')
-    // .attr("height", 0.66 * width + "px")
-
-
-    // mapSvg
-    //     .attr('width', width)
-    //     .attr('height', height)
 
     const statesFill = mapSvg
         .append('g')
@@ -664,19 +658,6 @@ d3.json('/us-election-dashboard/data/senate.json').then(function (data) {
         .attr('y2', '100%')
         .style('stroke-width', "4px")
         .style('stroke', '#EBEBE8')
-
-
-    // senWaf
-    //     .append('div')
-    //     .html('<b>50</b>')
-    //     .attr("class", "sen-finish-label")
-    //     .style('font-size', '1.2em')
-
-    // senWaf
-    //     .append('div')
-    //     .style('width', '2px')
-    //     .style('background-color', '#EBEBE8')
-    //     .attr("class", "sen-finish-line")
 })
 
 
@@ -917,35 +898,4 @@ d3.json("/us-election-dashboard/data/house.json").then(function (data) {
         .attr('y2', '92%')
         .style('stroke-width', "4px")
         .style('stroke', '#EBEBE8')
-
-    // houseWaf
-    //     .append('div')
-    //     .html('<b>218</b>')
-    //     .style('position', 'absolute')
-    //     .style('font-size', '1.2em')
-    //     .attr("class", "house-finish-label")
-
-
-    // houseWaf
-    //     .append('div')
-    //     .style('width', '2px')
-    //     .style('background-color', '#EBEBE8')
-    //     .style('position', 'absolute')
-    //     .attr("class", "house-finish-line-topdown")
-
-
-    // houseWaf
-    //     .append('div')
-    //     .style('height', "2px")
-    //     .style('background-color', '#EBEBE8')
-    //     .attr("class", "house-finish-line-horiz")
-    //     .style('position', 'absolute')
-
-    // houseWaf
-    //     .append('div')
-    //     .style('width', '2px')
-    //     .style('background-color', '#EBEBE8')
-    //     .attr("class", "house-finish-line-bottomdown")
-    //     .style('position', 'absolute')
-
 })
