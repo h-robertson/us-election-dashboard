@@ -398,14 +398,14 @@ h1 {
     }
 
     .senate-tooltip {
-        top: 92%;
+        top: 83%;
         left: 4%;
         font-size: 0.8em;
-        width: 300px;
+        width: 340px;
     }
 
     .house-tooltip {
-        top: 90%;
+        top: 83%;
         left: 4%;
         font-size: 0.8em;
     }
