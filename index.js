@@ -297,7 +297,6 @@ d3.json('/us-election-dashboard/data/ec.json').then(function (d) {
 
     d3.json("/us-election-dashboard/data/us-states.json")
         .then(function (us) {
-            f
 
             // Used https://geoman.io/geojson-editor to add circles for congressional districts
             const states = topojson.feature(us, us.objects.states)
