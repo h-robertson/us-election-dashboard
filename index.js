@@ -360,6 +360,8 @@ d3.json('/us-election-dashboard/data/ec.json').then(function (d) {
                         return acc + (cur.ecvs);
                     }, 0);
 
+                    console.log(d)
+
                     presidencyProjLeg
                         .transition()
                         .duration(300)
@@ -381,6 +383,8 @@ d3.json('/us-election-dashboard/data/ec.json').then(function (d) {
                         cur.start = acc;
                         return acc + (cur.ecvs);
                     }, 0);
+
+                    console.log(d)
 
                     presidencyResLeg
                         .transition()
@@ -409,6 +413,7 @@ d3.json('/us-election-dashboard/data/ec.json').then(function (d) {
                     .duration(300)
                     .style('width', d => (d.ecvs / 538 * 100) + "%")
                     .style('background-color', d => this.id == "pres2020" ? getProjCol(d.state) : getResultCol(d.state))
+                    .attr("class", d => `state-votes-${d.state.replace(' ', '-')} state-votes`)
 
             })
             var stateDivs = $('.state-votes')
