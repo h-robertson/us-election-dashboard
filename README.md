@@ -14,5 +14,5 @@ The 'Methodology' section at the bottom of the project provides information abou
 
 ## Methodology
 This repo contains scripts for scraping Cook Political projections of the House and Senate using Python and BeautifulSoup:
-* [House - scraping script](house.ipynb)
-* [Senate - scraping script](senate.ipynb)
+* [House - scraping script](data/house.ipynb)
+* [Senate - scraping script](data/senate.ipynb)
