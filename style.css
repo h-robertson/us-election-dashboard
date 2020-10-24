@@ -187,8 +187,8 @@ h1 {
 
 .states-map {
     width: 700px;
-    /* height: 462px; */
-    height: auto;
+    height: 462px;
+    /* height: auto; */
 }
 
 .presidency-tooltip {
