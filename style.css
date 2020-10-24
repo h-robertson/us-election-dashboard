@@ -5,12 +5,6 @@ body {
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
-@supports (-webkit-backdrop-filter: blur(1px)) {
-    .states-map {
-        height: 100%;
-    }
-}
-
 p {
     line-height: 1.5em;
 }
@@ -189,10 +183,17 @@ h1 {
     width: 75vw;
 }
 
+#pres-map {
+    padding-bottom: 66%;
+    height: 0;
+}
+
 .states-map {
-    width: 700px;
-    /* height: 462px; */
-    /* height: auto; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
 }
 
 .presidency-tooltip {
