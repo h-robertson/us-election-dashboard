@@ -195,8 +195,8 @@ function lowerThenCap(text) {
     return text.toLowerCase().replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase())))
 }
 
-// d3.json('/us-election-dashboard/data/ec.json').then(function (d) {
-d3.json('data/ec.json').then(function (d) {
+d3.json('/us-election-dashboard/data/ec.json').then(function (d) {
+    // d3.json('data/ec.json').then(function (d) {
 
     d.reduce((acc, cur) => {
         cur.start = acc;
@@ -296,8 +296,8 @@ d3.json('data/ec.json').then(function (d) {
         .append('g')
         .attr('transform', 'translate(10)')
 
-    // d3.json("/us-election-dashboard/data/us-states.json")
-    d3.json("data/us-states.json")
+    d3.json("/us-election-dashboard/data/us-states.json")
+        // d3.json("data/us-states.json")
         .then(function (us) {
 
             // Used https://geoman.io/geojson-editor to add circles for congressional districts
@@ -533,8 +533,8 @@ var senWafSvg = senWaf
     .attr("class", "senate-svg")
 
 
-// d3.json('/us-election-dashboard/data/senate.json').then(function (data) {
-d3.json('data/senate.json').then(function (data) {
+d3.json('/us-election-dashboard/data/senate.json').then(function (data) {
+    // d3.json('data/senate.json').then(function (data) {
 
     var projByState = {}
 
@@ -770,8 +770,8 @@ var houseWafSvg = houseWaf
     .attr("preserveAspectRatio", "xMinYMin")
     .attr("class", "house-svg")
 
-// d3.json("/us-election-dashboard/data/house.json").then(function (data) {
-d3.json("data/house.json").then(function (data) {
+d3.json("/us-election-dashboard/data/house.json").then(function (data) {
+    // d3.json("data/house.json").then(function (data) {
 
     var projByState = {}
 
