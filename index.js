@@ -195,8 +195,8 @@ function lowerThenCap(text) {
     return text.toLowerCase().replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase())))
 }
 
-d3.json('/us-election-dashboard/data/ec.json').then(function (d) {
-    // d3.json('data/ec.json').then(function (d) {
+// d3.json('/us-election-dashboard/data/ec.json').then(function (d) {
+d3.json('data/ec.json').then(function (d) {
 
     d.reduce((acc, cur) => {
         cur.start = acc;
@@ -290,8 +290,8 @@ d3.json('/us-election-dashboard/data/ec.json').then(function (d) {
         .append('g')
         .attr('transform', 'translate(10)')
 
-    d3.json("/us-election-dashboard/data/us-states.json")
-        // d3.json("data/us-states.json")
+    // d3.json("/us-election-dashboard/data/us-states.json")
+    d3.json("data/us-states.json")
         .then(function (us) {
 
             // Used https://geoman.io/geojson-editor to add circles for congressional districts
@@ -342,7 +342,32 @@ d3.json('/us-election-dashboard/data/ec.json').then(function (d) {
                 .attr("d", path)
                 .attr("class", d => `state-votes-${d.properties.NAME.replace(' ', '-')} state-votes`)
 
+            var stateDivs = $('.state-votes')
+            var stateClasses = []
+            stateDivs.each(function (index, element) {
+                stateClasses.push('.' + element.classList[0])
 
+            })
+            stateClasses.forEach(function (e) {
+                highlightSameClass(e)
+            })
+
+            function reDoTooltips() {
+
+                // timeout delay needed for tooltip linking to be re-done after classes change on toggle button change
+                setTimeout(function () {
+                    var stateDivs = $('.state-votes')
+                    var stateClasses = []
+                    stateDivs.each(function (index, element) {
+                        stateClasses.push('.' + element.classList[0])
+
+                    })
+                    stateClasses.forEach(function (e) {
+                        highlightSameClass(e)
+                    })
+                }, 100);
+
+            }
 
             $("#pres-toggle :input").on('change', function () {
 
@@ -380,7 +405,6 @@ d3.json('/us-election-dashboard/data/ec.json').then(function (d) {
                         return acc + (cur.ecvs);
                     }, 0);
 
-                    console.log(d)
 
                     presidencyResLeg
                         .transition()
@@ -395,9 +419,16 @@ d3.json('/us-election-dashboard/data/ec.json').then(function (d) {
                         .style('display', 'none')
                 }
 
-                statesFill.selectAll("path")
+                statesFill
+                    .selectAll("path")
+                    .data(states.features)
                     .transition()
                     .duration(300)
+                    // .append("path") //path per geoemtry
+                    // .attr("stroke", "#EBEBE8")
+                    // .attr("stroke-width", "0.3px") //defining the stroke color, in this case black
+                    // .attr("d", path)
+                    .attr("class", d => `state-votes-${d.properties.NAME.replace(' ', '-')} state-votes`)
                     .attr("fill", d => this.id == "pres2020" ? getProjCol(d.properties.NAME) : getResultCol(d.properties.NAME))
 
                 barDiv
@@ -409,16 +440,9 @@ d3.json('/us-election-dashboard/data/ec.json').then(function (d) {
                     .style('background-color', d => this.id == "pres2020" ? getProjCol(d.state) : getResultCol(d.state))
                     .attr("class", d => `state-votes-${d.state.replace(' ', '-')} state-votes`)
 
+                reDoTooltips()
             })
-            var stateDivs = $('.state-votes')
-            var stateClasses = []
-            stateDivs.each(function (index, element) {
-                stateClasses.push('.' + element.classList[0])
 
-            })
-            stateClasses.forEach(function (e) {
-                highlightSameClass(e)
-            })
         });
 
     barBase
@@ -527,8 +551,8 @@ var senWafSvg = senWaf
     .attr("class", "senate-svg")
 
 
-d3.json('/us-election-dashboard/data/senate.json').then(function (data) {
-    // d3.json('data/senate.json').then(function (data) {
+// d3.json('/us-election-dashboard/data/senate.json').then(function (data) {
+d3.json('data/senate.json').then(function (data) {
 
     var projByState = {}
 
@@ -751,8 +775,8 @@ var houseWafSvg = houseWaf
     .attr("preserveAspectRatio", "xMinYMin")
     .attr("class", "house-svg")
 
-d3.json("/us-election-dashboard/data/house.json").then(function (data) {
-    // d3.json("data/house.json").then(function (data) {
+// d3.json("/us-election-dashboard/data/house.json").then(function (data) {
+d3.json("data/house.json").then(function (data) {
 
     var projByState = {}
 
