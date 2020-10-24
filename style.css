@@ -5,7 +5,11 @@ body {
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
-
+@supports (-webkit-backdrop-filter: blur(1px)) {
+    .states-map {
+        height: 100%;
+    }
+}
 
 p {
     line-height: 1.5em;
