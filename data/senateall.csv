@@ -1,0 +1,101 @@
+state_unique,state_name,incumbent,challenger,held_name,index
+MNno,Minnesota,Amy Klobuchar (D),,Amy Klobuchar (D),3
+MEno,Maine,Angus King (I),,Angus King (I),4
+MDno2,Maryland,Ben Cardin (D),,Ben Cardin (D),5
+NE20,Nebraska,Ben Sasse (R),Chris Janicek (D),Ben Sasse (R),67
+VTno,Vermont,Bernie Sanders (I),,Bernie Sanders (I),25
+LA20,Louisiana,Bill Cassidy (R),unknown (no primaries),Bill Cassidy (R),65
+PAno,Pennsylvania,Bob Casey Jr. (D),,Bob Casey Jr. (D),28
+NJno,New Jersey,Bob Menendez (D),,Bob Menendez (D),18
+HIno2,Hawaii,Brian Schatz (D),,Brian Schatz (D),16
+NVno2,Nevada,Catherine Cortez Masto (D),,Catherine Cortez Masto (D),33
+DE20,Delaware,Chris Coons (D),Lauren Witzke (R),Chris Coons (D),36
+CTno,Connecticut,Chris Murphy (D),,Chris Murphy (D),13
+MDno,Maryland,Chris Van Hollen (D),,Chris Van Hollen (D),6
+IAno,Iowa,Chuck Grassley (R),,Chuck Grassley (R),93
+NYno2,New York,Chuck Schumer (D),,Chuck Schumer (D),31
+MS20,Mississippi,Cindy Hyde-Smith (R),Mike Espy (D),Cindy Hyde-Smith (R),66
+NJ20,New Jersey,Cory Booker (D),Rikin Mehta (R),Cory Booker (D),41
+CO20,Colorado,Cory Gardner (R),John Hickenlooper (D),Cory Gardner (R),47
+AK20,Alaska,Dan Sullivan (R),Al Gross (I),Dan Sullivan (R),59
+GA20,Georgia,David Perdue (R),Jon Ossoff (D),David Perdue (R),54
+NEno,Nebraska,Deb Fischer (R),,Deb Fischer (R),73
+MIno,Michigan,Debbie Stabenow (D),,Debbie Stabenow (D),1
+CAno,California,Dianne Feinstein (D),,Dianne Feinstein (D),17
+IL20,Illinois,Dick Durbin (D),Mark Curran (R),Dick Durbin (D),38
+AL20,Alabama,Doug Jones (D),Tommy Tuberville (R),Doug Jones (D),56
+MA20,Massachusetts,Ed Markey (D),Kevin O'Connor (R),Ed Markey (D),39
+MAno,Massachusetts,Elizabeth Warren (D),,Elizabeth Warren (D),7
+MI20,Michigan,Gary Peters (D),John James (R),Gary Peters (D),48
+RI20,Rhode Island,Jack Reed (D),Allen Waters (R),Jack Reed (D),44
+NVno,Nevada,Jacky Rosen (D),,Jacky Rosen (D),19
+OKno,Oklahoma,James Lankford (R),,James Lankford (R),75
+NH20,New Hampshire,Jeanne Shaheen (D),Corky Messner (R),Jeanne Shaheen (D),40
+OR20,Oregon,Jeff Merkley (D),Jo Rae Perkins (R),Jeff Merkley (D),43
+KSno,Kansas,Jerry Moran (R),,Jerry Moran (R),89
+OK20,Oklahoma,Jim Inhofe (R),Abby Broyles (D),Jim Inhofe (R),68
+ID20,Idaho,Jim Risch (R),Paulette Jordan (D),Jim Risch (R),64
+WVno,West Virginia,Joe Manchin (D),,Joe Manchin (D),20
+WYno,Wyoming,John Barrasso (R),,John Barrasso (R),100
+ARno,Arkansas,John Boozman (R),,John Boozman (R),96
+TX20,Texas,John Cornyn (R),Mary Hegar (D),John Cornyn (R),57
+NDno2,North Dakota,John Hoeven (R),,John Hoeven (R),72
+LAno,Louisiana,John Kennedy (R),,John Kennedy (R),87
+SDno,South Dakota,John Thune (R),,John Thune (R),78
+MTno,Montana,Jon Tester (D),,Jon Tester (D),2
+IA20,Iowa,Joni Ernst (R),Theresa Greenfield (D),Joni Ernst (R),53
+MOno2,Missouri,Josh Hawley (R),,Josh Hawley (R),99
+CAno2,California,Kamala Harris (D),,Kamala Harris (D),15
+NDno,North Dakota,Kevin Cramer (R),,Kevin Cramer (R),71
+NYno,New York,Kirsten Gillibrand (D),,Kirsten Gillibrand (D),32
+AZno,Arizona,Kyrsten Sinema (D),,Kyrsten Sinema (D),35
+SC20,South Carolina,Lindsey Graham (R),Jaime Harrison (D),Lindsey Graham (R),49
+AKno,Alaska,Lisa Murkowski (R),,Lisa Murkowski (R),98
+NHno,New Hampshire,Maggie Hassan (D),,Maggie Hassan (D),8
+FLno2,Florida,Marco Rubio (R),,Marco Rubio (R),94
+WAno2,Washington,Maria Cantwell (D),,Maria Cantwell (D),22
+VA20,Virginia,Mark Warner (D),Daniel Gade (R),Mark Warner (D),45
+TNno,Tennessee,Marsha Blackburn (R),,Marsha Blackburn (R),79
+AZ20,Arizona,Martha McSally (R),Mark Kelly (D),Martha McSally (R),46
+NMno,New Mexico,Martin Heinrich (D),,Martin Heinrich (D),26
+HIno,Hawaii,Mazie Hirono (D),,Mazie Hirono (D),10
+COno,Colorado,Michael Bennet (D),,Michael Bennet (D),14
+INno,Indiana,Mike Braun (R),,Mike Braun (R),91
+IDno,Idaho,Mike Crapo (R),,Mike Crapo (R),92
+UTno,Utah,Mike Lee (R),,Mike Lee (R),81
+SD20,South Dakota,Mike Rounds (R),Dan Ahlers (D),Mike Rounds (R),69
+KY20,Kentucky,Mitch McConnell (R),Amy McGrath (D),Mitch McConnell (R),60
+UTno2,Utah,Mitt Romney (R),,Mitt Romney (R),82
+PAno2,Pennsylvania,Pat Toomey (R),,Pat Toomey (R),76
+VTno2,Vermont,Patrick Leahy (D),,Patrick Leahy (D),24
+WAno,Washington,Patty Murray (D),,Patty Murray (D),23
+KYno,Kentucky,Rand Paul (R),,Rand Paul (R),85
+CTno2,Connecticut,Richard Blumenthal (D),,Richard Blumenthal (D),12
+NCno,North Carolina,Richard Burr (R),,Richard Burr (R),80
+ALno,Alabama,Richard Shelby (R),,Richard Shelby (R),97
+FLno,Florida,Rick Scott (R),,Rick Scott (R),95
+OHno2,Ohio,Rob Portman (R),,Rob Portman (R),74
+MSno,Mississippi,Roger Wicker (R),,Roger Wicker (R),84
+WIno2,Wisconsin,Ron Johnson (R),,Ron Johnson (R),88
+ORno,Oregon,Ron Wyden (D),,Ron Wyden (D),29
+MOno,Missouri,Roy Blunt (R),,Roy Blunt (R),86
+RIno,Rhode Island,Sheldon Whitehouse (D),,Sheldon Whitehouse (D),34
+WV20,West Virginia,Shelley Moore Capito (R),Paula Jean Swearengin (D),Shelley Moore Capito (R),62
+OHno,Ohio,Sherrod Brown (D),,Sherrod Brown (D),30
+MT20,Montana,Steve Daines (R),Steve Bullock (D),Steve Daines (R),51
+ME20,Maine,Susan Collins (R),Sara Gideon (D),Susan Collins (R),52
+WIno,Wisconsin,Tammy Baldwin (D),,Tammy Baldwin (D),21
+ILno,Illinois,Tammy Duckworth (D),,Tammy Duckworth (D),9
+TXno,Texas,Ted Cruz (R),,Ted Cruz (R),77
+NC20,North Carolina,Thom Tillis (R),Cal Cunningham (D),Thom Tillis (R),50
+VAno,Virginia,Tim Kaine (D),,Tim Kaine (D),27
+SCno,South Carolina,Tim Scott (R),,Tim Scott (R),83
+MN20,Minnesota,Tina Smith (D),Jason Lewis (R),Tina Smith (D),37
+INno2,Indiana,Todd Young (R),,Todd Young (R),90
+DEno,Delaware,Tom Carper (D),,Tom Carper (D),11
+AR20,Arkansas,Tom Cotton (R),Rick Dale Harrington Jr. (L),Tom Cotton (R),63
+WY20,Wyoming,Open,Cynthia Lummis (R)/Merav Ben-David (D),Mike Enzi (R),61
+GAsp,Georgia,Open (special election),,Kelly Loeffler (R),55
+KS20,Kansas,Open,Roger Marshall (R)/Barbara Bollier (D),Pat Roberts (R),58
+NM20,New Mexico,Open,Ben Ray Lujan (D)/Mark Ronchetti (R),Tom Udall (D),42
+TN20,Tennessee,Open,Bill Hagerty (R)/Marquita Bradshaw (D),Lamar Alexander (R),70
