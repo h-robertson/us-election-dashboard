@@ -254,6 +254,14 @@ h1 {
         width: 230px;
     }
 
+    .senate-svg {
+        height: 240px;
+    }
+
+    .house-svg {
+        height: 240px;
+    }
+
 }
 
 @media (min-width: 768px) and (max-width:991px) {
