@@ -301,6 +301,14 @@ h1 {
         left: 60%
     }
 
+    .senate-svg {
+        height: 240px;
+    }
+
+    .house-svg {
+        height: 240px;
+    }
+
     .sen-waffle,
     .house-waffle {
         padding: 5px;
