@@ -236,6 +236,20 @@ h1 {
     width: 230px;
 }
 
+.barlabel-2016 {
+    position: absolute;
+    opacity: 0;
+    top: 13%
+}
+
+.barlabel-clinton {
+    left: 0%
+}
+
+.barlabel-trump {
+    left: 78%
+}
+
 @media (min-width:993px) and (max-width: 1199px) {
     .presidency-tooltip {
         top: 30%;
@@ -380,8 +394,8 @@ h1 {
     }
 
     .pres-finish-label {
-        left: 47.9%;
-        top: 65px;
+        left: 47.6%;
+        top: 62px;
     }
 
     .pres-finish-line {
@@ -429,4 +443,19 @@ h1 {
     .cook-datestamp {
         padding-top: 12vh;
     }
+
+    .barlabel-2016 {
+        font-size: 0.7em;
+        top: 15%
+    }
+
+    .barlabel-clinton {
+        left: 3%;
+    }
+
+    .barlabel-trump {
+        left: 65%;
+    }
+
+
 }

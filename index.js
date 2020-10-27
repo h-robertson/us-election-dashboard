@@ -275,7 +275,6 @@ d3.json('data/ec.json').then(function (d) {
         .attr("class", d => `state-votes-${d.state.replace(' ', '-')} state-votes`)
 
 
-
     // Pres Map
     const width = 700
     const height = width * 0.66
@@ -395,6 +394,11 @@ d3.json('data/ec.json').then(function (d) {
                         .style('opacity', 0)
                         .style('display', 'none')
 
+                    d3.selectAll('.barlabel-2016')
+                        .transition()
+                        .duration(300)
+                        .style('opacity', 0)
+
                 } else if (this.id == "pres2016") {
                     d.sort(function (a, b) {
                         return a.absmargin_2016 < b.absmargin_2016 ? -1 : a.absmargin_2016 > b.absmargin_2016 ? 1 : 0;
@@ -417,6 +421,11 @@ d3.json('data/ec.json').then(function (d) {
                         .duration(300)
                         .style('opacity', 0)
                         .style('display', 'none')
+
+                    d3.selectAll('.barlabel-2016')
+                        .transition()
+                        .duration(300)
+                        .style('opacity', 1)
                 }
 
                 statesFill
@@ -455,6 +464,16 @@ d3.json('data/ec.json').then(function (d) {
         .style('width', '3px')
         .attr('class', 'pres-finish-line')
         .style('background-color', '#EBEBE8')
+
+    barBase
+        .append('div')
+        .html("&#8592; Larger Clinton margin")
+        .attr('class', 'barlabel-2016 barlabel-clinton')
+
+    barBase
+        .append('div')
+        .html("Larger Trump margin &#8594;")
+        .attr('class', 'barlabel-2016 barlabel-trump')
 })
 
 
