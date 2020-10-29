@@ -7,8 +7,8 @@ const projDict = {
     "LEAN REPUBLICAN": "#E79090",
     "LIKELY REPUBLICAN": "#C74343",
     "SOLID REPUBLICAN": "#9C1515",
-    "noelectiondem": "#EBEBE8",
-    "noelectionrep": "#EBEBE8"
+    "noelectiondem": "#124683",
+    "noelectionrep": "#9C1515"
 }
 
 var projCol = function (myKey) {
@@ -70,7 +70,6 @@ const senResCols = [
 ]
 
 const senProjCols = [
-    "#EBEBE8",
     "#124683",
     "#337FD8",
     "#8EBDF3",
@@ -81,7 +80,6 @@ const senProjCols = [
 ]
 
 const senProjNames = [
-    "No election",
     "Solid Dem",
     "Likely Dem",
     "Lean Dem",
@@ -380,8 +378,6 @@ d3.json('data/ec.json').then(function (d) {
                         return acc + (cur.ecvs);
                     }, 0);
 
-                    console.log(d)
-
                     presidencyProjLeg
                         .transition()
                         .duration(300)
@@ -548,8 +544,8 @@ senateCurLeg
 // Senate waffle chart
 // Waffle chart example: https://bl.ocks.org/JulienAssouline/b98116bb991e13beb5418c45a2e64a14
 
-var wafWidth = 800
-var wafHeight = 280
+var senWafWidth = 900
+var senWafHeight = 300
 var senNumRows = 5
 
 var senWaf = d3.select('.sen-waffle')
@@ -565,7 +561,7 @@ var senTooltip = senWaf
 var senWafSvg = senWaf
     .append("svg")
     .attr("id", "chart")
-    .attr("viewBox", "0 0 " + wafWidth + " " + wafHeight)
+    .attr("viewBox", "0 0 " + senWafWidth + " " + senWafHeight)
     .attr("preserveAspectRatio", "xMinYMin")
     .attr("class", "senate-svg")
 
@@ -597,16 +593,17 @@ d3.json('data/senate.json').then(function (data) {
         .append("rect")
         .attr("width", 32)
         .attr("height", 32)
-        .attr("class", d => d.state_unique)
+        .attr("class", d => d.state_unique + " senate-" + d.projection)
         .attr("y", function (d, i) {
             var rowIndex = i % senNumRows
             return rowIndex * 40 + 60
         })
         .attr("x", function (d, i) {
             var colIndex = Math.floor(i / senNumRows)
-            return colIndex * 40
+            return colIndex * 40 + 50
         })
         .style("fill", d => getProjCol(d.state_unique))
+        .attr('transform', d => d.projection == "noelectiondem" ? "translate(-40,0)" : (d.projection == "noelectionrep" ? "translate(40,0)" : "translate(0,0)"))
         .on("mouseover", function (m, d) {
             senTooltip.transition()
                 .duration(100)
@@ -632,11 +629,19 @@ d3.json('data/senate.json').then(function (data) {
             d3.select(this).style("stroke", "none")
         })
 
+
+
     $("#sen-toggle :input").on('change', function () {
         if (this.id == "sen2020") {
             data.sort(function (a, b) {
                 return a.index < b.index ? -1 : a.index > b.index ? 1 : 0;
             })
+
+
+            d3.selectAll('.up-for-election')
+                .transition()
+                .duration(300)
+                .style('opacity', 1)
 
             senateProjLeg
                 .transition()
@@ -654,6 +659,11 @@ d3.json('data/senate.json').then(function (data) {
             data.sort(function (a, b) {
                 return a.held < b.held ? -1 : a.held > b.held ? 1 : 0;
             })
+
+            d3.selectAll('.up-for-election')
+                .transition()
+                .duration(300)
+                .style('opacity', 0)
 
             senateCurLeg
                 .transition()
@@ -679,16 +689,37 @@ d3.json('data/senate.json').then(function (data) {
             })
             .attr("x", function (d, i) {
                 var colIndex = Math.floor(i / senNumRows)
-                return colIndex * 40
+                return colIndex * 40 + 50
             })
+            .attr('transform', d => this.id == "sen2020" ? (d.projection == "noelectiondem" ? "translate(-40,0)" : (d.projection == "noelectionrep" ? "translate(40,0)" : "translate(0,0)")) :
+                'translate(0,0)')
             .style("fill", d => this.id == "sen2020" ? getProjCol(d.state_unique) : getCurCol(d.state_unique))
     })
 
+    senWafSvg
+        .append('rect')
+        .attr('x', '35.5%')
+        .attr('y', '17%')
+        .attr('width', '292px')
+        .attr('height', '210px')
+        .style('stroke', '#EBEBE8')
+        .style('stroke-width', '4px')
+        .style('fill', 'none')
+        .attr('class', 'up-for-election')
 
     senWafSvg
         .append('text')
-        .attr('x', '47.4%')
-        .attr('y', '11%')
+        .attr('x', '41%')
+        .attr('y', '96%')
+        .style('font-size', '1.2em')
+        .text('35 seats up for election')
+        .style('fill', '#EBEBE8')
+        .attr('class', 'up-for-election')
+
+    senWafSvg
+        .append('text')
+        .attr('x', '47.5%')
+        .attr('y', '9.8%')
         .text('50')
         .style('fill', '#EBEBE8')
         .attr('class', 'finish-label')
@@ -697,8 +728,8 @@ d3.json('data/senate.json').then(function (data) {
         .append('line')
         .attr('x1', '49.5%')
         .attr('x2', '49.5%')
-        .attr('y1', '14%')
-        .attr('y2', '100%')
+        .attr('y1', '12%')
+        .attr('y2', '87%')
         .style('stroke-width', "4px")
         .style('stroke', '#EBEBE8')
 })
@@ -774,6 +805,8 @@ houseCurLeg
         return d
     })
 
+var houseWafWidth = 800
+var houseWafHeight = 280
 var houseNumRows = 10
 
 var houseWaf = d3.select('.house-waff')
@@ -790,7 +823,7 @@ var houseTooltip = houseWaf
 var houseWafSvg = houseWaf
     .append("svg")
     .attr("id", "chart")
-    .attr("viewBox", "0 0 " + wafWidth + " " + wafHeight)
+    .attr("viewBox", "0 0 " + houseWafWidth + " " + houseWafHeight)
     .attr("preserveAspectRatio", "xMinYMin")
     .attr("class", "house-svg")
 
