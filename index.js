@@ -705,16 +705,16 @@ d3.json('data/senate.json').then(function (data) {
         .style('stroke', '#EBEBE8')
         .style('stroke-width', '4px')
         .style('fill', 'none')
-        .attr('class', 'up-for-election')
+        .attr('class', 'up-for-election up-box')
 
     senWafSvg
         .append('text')
-        .attr('x', '41%')
-        .attr('y', '96%')
-        .style('font-size', '1.2em')
+        .attr('x', window.innerWidth <= 991 ? "33.7%" : "41%")
+        .attr('y', window.innerWidth <= 991 ? "98%" : "96%")
         .text('35 seats up for election')
+        .attr('font-size', window.innerWidth <= 991 ? "2em" : "1.2em")
         .style('fill', '#EBEBE8')
-        .attr('class', 'up-for-election')
+        .attr('class', 'up-for-election up-label')
 
     senWafSvg
         .append('text')
@@ -733,6 +733,7 @@ d3.json('data/senate.json').then(function (data) {
         .style('stroke-width', "4px")
         .style('stroke', '#EBEBE8')
 })
+
 
 
 
