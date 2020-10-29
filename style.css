@@ -139,6 +139,12 @@ h1 {
     border-radius: 0 0 20px 20px;
 }
 
+
+.social-img {
+    width: 50px;
+    padding: 4px;
+}
+
 .pres-finish-label {
     position: absolute;
     left: 48.5%;
