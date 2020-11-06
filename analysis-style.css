@@ -1,0 +1,10 @@
+.analysis-buttons .btn-light {
+    background-color: #EBEBE8;
+    color: #121212;
+    padding: 10px 30px;
+    margin: 10px 30px 10px 0;
+}
+
+.analysis-buttons>a>.btn-light {
+    width: 210px;
+}
