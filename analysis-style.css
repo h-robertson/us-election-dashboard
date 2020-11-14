@@ -21,3 +21,33 @@
 .carousel-margin p {
     margin: 0;
 }
+
+.annotation {
+    font-size: 0.9em;
+}
+
+.mail-count-rules-mobile,
+.swing-states-outlines-mobile,
+.house-flips-mobile,
+.house-uncalled-mobile {
+    display: none;
+}
+
+@media (max-width: 767px) {
+
+    .mail-count-rules,
+    .swing-states-outlines,
+    .house-flips,
+    .house-uncalled {
+        display: none
+    }
+
+    .mail-count-rules-mobile,
+    .swing-states-outlines-mobile,
+    .house-flips-mobile,
+    .house-uncalled-mobile {
+        display: block;
+        width: 100vw;
+        padding: 0;
+    }
+}
