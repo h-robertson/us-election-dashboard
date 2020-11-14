@@ -8,3 +8,16 @@
 .analysis-buttons>a>.btn-light {
     width: 210px;
 }
+
+.last-updated {
+    font-style: italic;
+    font-size: 0.8em
+}
+
+.carousel-margin {
+    padding: 0 15%;
+}
+
+.carousel-margin p {
+    margin: 0;
+}
