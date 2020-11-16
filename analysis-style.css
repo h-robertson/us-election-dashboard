@@ -9,6 +9,10 @@
     width: 210px;
 }
 
+.spacer {
+    height: 8vh;
+}
+
 .last-updated {
     font-style: italic;
     font-size: 0.8em
@@ -31,6 +35,11 @@
 .house-flips-mobile,
 .house-uncalled-mobile {
     display: none;
+}
+
+.senate-stacked {
+    position: relative;
+    top: -15x;
 }
 
 @media (max-width: 767px) {
