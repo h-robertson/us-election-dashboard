@@ -80,10 +80,13 @@
         <div class="row mb-4">
             <div class="pres-toggle col-sm-12">
                 <div id="pres-toggle" class="btn-group btn-group-toggle" data-toggle="buttons">
-                    <label id="pres2020label" class="btn btn-light active">
-                        <input type="radio" name="options" id="pres2020" checked>2020 projection
+                    <label id="pres2020resultslabel" class="btn btn-light active">
+                        <input type="radio" name="options" id="presresults2020" checked>2020 results
                     </label>
-                    <label class="btn btn-light">
+                    <label id="pres2020label" class="btn btn-light">
+                        <input type="radio" name="options" id="pres2020">Final 2020 projection
+                    </label>
+                    <label id="pres2016label" class="btn btn-light">
                         <input type="radio" name="options" id="pres2016">2016 results
                     </label>
                 </div>
@@ -96,10 +99,8 @@
                 <div class="pres-map mt-4 mb-4 d-flex justify-content-center"></div>
             </div>
         </div>
-        <div class="cook-datestamp-pres">Source: <a
-                href="https://cookpolitical.com/sites/default/files/2020-10/EC%20Ratings.102820.pdf" target="_blank">
-                Cook
-                Political Electoral College Ratings. Last updated 28 October 2020.</a></div>
+        <div id='pres-datestamp'>Source: <a href='https://results.decisiondeskhq.com/' target='_blank'>
+                Decision Desk HQ, 2020 election results</a>. Last updated Tuesday 17 November 2020.</div>
     </div>
 
 
@@ -132,11 +133,14 @@
         <div class="row mb-4">
             <div class='senate-toggle col-sm-12'>
                 <div id="sen-toggle" class="btn-group btn-group-toggle" data-toggle="buttons">
-                    <label id="sen2020label" class="btn btn-light active">
-                        <input type="radio" name="options" id="sen2020" checked>2020 projection
+                    <label class="btn btn-light active">
+                        <input type="radio" name="options" id="senresults2020" checked>2020 results
                     </label>
-                    <label class="btn btn-light">
-                        <input type="radio" name="options" id="senCur">Current breakdown
+                    <label id="sen2020label" class="btn btn-light">
+                        <input type="radio" name="options" id="sen2020">Final 2020 projection
+                    </label>
+                    <label id="sen2016label" class="btn btn-light">
+                        <input type="radio" name="options" id="senCur">Pre-2020 breakdown
                     </label>
                 </div>
             </div>
@@ -151,9 +155,8 @@
             <div class="col-sm col-md-8 sen-graphics sen-waffle">
             </div>
         </div>
-        <div class="cook-datestamp">Source: <a href="https://cookpolitical.com/ratings/senate-race-ratings"
-                target="_blank"> Cook
-                Political Senate Ratings. Last updated 29 October 2020.</a></div>
+        <div id="sen-datestamp">Source: <a href='https://results.decisiondeskhq.com/' target='_blank'>
+                Decision Desk HQ, 2020 election results</a>. Last updated Tuesday 17 November 2020.</div>
         <div class='text-italic' style="font-size: 0.8em">*The two Independent seats held by Senators Bernie Sanders and
             Angus King are shown alongside Democratic seats with whom they currently caucus.</div>
     </div>
@@ -175,11 +178,14 @@
         <div class="row mb-4">
             <div class='house-toggle col-sm-12'>
                 <div id="house-toggle" class="btn-group btn-group-toggle" data-toggle="buttons">
-                    <label id="house2020label" class="btn btn-light active">
-                        <input type="radio" name="options" id="house2020" checked>2020 projection
+                    <label class="btn btn-light active">
+                        <input type="radio" name="options" id="houseresults2020" checked>2020 results
                     </label>
-                    <label class="btn btn-light">
-                        <input type="radio" name="options" id="houseCur">Current breakdown
+                    <label id="house2020label" class="btn btn-light">
+                        <input type="radio" name="options" id="house2020">Final 2020 projection
+                    </label>
+                    <label id="house2016label" class="btn btn-light">
+                        <input type="radio" name="options" id="houseCur">Pre-2020 breakdown
                     </label>
                 </div>
             </div>
@@ -195,15 +201,18 @@
             <div class="col-sm col-md-8 house-graphics house-waff"></div>
         </div>
 
-        <div class="cook-datestamp">Source: <a href="https://cookpolitical.com/ratings/house-race-ratings"
-                target="_blank"> Cook
-                Political House Ratings. Last updated 21 October 2020.</a></div>
+        <div id="house-datestamp">Source: <a href='https://results.decisiondeskhq.com/' target='_blank'>
+                Decision Desk HQ, 2020 election results</a>. Last updated Tuesday 17 November 2020.</div>
     </div>
     </div>
     <div class="container methodology">
         <hr class="mt-5 mb-0" id="method-jump">
         <hr class="mt-1 mb-5">
         <h2>Methodology</h2>
+        <p class="text-italic">2020 results are sourced from <a class="method-link"
+                href="https://results.decisiondeskhq.com/">Decision Desk HQ</a>, correct to the date displayed below
+            each
+            graphic.</p>
         <p class="text-italic">Projections are sourced from <a class="method-link"
                 href="https://cookpolitical.com/ratings">Cook
                 Political

@@ -5,7 +5,12 @@
     "result_2016": "D",
     "margin_2016": 30.1,
     "absmargin_2016": -30.1,
-    "index": 0
+    "index": 0,
+    "last_updated": "2020-11-17 07:52:48",
+    "margin_2020": -29.58,
+    "party2020": "D",
+    "est_count_display": "96%",
+    "absmargin_2020": 29.58
 }, {
     "rating": "SOLID DEMOCRAT",
     "state": "Connecticut",
@@ -13,7 +18,12 @@
     "result_2016": "D",
     "margin_2016": 13.6,
     "absmargin_2016": -13.6,
-    "index": 1
+    "index": 1,
+    "last_updated": "2020-11-17 02:42:37",
+    "margin_2020": -19.35,
+    "party2020": "D",
+    "est_count_display": ">98%",
+    "absmargin_2020": 19.35
 }, {
     "rating": "SOLID DEMOCRAT",
     "state": "Delaware",
@@ -21,7 +31,12 @@
     "result_2016": "D",
     "margin_2016": 11.4,
     "absmargin_2016": -11.4,
-    "index": 2
+    "index": 2,
+    "last_updated": "2020-11-14 13:40:12",
+    "margin_2020": -18.98,
+    "party2020": "D",
+    "est_count_display": ">98%",
+    "absmargin_2020": 18.98
 }, {
     "rating": "SOLID DEMOCRAT",
     "state": "District of Columbia",
@@ -29,7 +44,12 @@
     "result_2016": "D",
     "margin_2016": 86.8,
     "absmargin_2016": -86.8,
-    "index": 3
+    "index": 3,
+    "last_updated": "2020-11-11 01:43:59",
+    "margin_2020": -87.89,
+    "party2020": "D",
+    "est_count_display": "83%",
+    "absmargin_2020": 87.89
 }, {
     "rating": "SOLID DEMOCRAT",
     "state": "Hawaii",
@@ -37,7 +57,12 @@
     "result_2016": "D",
     "margin_2016": 32.2,
     "absmargin_2016": -32.2,
-    "index": 4
+    "index": 4,
+    "last_updated": "2020-11-04 20:42:24",
+    "margin_2020": -29.48,
+    "party2020": "D",
+    "est_count_display": "99%",
+    "absmargin_2020": 29.48
 }, {
     "rating": "SOLID DEMOCRAT",
     "state": "Illinois",
@@ -45,7 +70,12 @@
     "result_2016": "D",
     "margin_2016": 17.1,
     "absmargin_2016": -17.1,
-    "index": 5
+    "index": 5,
+    "last_updated": "2020-11-17 07:55:17",
+    "margin_2020": -16.54,
+    "party2020": "D",
+    "est_count_display": "92%",
+    "absmargin_2020": 16.54
 }, {
     "rating": "SOLID DEMOCRAT",
     "state": "Maine 1st CD",
@@ -53,7 +83,12 @@
     "result_2016": "D",
     "margin_2016": 14.8,
     "absmargin_2016": -14.8,
-    "index": 6
+    "index": 6,
+    "last_updated": "2020-11-14 23:05:36",
+    "margin_2020": -22.86,
+    "party2020": "D",
+    "est_count_display": "94%",
+    "absmargin_2020": 22.86
 }, {
     "rating": "SOLID DEMOCRAT",
     "state": "Maryland",
@@ -61,7 +96,12 @@
     "result_2016": "D",
     "margin_2016": 26.4,
     "absmargin_2016": -26.4,
-    "index": 7
+    "index": 7,
+    "last_updated": "2020-11-16 21:03:15",
+    "margin_2020": -32.46,
+    "party2020": "D",
+    "est_count_display": ">98%",
+    "absmargin_2020": 32.46
 }, {
     "rating": "SOLID DEMOCRAT",
     "state": "Massachusetts",
@@ -69,7 +109,12 @@
     "result_2016": "D",
     "margin_2016": 27.2,
     "absmargin_2016": -27.2,
-    "index": 8
+    "index": 8,
+    "last_updated": "2020-11-17 00:43:07",
+    "margin_2020": -33.03,
+    "party2020": "D",
+    "est_count_display": "87%",
+    "absmargin_2020": 33.03
 }, {
     "rating": "SOLID DEMOCRAT",
     "state": "New Jersey",
@@ -77,7 +122,12 @@
     "result_2016": "D",
     "margin_2016": 14.1,
     "absmargin_2016": -14.1,
-    "index": 9
+    "index": 9,
+    "last_updated": "2020-11-17 07:53:31",
+    "margin_2020": -15.58,
+    "party2020": "D",
+    "est_count_display": "95%",
+    "absmargin_2020": 15.58
 }, {
     "rating": "SOLID DEMOCRAT",
     "state": "New Mexico",
@@ -85,7 +135,12 @@
     "result_2016": "D",
     "margin_2016": 8.2,
     "absmargin_2016": -8.2,
-    "index": 10
+    "index": 10,
+    "last_updated": "2020-11-11 09:32:35",
+    "margin_2020": -10.7,
+    "party2020": "D",
+    "est_count_display": "99%",
+    "absmargin_2020": 10.7
 }, {
     "rating": "SOLID DEMOCRAT",
     "state": "New York",
@@ -93,7 +148,12 @@
     "result_2016": "D",
     "margin_2016": 22.5,
     "absmargin_2016": -22.5,
-    "index": 11
+    "index": 11,
+    "last_updated": "2020-11-17 08:38:54",
+    "margin_2020": -13.55,
+    "party2020": "D",
+    "est_count_display": "74-89%",
+    "absmargin_2020": 13.55
 }, {
     "rating": "SOLID DEMOCRAT",
     "state": "Oregon",
@@ -101,7 +161,12 @@
     "result_2016": "D",
     "margin_2016": 11.0,
     "absmargin_2016": -11.0,
-    "index": 12
+    "index": 12,
+    "last_updated": "2020-11-15 20:54:36",
+    "margin_2020": -16.26,
+    "party2020": "D",
+    "est_count_display": "99%",
+    "absmargin_2020": 16.26
 }, {
     "rating": "SOLID DEMOCRAT",
     "state": "Rhode Island",
@@ -109,7 +174,12 @@
     "result_2016": "D",
     "margin_2016": 15.5,
     "absmargin_2016": -15.5,
-    "index": 13
+    "index": 13,
+    "last_updated": "2020-11-17 08:03:31",
+    "margin_2020": -20.71,
+    "party2020": "D",
+    "est_count_display": "99%",
+    "absmargin_2020": 20.71
 }, {
     "rating": "SOLID DEMOCRAT",
     "state": "Vermont",
@@ -117,7 +187,12 @@
     "result_2016": "D",
     "margin_2016": 26.4,
     "absmargin_2016": -26.4,
-    "index": 14
+    "index": 14,
+    "last_updated": "2020-11-11 03:06:11",
+    "margin_2020": -35.6,
+    "party2020": "D",
+    "est_count_display": "99%",
+    "absmargin_2020": 35.6
 }, {
     "rating": "SOLID DEMOCRAT",
     "state": "Washington",
@@ -125,7 +200,12 @@
     "result_2016": "D",
     "margin_2016": 15.7,
     "absmargin_2016": -15.7,
-    "index": 15
+    "index": 15,
+    "last_updated": "2020-11-17 07:55:51",
+    "margin_2020": -19.39,
+    "party2020": "D",
+    "est_count_display": "97%",
+    "absmargin_2020": 19.39
 }, {
     "rating": "LIKELY DEMOCRAT",
     "state": "Colorado",
@@ -133,7 +213,12 @@
     "result_2016": "D",
     "margin_2016": 4.9,
     "absmargin_2016": -4.9,
-    "index": 16
+    "index": 16,
+    "last_updated": "2020-11-17 07:58:10",
+    "margin_2020": -13.5,
+    "party2020": "D",
+    "est_count_display": "97%",
+    "absmargin_2020": 13.5
 }, {
     "rating": "LIKELY DEMOCRAT",
     "state": "Maine",
@@ -141,7 +226,12 @@
     "result_2016": "D",
     "margin_2016": 3.0,
     "absmargin_2016": -3.0,
-    "index": 17
+    "index": 17,
+    "last_updated": "2020-11-14 23:05:36",
+    "margin_2020": -9.37,
+    "party2020": "D",
+    "est_count_display": "94%",
+    "absmargin_2020": 9.37
 }, {
     "rating": "LIKELY DEMOCRAT",
     "state": "Virginia",
@@ -149,7 +239,12 @@
     "result_2016": "D",
     "margin_2016": 5.3,
     "absmargin_2016": -5.3,
-    "index": 18
+    "index": 18,
+    "last_updated": "2020-11-17 07:56:19",
+    "margin_2020": -10.14,
+    "party2020": "D",
+    "est_count_display": "92%",
+    "absmargin_2020": 10.14
 }, {
     "rating": "LEAN DEMOCRAT",
     "state": "Arizona",
@@ -157,7 +252,12 @@
     "result_2016": "R",
     "margin_2016": 3.5,
     "absmargin_2016": 3.5,
-    "index": 19
+    "index": 19,
+    "last_updated": "2020-11-16 11:26:57",
+    "margin_2020": -0.31,
+    "party2020": "D",
+    "est_count_display": ">98%",
+    "absmargin_2020": 0.31
 }, {
     "rating": "LEAN DEMOCRAT",
     "state": "Michigan",
@@ -165,7 +265,12 @@
     "result_2016": "R",
     "margin_2016": 0.2,
     "absmargin_2016": 0.2,
-    "index": 20
+    "index": 20,
+    "last_updated": "2020-11-17 08:02:36",
+    "margin_2020": -2.64,
+    "party2020": "D",
+    "est_count_display": "99%",
+    "absmargin_2020": 2.64
 }, {
     "rating": "LEAN DEMOCRAT",
     "state": "Minnesota",
@@ -173,7 +278,12 @@
     "result_2016": "D",
     "margin_2016": 1.5,
     "absmargin_2016": -1.5,
-    "index": 21
+    "index": 21,
+    "last_updated": "2020-11-11 09:31:13",
+    "margin_2020": -7.12,
+    "party2020": "D",
+    "est_count_display": "99%",
+    "absmargin_2020": 7.12
 }, {
     "rating": "LEAN DEMOCRAT",
     "state": "Nebraska 2nd CD",
@@ -181,7 +291,12 @@
     "result_2016": "R",
     "margin_2016": 2.2,
     "absmargin_2016": 2.2,
-    "index": 22
+    "index": 22,
+    "last_updated": "2020-11-07 18:32:52",
+    "margin_2020": -6.59,
+    "party2020": "D",
+    "est_count_display": "94%",
+    "absmargin_2020": 6.59
 }, {
     "rating": "LEAN DEMOCRAT",
     "state": "Nevada",
@@ -189,7 +304,12 @@
     "result_2016": "D",
     "margin_2016": 2.4,
     "absmargin_2016": -2.4,
-    "index": 23
+    "index": 23,
+    "last_updated": "2020-11-14 13:38:30",
+    "margin_2020": -2.57,
+    "party2020": "D",
+    "est_count_display": ">98%",
+    "absmargin_2020": 2.57
 }, {
     "rating": "LEAN DEMOCRAT",
     "state": "New Hampshire",
@@ -197,7 +317,12 @@
     "result_2016": "D",
     "margin_2016": 0.4,
     "absmargin_2016": -0.4,
-    "index": 24
+    "index": 24,
+    "last_updated": "2020-11-14 19:51:48",
+    "margin_2020": -7.37,
+    "party2020": "D",
+    "est_count_display": "93%",
+    "absmargin_2020": 7.37
 }, {
     "rating": "LEAN DEMOCRAT",
     "state": "Pennsylvania",
@@ -205,7 +330,12 @@
     "result_2016": "R",
     "margin_2016": 0.7,
     "absmargin_2016": 0.7,
-    "index": 25
+    "index": 25,
+    "last_updated": "2020-11-17 07:59:33",
+    "margin_2020": -1.05,
+    "party2020": "D",
+    "est_count_display": ">98%",
+    "absmargin_2020": 1.05
 }, {
     "rating": "LEAN DEMOCRAT",
     "state": "Wisconsin",
@@ -213,7 +343,12 @@
     "result_2016": "R",
     "margin_2016": 0.8,
     "absmargin_2016": 0.8,
-    "index": 26
+    "index": 26,
+    "last_updated": "2020-11-17 07:12:26",
+    "margin_2020": -0.62,
+    "party2020": "D",
+    "est_count_display": "99%",
+    "absmargin_2020": 0.62
 }, {
     "rating": "TOSS UP",
     "state": "Florida",
@@ -221,7 +356,12 @@
     "result_2016": "R",
     "margin_2016": 1.2,
     "absmargin_2016": 1.2,
-    "index": 27
+    "index": 27,
+    "last_updated": "2020-11-17 08:04:38",
+    "margin_2020": 3.36,
+    "party2020": "R",
+    "est_count_display": "99%",
+    "absmargin_2020": 3.36
 }, {
     "rating": "TOSS UP",
     "state": "Georgia",
@@ -229,7 +369,12 @@
     "result_2016": "R",
     "margin_2016": 5.1,
     "absmargin_2016": 5.1,
-    "index": 28
+    "index": 28,
+    "last_updated": "2020-11-14 16:39:24",
+    "margin_2020": -0.28,
+    "party2020": "D",
+    "est_count_display": "99%",
+    "absmargin_2020": 0.28
 }, {
     "rating": "TOSS UP",
     "state": "Iowa",
@@ -237,7 +382,12 @@
     "result_2016": "R",
     "margin_2016": 9.4,
     "absmargin_2016": 9.4,
-    "index": 29
+    "index": 29,
+    "last_updated": "2020-11-12 05:07:34",
+    "margin_2020": 8.25,
+    "party2020": "R",
+    "est_count_display": "99%",
+    "absmargin_2020": 8.25
 }, {
     "rating": "TOSS UP",
     "state": "Maine 2nd CD",
@@ -245,7 +395,12 @@
     "result_2016": "R",
     "margin_2016": 10.3,
     "absmargin_2016": 10.3,
-    "index": 30
+    "index": 30,
+    "last_updated": "2020-11-14 23:05:36",
+    "margin_2020": 7.7,
+    "party2020": "R",
+    "est_count_display": "94%",
+    "absmargin_2020": 7.7
 }, {
     "rating": "TOSS UP",
     "state": "North Carolina",
@@ -253,7 +408,12 @@
     "result_2016": "R",
     "margin_2016": 3.7,
     "absmargin_2016": 3.7,
-    "index": 31
+    "index": 31,
+    "last_updated": "2020-11-17 08:01:48",
+    "margin_2020": 1.34,
+    "party2020": "R",
+    "est_count_display": ">98%",
+    "absmargin_2020": 1.34
 }, {
     "rating": "TOSS UP",
     "state": "Ohio",
@@ -261,15 +421,25 @@
     "result_2016": "R",
     "margin_2016": 8.1,
     "absmargin_2016": 8.1,
-    "index": 32
+    "index": 32,
+    "last_updated": "2020-11-07 22:27:44",
+    "margin_2020": 8.17,
+    "party2020": "R",
+    "est_count_display": ">98%",
+    "absmargin_2020": 8.17
 }, {
-    "rating": "TOSS UP",
+    "rating": "LEAN REPUBLICAN",
     "state": "Texas",
     "ecvs": 38,
     "result_2016": "R",
     "margin_2016": 9.0,
     "absmargin_2016": 9.0,
-    "index": 33
+    "index": 33,
+    "last_updated": "2020-11-17 07:54:44",
+    "margin_2020": 5.73,
+    "party2020": "R",
+    "est_count_display": "99%",
+    "absmargin_2020": 5.73
 }, {
     "rating": "LIKELY REPUBLICAN",
     "state": "Alaska",
@@ -277,7 +447,12 @@
     "result_2016": "R",
     "margin_2016": 14.7,
     "absmargin_2016": 14.7,
-    "index": 34
+    "index": 34,
+    "last_updated": "2020-11-16 13:37:17",
+    "margin_2020": 10.2,
+    "party2020": "R",
+    "est_count_display": "96%",
+    "absmargin_2020": 10.2
 }, {
     "rating": "LIKELY REPUBLICAN",
     "state": "Indiana",
@@ -285,7 +460,12 @@
     "result_2016": "R",
     "margin_2016": 19.2,
     "absmargin_2016": 19.2,
-    "index": 35
+    "index": 35,
+    "last_updated": "2020-11-17 08:05:31",
+    "margin_2020": 16.08,
+    "party2020": "R",
+    "est_count_display": ">98%",
+    "absmargin_2020": 16.08
 }, {
     "rating": "LIKELY REPUBLICAN",
     "state": "Kansas",
@@ -293,7 +473,12 @@
     "result_2016": "R",
     "margin_2016": 20.6,
     "absmargin_2016": 20.6,
-    "index": 36
+    "index": 36,
+    "last_updated": "2020-11-12 17:49:49",
+    "margin_2020": 15.15,
+    "party2020": "R",
+    "est_count_display": ">98%",
+    "absmargin_2020": 15.15
 }, {
     "rating": "LIKELY REPUBLICAN",
     "state": "Missouri",
@@ -301,7 +486,12 @@
     "result_2016": "R",
     "margin_2016": 18.6,
     "absmargin_2016": 18.6,
-    "index": 37
+    "index": 37,
+    "last_updated": "2020-11-11 20:23:36",
+    "margin_2020": 15.59,
+    "party2020": "R",
+    "est_count_display": "92%",
+    "absmargin_2020": 15.59
 }, {
     "rating": "LIKELY REPUBLICAN",
     "state": "Montana",
@@ -309,7 +499,12 @@
     "result_2016": "R",
     "margin_2016": 20.4,
     "absmargin_2016": 20.4,
-    "index": 38
+    "index": 38,
+    "last_updated": "2020-11-17 08:08:03",
+    "margin_2020": 16.2,
+    "party2020": "R",
+    "est_count_display": "99%",
+    "absmargin_2020": 16.2
 }, {
     "rating": "LIKELY REPUBLICAN",
     "state": "South Carolina",
@@ -317,7 +512,12 @@
     "result_2016": "R",
     "margin_2016": 14.3,
     "absmargin_2016": 14.3,
-    "index": 39
+    "index": 39,
+    "last_updated": "2020-11-11 03:06:32",
+    "margin_2020": 11.68,
+    "party2020": "R",
+    "est_count_display": "99%",
+    "absmargin_2020": 11.68
 }, {
     "rating": "LIKELY REPUBLICAN",
     "state": "Utah",
@@ -325,7 +525,12 @@
     "result_2016": "R",
     "margin_2016": 18.1,
     "absmargin_2016": 18.1,
-    "index": 40
+    "index": 40,
+    "last_updated": "2020-11-17 07:56:38",
+    "margin_2020": 20.18,
+    "party2020": "R",
+    "est_count_display": ">98%",
+    "absmargin_2020": 20.18
 }, {
     "rating": "SOLID REPUBLICAN",
     "state": "Alabama",
@@ -333,7 +538,12 @@
     "result_2016": "R",
     "margin_2016": 27.7,
     "absmargin_2016": 27.7,
-    "index": 41
+    "index": 41,
+    "last_updated": "2020-11-12 05:06:29",
+    "margin_2020": 25.4,
+    "party2020": "R",
+    "est_count_display": "99%",
+    "absmargin_2020": 25.4
 }, {
     "rating": "SOLID REPUBLICAN",
     "state": "Arkansas",
@@ -341,7 +551,12 @@
     "result_2016": "R",
     "margin_2016": 26.9,
     "absmargin_2016": 26.9,
-    "index": 42
+    "index": 42,
+    "last_updated": "2020-11-16 11:30:11",
+    "margin_2020": 27.89,
+    "party2020": "R",
+    "est_count_display": ">98%",
+    "absmargin_2020": 27.89
 }, {
     "rating": "SOLID REPUBLICAN",
     "state": "Idaho",
@@ -349,7 +564,12 @@
     "result_2016": "R",
     "margin_2016": 31.8,
     "absmargin_2016": 31.8,
-    "index": 43
+    "index": 43,
+    "last_updated": "2020-11-07 22:14:45",
+    "margin_2020": 30.79,
+    "party2020": "R",
+    "est_count_display": "99%",
+    "absmargin_2020": 30.79
 }, {
     "rating": "SOLID REPUBLICAN",
     "state": "Kentucky",
@@ -357,7 +577,12 @@
     "result_2016": "R",
     "margin_2016": 29.8,
     "absmargin_2016": 29.8,
-    "index": 44
+    "index": 44,
+    "last_updated": "2020-11-11 00:30:40",
+    "margin_2020": 25.94,
+    "party2020": "R",
+    "est_count_display": "99%",
+    "absmargin_2020": 25.94
 }, {
     "rating": "SOLID REPUBLICAN",
     "state": "Louisiana",
@@ -365,7 +590,12 @@
     "result_2016": "R",
     "margin_2016": 19.6,
     "absmargin_2016": 19.6,
-    "index": 45
+    "index": 45,
+    "last_updated": "2020-11-11 09:35:14",
+    "margin_2020": 18.61,
+    "party2020": "R",
+    "est_count_display": "99%",
+    "absmargin_2020": 18.61
 }, {
     "rating": "SOLID REPUBLICAN",
     "state": "Mississippi",
@@ -373,7 +603,12 @@
     "result_2016": "R",
     "margin_2016": 17.8,
     "absmargin_2016": 17.8,
-    "index": 46
+    "index": 46,
+    "last_updated": "2020-11-17 12:00:39",
+    "margin_2020": 18.11,
+    "party2020": "R",
+    "est_count_display": "88%",
+    "absmargin_2020": 18.11
 }, {
     "rating": "SOLID REPUBLICAN",
     "state": "Nebraska",
@@ -381,7 +616,12 @@
     "result_2016": "R",
     "margin_2016": 25.0,
     "absmargin_2016": 25.0,
-    "index": 47
+    "index": 47,
+    "last_updated": "2020-11-17 08:06:29",
+    "margin_2020": 19.23,
+    "party2020": "R",
+    "est_count_display": "99%",
+    "absmargin_2020": 19.23
 }, {
     "rating": "SOLID REPUBLICAN",
     "state": "Nebraska 1st CD",
@@ -389,7 +629,12 @@
     "result_2016": "R",
     "margin_2016": 21.3,
     "absmargin_2016": 21.3,
-    "index": 48
+    "index": 48,
+    "last_updated": "2020-11-17 14:08:49",
+    "margin_2020": 14.9,
+    "party2020": "R",
+    "est_count_display": ">98%",
+    "absmargin_2020": 14.9
 }, {
     "rating": "SOLID REPUBLICAN",
     "state": "Nebraska 3rd CD",
@@ -397,7 +642,12 @@
     "result_2016": "R",
     "margin_2016": 55.9,
     "absmargin_2016": 55.9,
-    "index": 49
+    "index": 49,
+    "last_updated": "2020-11-17 14:08:49",
+    "margin_2020": 53.17,
+    "party2020": "R",
+    "est_count_display": ">98%",
+    "absmargin_2020": 53.17
 }, {
     "rating": "SOLID REPUBLICAN",
     "state": "North Dakota",
@@ -405,7 +655,12 @@
     "result_2016": "R",
     "margin_2016": 35.7,
     "absmargin_2016": 35.7,
-    "index": 50
+    "index": 50,
+    "last_updated": "2020-11-17 08:07:14",
+    "margin_2020": 33.47,
+    "party2020": "R",
+    "est_count_display": ">98%",
+    "absmargin_2020": 33.47
 }, {
     "rating": "SOLID REPUBLICAN",
     "state": "Oklahoma",
@@ -413,7 +668,12 @@
     "result_2016": "R",
     "margin_2016": 36.4,
     "absmargin_2016": 36.4,
-    "index": 51
+    "index": 51,
+    "last_updated": "2020-11-07 22:06:34",
+    "margin_2020": 33.09,
+    "party2020": "R",
+    "est_count_display": "99%",
+    "absmargin_2020": 33.09
 }, {
     "rating": "SOLID REPUBLICAN",
     "state": "South Dakota",
@@ -421,7 +681,12 @@
     "result_2016": "R",
     "margin_2016": 29.8,
     "absmargin_2016": 29.8,
-    "index": 52
+    "index": 52,
+    "last_updated": "2020-11-07 22:13:27",
+    "margin_2020": 26.16,
+    "party2020": "R",
+    "est_count_display": ">98%",
+    "absmargin_2020": 26.16
 }, {
     "rating": "SOLID REPUBLICAN",
     "state": "Tennessee",
@@ -429,7 +694,12 @@
     "result_2016": "R",
     "margin_2016": 26.0,
     "absmargin_2016": 26.0,
-    "index": 53
+    "index": 53,
+    "last_updated": "2020-11-11 02:16:49",
+    "margin_2020": 23.32,
+    "party2020": "R",
+    "est_count_display": ">98%",
+    "absmargin_2020": 23.32
 }, {
     "rating": "SOLID REPUBLICAN",
     "state": "West Virginia",
@@ -437,7 +707,12 @@
     "result_2016": "R",
     "margin_2016": 42.1,
     "absmargin_2016": 42.1,
-    "index": 54
+    "index": 54,
+    "last_updated": "2020-11-17 08:00:17",
+    "margin_2020": 38.95,
+    "party2020": "R",
+    "est_count_display": ">98%",
+    "absmargin_2020": 38.95
 }, {
     "rating": "SOLID REPUBLICAN",
     "state": "Wyoming",
@@ -445,5 +720,10 @@
     "result_2016": "R",
     "margin_2016": 46.3,
     "absmargin_2016": 46.3,
-    "index": 55
+    "index": 55,
+    "last_updated": "2020-11-12 16:14:31",
+    "margin_2020": 43.66,
+    "party2020": "R",
+    "est_count_display": ">98%",
+    "absmargin_2020": 43.66
 }]

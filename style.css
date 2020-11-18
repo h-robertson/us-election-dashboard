@@ -35,24 +35,27 @@ h1 {
     font-size: 0.8em;
 }
 
-.cook-datestamp {
+#sen-datestamp,
+#house-datestamp {
     font-style: italic;
     font-size: 0.8em;
 }
 
-.cook-datestamp-pres {
+#pres-datestamp {
     font-style: italic;
     font-size: 0.8em;
 }
 
-.cook-datestamp>a,
-.cook-datestamp-pres>a,
+#sen-datestamp>a,
+#house-datestamp>a,
+#pres-datestamp>a,
 .text-link {
     color: #EBEBE8;
 }
 
-.cook-datestamp>a:hover,
-.cook-datestamp-pres>a:hover,
+#sen-datestamp>a:hover,
+#house-datestamp>a:hover,
+#pres-datestamp>a:hover,
 .text-link:hover {
     color: #007bff
 }
@@ -234,7 +237,6 @@ h1 {
 
 .barlabel-2016 {
     position: absolute;
-    opacity: 0;
     top: 13%
 }
 
@@ -243,7 +245,7 @@ h1 {
 }
 
 .barlabel-trump {
-    left: 78%
+    left: 77%
 }
 
 @media (min-width:993px) and (max-width: 1199px) {
@@ -436,7 +438,8 @@ h1 {
         font-size: 0.8em;
     }
 
-    .cook-datestamp {
+    #sen-datestamp,
+    #house-datestamp {
         padding-top: 12vh;
     }
 
@@ -450,7 +453,7 @@ h1 {
     }
 
     .barlabel-trump {
-        left: 65%;
+        left: 62%;
     }
 
 

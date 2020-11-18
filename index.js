@@ -21,7 +21,9 @@ const resultDict = {
     "L": "#E5BB25", //L = libertarian
     "E": "#dcdcdc", //E = vacant previously democrat (used for ordering reasons)
     "Q": "#dcdcdc", //Q = vacant previously republican (used for ordering reasons)
-    "I": "#dcdcdc"
+    "I": "#dcdcdc",
+    "Not yet called": '#dcdcdc',
+    "P": '#787878'
 }
 
 var resultCol = function (myKey) {
@@ -60,6 +62,15 @@ const resCols = [
     "#9C1515"
 ]
 
+// senate 2020 results legend
+const sen20Names = [
+    "Democrat", "Republican", "Independent", "Runoff"
+]
+
+const sen20Cols = [
+    "#124683", "#9C1515", "#dcdcdc", "#787878"
+]
+
 // senate legend data
 const senResNames = [
     "Democrat", "Independent", "Republican"
@@ -90,6 +101,16 @@ const senProjNames = [
 ]
 
 // house legend data
+
+// house 2020 results legend
+const house20Names = [
+    "Democrat", "Republican", "Not yet called", "Runoff"
+]
+
+const house20Cols = [
+    "#124683", "#9C1515", "#dcdcdc", "#787878"
+]
+
 const houseCurCols = [
     "#124683",
     "#9C1515",
@@ -107,6 +128,8 @@ const houseCurNames = [
 var presidencyProjLeg = d3.select('.pres-leg')
     .append('div')
     .attr('class', 'presidency-projection-legend')
+    .style('opacity', 0)
+    .style('display', 'none')
 
 presidencyProjLeg
     .append('div')
@@ -139,8 +162,6 @@ presidencyProjLeg
 var presidencyResLeg = d3.select('.pres-leg')
     .append('div')
     .attr('class', 'presidency-2016-legend')
-    .style('opacity', 0)
-    .style('display', 'none')
 
 presidencyResLeg
     .append('div')
@@ -195,11 +216,20 @@ function lowerThenCap(text) {
 
 // d3.json('/us-election-dashboard/data/ec.json').then(function (d) {
 d3.json('data/ec.json').then(function (d) {
+    d.sort(function (a, b) {
+        return a.margin_2020 < b.margin_2020 ? -1 : a.margin_2020 > b.margin_2020 ? 1 : 0;
+    });
 
     d.reduce((acc, cur) => {
         cur.start = acc;
         return acc + (cur.ecvs);
     }, 0);
+
+    var results20ByState = {};
+    d.forEach(el => (results20ByState[el.state] = resultCol(el.party2020)));
+    var get20ResultCol = function (myKey) {
+        return results20ByState[myKey];
+    };
 
     var projByState = {};
     d.forEach(el => (projByState[el.state] = projCol(el.rating)));
@@ -207,10 +237,10 @@ d3.json('data/ec.json').then(function (d) {
         return projByState[myKey];
     };
 
-    var resultsByState = {};
-    d.forEach(el => (resultsByState[el.state] = resultCol(el.result_2016)));
-    var getResultCol = function (myKey) {
-        return resultsByState[myKey];
+    var results16ByState = {};
+    d.forEach(el => (results16ByState[el.state] = resultCol(el.result_2016)));
+    var get16ResultCol = function (myKey) {
+        return results16ByState[myKey];
     };
 
     // http://jsfiddle.net/aZXRM/
@@ -219,8 +249,6 @@ d3.json('data/ec.json').then(function (d) {
         var otherDivs = d3.selectAll('.state-votes:not(' + className + ")")
         classto.on("mouseover", function (m, d) {
             otherDivs
-                // .transition()
-                // .duration(10)
                 .style('opacity', 0.5)
 
             classto.style("stroke-width", "2px")
@@ -230,23 +258,29 @@ d3.json('data/ec.json').then(function (d) {
                 .duration(200)
                 .style("opacity", 0.9);
 
+
             $('#pres2020label')[0].classList.contains('active') ?
                 (this.tagName == "DIV" ?
-                    // bar 2020
+                    // bar 2020 projection
                     (presTooltip.html("<b>" + d.state + "</b><br/>" + lowerThenCap(d.rating) + "</br>" + d.ecvs + " electoral vote" + (d.ecvs == 1 ? "" : "s"))) :
-                    // map 2020
+                    // map 2020 projection
                     (presTooltip.html("<b>" + d.properties.NAME + "</b><br/>" + lowerThenCap(d.properties.rating) + "</br>" + d.properties.ecvs + " electoral vote" + (d.properties.ecvs == 1 ? "" : "s")))) :
-                (this.tagName == "DIV" ?
-                    // bar 2016
-                    (presTooltip.html("<b>" + d.state + "</b><br/>" + (d.result_2016 == "D" ? "Democrat</br>" : "Republican</br>") + "<i>2016 margin:</i> +" + d.margin_2016 + "</br>" + d.ecvs + " electoral vote" + (d.ecvs == 1 ? "" : "s"))) :
-                    // map 2016
-                    (presTooltip.html("<b>" + d.properties.NAME + "</b><br/>" + (d.properties.result_2016 == "D" ? "Democrat</br>" : "Republican</br>") + "<i>2016 margin:</i> +" + d.properties.margin_2016 + "</br>" + d.properties.ecvs + " electoral vote" + (d.properties.ecvs == 1 ? "" : "s"))));
+                ($('#pres2016label')[0].classList.contains('active') ?
+                    (this.tagName == "DIV" ?
+                        // bar 2016
+                        (presTooltip.html("<b>" + d.state + "</b><br/>" + (d.result_2016 == "D" ? "Democrat</br>" : "Republican</br>") + "<i>2016 margin:</i> +" + d.margin_2016 + "</br>" + d.ecvs + " electoral vote" + (d.ecvs == 1 ? "" : "s"))) :
+                        // map 2016
+                        (presTooltip.html("<b>" + d.properties.NAME + "</b><br/>" + (d.properties.result_2016 == "D" ? "Democrat</br>" : "Republican</br>") + "<i>2016 margin:</i> +" + d.properties.margin_2016 + "%</br>" + d.properties.ecvs + " electoral vote" + (d.properties.ecvs == 1 ? "" : "s")))) :
+                    (this.tagName == "DIV" ?
+                        // bar 2020 results
+                        (presTooltip.html("<b>" + d.state + "</b><br/>" + (d.party2020 == "D" ? "Democrat</br>" : "Republican</br>") + "<i>2020 margin:</i> +" + d.absmargin_2020 + "</br>Est. counted: " + d.est_count_display)) :
+                        // map 2020 results
+                        (presTooltip.html("<b>" + d.properties.NAME + "</b><br/>" + (d.properties.party2020 == "D" ? "Democrat</br>" : "Republican</br>") + "<i>2020 margin:</i> +" + d.properties.absmargin_2020 + "%</br>Est. counted: " + d.properties.est_count_display))));
+
 
         });
         classto.on('mouseleave', function () {
             otherDivs
-                // .transition()
-                // .duration(10)
                 .style('opacity', 1)
             classto.style("stroke-width", "0.3px")
                 .style('border', 'none');
@@ -269,7 +303,7 @@ d3.json('data/ec.json').then(function (d) {
         .append('div')
         .style('height', '40px')
         .style('width', d => (d.ecvs / 538 * 100) + "%")
-        .style('background-color', d => (getProjCol(d.state)))
+        .style('background-color', d => (get20ResultCol(d.state)))
         .attr("class", d => `state-votes-${d.state.replace(' ', '-')} state-votes`)
 
 
@@ -316,7 +350,7 @@ d3.json('data/ec.json').then(function (d) {
                 .data(states.features) //using .features to bind the data this time. GeoJSON that is an object that has two features, features are what we actually want to access the array of objects
                 .enter() //this then propogates into our group
                 .append("path") //path per geoemtry
-                .attr("fill", d => getProjCol(d.properties.NAME)) //then applying a fill color. can be hex colors or actual colors
+                .attr("fill", d => get20ResultCol(d.properties.NAME)) //then applying a fill color. can be hex colors or actual colors
                 .attr("stroke", "#EBEBE8")
                 .attr("stroke-width", "0.3px") //defining the stroke color, in this case black
                 .attr("d", path)
@@ -367,6 +401,7 @@ d3.json('data/ec.json').then(function (d) {
             }
 
             $("#pres-toggle :input").on('change', function () {
+                var presDatestamp = document.getElementById('pres-datestamp')
 
                 if (this.id == "pres2020") {
                     d.sort(function (a, b) {
@@ -395,9 +430,45 @@ d3.json('data/ec.json').then(function (d) {
                         .duration(300)
                         .style('opacity', 0)
 
+                    presDatestamp.innerHTML = `Source: <a
+                    href='https://cookpolitical.com/sites/default/files/2020-10/EC%20Ratings.102820.pdf' target='_blank'>
+                    Cook
+                    Political Electoral College Ratings. Last updated 28 October 2020.</a></div>`
+
                 } else if (this.id == "pres2016") {
                     d.sort(function (a, b) {
                         return a.absmargin_2016 < b.absmargin_2016 ? -1 : a.absmargin_2016 > b.absmargin_2016 ? 1 : 0;
+                    });
+
+                    d.reduce((acc, cur) => {
+                        cur.start = acc;
+                        return acc + (cur.ecvs);
+                    }, 0);
+
+                    presidencyResLeg
+                        .transition()
+                        .duration(300)
+                        .style('opacity', 1)
+                        .style('display', 'block')
+
+                    presidencyProjLeg
+                        .transition()
+                        .duration(300)
+                        .style('opacity', 0)
+                        .style('display', 'none')
+
+                    d3.selectAll('.barlabel-2016')
+                        .transition()
+                        .duration(300)
+                        .style('opacity', 1)
+
+                    presDatestamp.innerHTML = `Source: <a
+                        href='https://www.fec.gov/introduction-campaign-finance/election-and-voting-information/' target='_blank'>
+                        Federal Election Commission, 2016 election results</a>.</div>`
+
+                } else if (this.id == "presresults2020") {
+                    d.sort(function (a, b) {
+                        return a.margin_2020 < b.margin_2020 ? -1 : a.margin_2020 > b.margin_2020 ? 1 : 0;
                     });
 
                     d.reduce((acc, cur) => {
@@ -422,6 +493,10 @@ d3.json('data/ec.json').then(function (d) {
                         .transition()
                         .duration(300)
                         .style('opacity', 1)
+
+                    presDatestamp.innerHTML = `Source: <a
+                        href='https://results.decisiondeskhq.com/' target='_blank'>
+                        Decision Desk HQ, 2020 election results</a>. Last updated Tuesday 17 November 2020.</div>`
                 }
 
                 statesFill
@@ -434,7 +509,7 @@ d3.json('data/ec.json').then(function (d) {
                     // .attr("stroke-width", "0.3px") //defining the stroke color, in this case black
                     // .attr("d", path)
                     .attr("class", d => `state-votes-${d.properties.NAME.replace(' ', '-')} state-votes`)
-                    .attr("fill", d => this.id == "pres2020" ? getProjCol(d.properties.NAME) : getResultCol(d.properties.NAME))
+                    .attr("fill", d => this.id == "pres2020" ? getProjCol(d.properties.NAME) : (this.id == "pres2016" ? get16ResultCol(d.properties.NAME) : get20ResultCol(d.properties.NAME)))
 
                 barDiv
                     .selectAll('.state-votes')
@@ -442,11 +517,13 @@ d3.json('data/ec.json').then(function (d) {
                     .transition()
                     .duration(300)
                     .style('width', d => (d.ecvs / 538 * 100) + "%")
-                    .style('background-color', d => this.id == "pres2020" ? getProjCol(d.state) : getResultCol(d.state))
+                    .style('background-color', d => this.id == "pres2020" ? getProjCol(d.state) : (this.id == "pres2016" ? get16ResultCol(d.state) : get20ResultCol(d.state)))
                     .attr("class", d => `state-votes-${d.state.replace(' ', '-')} state-votes`)
 
                 reDoTooltips()
             })
+
+
 
         });
 
@@ -463,21 +540,56 @@ d3.json('data/ec.json').then(function (d) {
 
     barBase
         .append('div')
-        .html("&#8592; Larger Clinton margin")
+        .html("&#8592; Larger Democrat margin")
         .attr('class', 'barlabel-2016 barlabel-clinton')
 
     barBase
         .append('div')
-        .html("Larger Trump margin &#8594;")
+        .html("Larger Republican margin &#8594;")
         .attr('class', 'barlabel-2016 barlabel-trump')
 })
 
 
 // SENATE ------------------------------------
 // Senate legend
+var senate20Leg = d3.select('.sen-leg')
+    .append('div')
+    .attr('class', 'senate-2020-legend')
+
+
+senate20Leg
+    .append('div')
+    .attr('class', 'legend-labels  d-flex  justify-content-center')
+    .selectAll('div')
+    .data(sen20Names)
+    .enter()
+    .append('div')
+    .attr('class', 'legend-label')
+    .style('width', "100px")
+    .style('height', '15px')
+    .text(function (d) {
+        return d
+    })
+
+senate20Leg
+    .append('div')
+    .attr('class', 'legend-boxes  d-flex  justify-content-center')
+    .selectAll('div')
+    .data(sen20Cols)
+    .enter()
+    .append('div')
+    .attr('class', 'legend-box')
+    .style('width', "100px")
+    .style('height', '15px')
+    .style('background-color', function (d) {
+        return d
+    })
+
 var senateProjLeg = d3.select('.sen-leg')
     .append('div')
     .attr('class', 'senate-projection-legend')
+    .style('opacity', 0)
+    .style('display', 'none')
 
 senateProjLeg
     .append('div')
@@ -569,6 +681,18 @@ var senWafSvg = senWaf
 // d3.json('/us-election-dashboard/data/senate.json').then(function (data) {
 d3.json('data/senate.json').then(function (data) {
 
+    data.sort(function (a, b) {
+        return a.newParty < b.newParty ? -1 : a.newParty > b.newParty ? 1 : 0;
+    })
+
+    var res20ByState = {}
+
+    data.forEach(el => (res20ByState[el.state_unique] = resultCol(el.newParty)));
+
+    var get20Col = function (myKey) {
+        return res20ByState[myKey];
+    };
+
     var projByState = {}
 
     data.forEach(el => (projByState[el.state_unique] = projCol(el.projection.replace('_', ' '))));
@@ -602,8 +726,8 @@ d3.json('data/senate.json').then(function (data) {
             var colIndex = Math.floor(i / senNumRows)
             return colIndex * 40 + 50
         })
-        .style("fill", d => getProjCol(d.state_unique))
-        .attr('transform', d => d.projection == "noelectiondem" ? "translate(-40,0)" : (d.projection == "noelectionrep" ? "translate(40,0)" : "translate(0,0)"))
+        .style("fill", d => get20Col(d.state_unique))
+        // .attr('transform', d => d.projection == "noelectiondem" ? "translate(-40,0)" : (d.projection == "noelectionrep" ? "translate(40,0)" : "translate(0,0)"))
         .on("mouseover", function (m, d) {
             senTooltip.transition()
                 .duration(100)
@@ -615,10 +739,12 @@ d3.json('data/senate.json').then(function (data) {
                 .html(d.state_unique)
 
             $('#sen2020label')[0].classList.contains('active') ?
-                // 2020
+                // 2020 projection
                 (senTooltip.html("<b>" + d.state_name + "</b><br/>" + d.rating + "</br><i>Incumbent: </i>" + d.incumbent + "</br>" + (d.challenger ? "<i>Challenger(s): </i>" + d.challenger : ""))) :
                 // 2016
-                (senTooltip.html("<b>" + d.state_name + "</b><br/>" + (d.held == "D" ? "Democrat" : (d.held == "R" ? "Republican" : "Independent")) + "</br><i>Held by: </i>" + d.held_name))
+                ($('#sen2016label')[0].classList.contains('active') ? ((senTooltip.html("<b>" + d.state_name + "</b><br/>" + (d.held == "D" ? "Democrat" : (d.held == "R" ? "Republican" : "Independent")) + "</br><i>Held by: </i>" + d.held_name))) :
+                    // 2020 results
+                    (senTooltip.html("<b>" + d.state_name + "</b><br/>" + (d.newParty == "D" ? "Democrat" : (d.newParty == "R" ? "Republican" : (d.newParty == "I" ? "Independent" : "Runoff"))) + "</br>" + (d.newParty == "P" ? "" : "<i>Held by: </i>" + d.newName))))
 
         })
 
@@ -632,11 +758,12 @@ d3.json('data/senate.json').then(function (data) {
 
 
     $("#sen-toggle :input").on('change', function () {
+        var senDatestamp = document.getElementById('sen-datestamp')
+
         if (this.id == "sen2020") {
             data.sort(function (a, b) {
                 return a.index < b.index ? -1 : a.index > b.index ? 1 : 0;
             })
-
 
             d3.selectAll('.up-for-election')
                 .transition()
@@ -654,6 +781,15 @@ d3.json('data/senate.json').then(function (data) {
                 .duration(300)
                 .style('opacity', 0)
                 .style('display', 'none')
+
+            senate20Leg
+                .transition()
+                .duration(300)
+                .style('opacity', 0)
+                .style('display', 'none')
+
+            senDatestamp.innerHTML = `Source: <a href="https://cookpolitical.com/ratings/senate-race-ratings" target="_blank">
+            Cook Political Senate Ratings. Last updated 29 October 2020.</a></div>`
 
         } else if (this.id == "senCur") {
             data.sort(function (a, b) {
@@ -676,6 +812,51 @@ d3.json('data/senate.json').then(function (data) {
                 .duration(300)
                 .style('opacity', 0)
                 .style('display', 'none')
+
+            senate20Leg
+                .transition()
+                .duration(300)
+                .style('opacity', 0)
+                .style('display', 'none')
+
+
+            senDatestamp.innerHTML = `Source: <a
+            href='https://www.fec.gov/introduction-campaign-finance/election-and-voting-information/' target='_blank'>
+            Federal Election Commission, 2018 election results</a>.</div>`
+
+        } else if (this.id == "senresults2020") {
+            data.sort(function (a, b) {
+                return a.newParty < b.newParty ? -1 : a.newParty > b.newParty ? 1 : 0;
+            })
+
+            d3.selectAll('.up-for-election')
+                .transition()
+                .duration(300)
+                .style('opacity', 0)
+
+            senate20Leg
+                .transition()
+                .duration(300)
+                .style('opacity', 1)
+                .style('display', 'block')
+
+            senateProjLeg
+                .transition()
+                .duration(300)
+                .style('opacity', 0)
+                .style('display', 'none')
+
+            senateCurLeg
+                .transition()
+                .duration(300)
+                .style('opacity', 0)
+                .style('display', 'none')
+
+
+            senDatestamp.innerHTML = `Source: <a
+            href='https://results.decisiondeskhq.com/' target='_blank'>
+            Decision Desk HQ, 2020 election results</a>. Last updated Tuesday 17 November 2020.</div>`
+
         }
 
         senWafSvg
@@ -693,7 +874,7 @@ d3.json('data/senate.json').then(function (data) {
             })
             .attr('transform', d => this.id == "sen2020" ? (d.projection == "noelectiondem" ? "translate(-40,0)" : (d.projection == "noelectionrep" ? "translate(40,0)" : "translate(0,0)")) :
                 'translate(0,0)')
-            .style("fill", d => this.id == "sen2020" ? getProjCol(d.state_unique) : getCurCol(d.state_unique))
+            .style("fill", d => this.id == "sen2020" ? getProjCol(d.state_unique) : (this.id == "senCur" ? getCurCol(d.state_unique) : get20Col(d.state_unique)))
     })
 
     senWafSvg
@@ -706,6 +887,7 @@ d3.json('data/senate.json').then(function (data) {
         .style('stroke-width', '4px')
         .style('fill', 'none')
         .attr('class', 'up-for-election up-box')
+        .style('opacity', 0)
 
     senWafSvg
         .append('text')
@@ -715,6 +897,8 @@ d3.json('data/senate.json').then(function (data) {
         .attr('font-size', window.innerWidth <= 991 ? "2em" : "1.2em")
         .style('fill', '#EBEBE8')
         .attr('class', 'up-for-election up-label')
+        .style('opacity', 0)
+
 
     senWafSvg
         .append('text')
@@ -735,14 +919,47 @@ d3.json('data/senate.json').then(function (data) {
 })
 
 
-
-
 // HOUSE ------------------------------------
 
 // House legend
+var house20Leg = d3.select('.house-leg')
+    .append('div')
+    .attr('class', 'house-2020-legend')
+
+house20Leg
+    .append('div')
+    .attr('class', 'legend-labels  d-flex  justify-content-center')
+    .selectAll('div')
+    .data(house20Names)
+    .enter()
+    .append('div')
+    .attr('class', 'legend-label')
+    .style('width', "100px")
+    .style('height', '15px')
+    .text(function (d) {
+        return d
+    })
+
+house20Leg
+    .append('div')
+    .attr('class', 'legend-boxes  d-flex  justify-content-center')
+    .selectAll('div')
+    .data(house20Cols)
+    .enter()
+    .append('div')
+    .attr('class', 'legend-box')
+    .style('width', "100px")
+    .style('height', '15px')
+    .style('background-color', function (d) {
+        return d
+    })
+
 var houseProjLeg = d3.select('.house-leg')
     .append('div')
     .attr('class', 'house-projection-legend')
+    .style('opacity', 0)
+    .style('display', 'none')
+
 
 houseProjLeg
     .append('div')
@@ -831,6 +1048,20 @@ var houseWafSvg = houseWaf
 // d3.json("/us-election-dashboard/data/house.json").then(function (data) {
 d3.json("data/house.json").then(function (data) {
 
+    data.sort(function (a, b) {
+        return a.newParty < b.newParty ? -1 : a.newParty > b.newParty ? 1 : 0;
+    })
+
+    console.log(data)
+
+    var res20ByState = {}
+
+    data.forEach(el => (res20ByState[el.seat] = resultCol(el.newParty)));
+
+    var get20ResultCol = function (myKey) {
+        return res20ByState[myKey];
+    };
+
     var projByState = {}
 
     data.forEach(el => (projByState[el.seat] = projCol(el.rating.replace('_', ' '))));
@@ -864,7 +1095,7 @@ d3.json("data/house.json").then(function (data) {
             var colIndex = Math.floor(i / houseNumRows)
             return colIndex * 18
         })
-        .style("fill", d => getProjCol(d.seat))
+        .style("fill", d => get20ResultCol(d.seat))
         .on("mouseover", function (m, d) {
             houseTooltip.transition()
                 .duration(100)
@@ -874,12 +1105,14 @@ d3.json("data/house.json").then(function (data) {
                 .style("stroke-width", "1.5px")
 
             $('#house2020label')[0].classList.contains('active') ?
-                // 2020
+                // 2020 projection
                 (houseTooltip.html("<b>" + d.seat + "</b><br/>" + lowerThenCap(d.rating.replace('_', ' ')) + "</br><i>Incumbent: </i>" + d.name)) :
                 // 2016
-                (houseTooltip.html("<b>" + d.seat + "</b><br/>" + (d.held == "D" ? "Democrat" : (d.held == "R" ? "Republican" : (d.held == "L" ? "Libertarian" : "Vacant"))) + (d.held_name ? ("</br><i>Held by: </i>" + d.held_name) : "")))
-            // houseTooltip
-            //     .html(d.seat)
+                ($('#house2016label')[0].classList.contains('active') ?
+                    (houseTooltip.html("<b>" + d.seat + "</b><br/>" + (d.held == "D" ? "Democrat" : (d.held == "R" ? "Republican" : (d.held == "L" ? "Libertarian" : "Vacant"))) + (d.held_name ? ("</br><i>Held by: </i>" + d.held_name) : ""))) :
+                    // 2020 results
+                    (houseTooltip.html("<b>" + d.seat + "</b><br/>" + (d.newParty == "D" ? "Democrat" : (d.newParty == "R" ? "Republican" : (d.newParty == "P" ? "Runoff" : "Not yet called"))) + (d.newParty == "D" ? ("</br><i>Held by: </i>" + d.newName) : (d.newParty == "R" ? ("</br><i>Held by: </i>" + d.newName) : "")))))
+
         })
 
         .on("mouseout", function (d) {
@@ -890,6 +1123,8 @@ d3.json("data/house.json").then(function (data) {
         })
 
     $("#house-toggle :input").on('change', function () {
+        var houseDatestamp = document.getElementById('house-datestamp')
+
         if (this.id == "house2020") {
             data.sort(function (a, b) {
                 return a.index < b.index ? -1 : a.index > b.index ? 1 : 0;
@@ -905,6 +1140,15 @@ d3.json("data/house.json").then(function (data) {
                 .duration(300)
                 .style('opacity', 0)
                 .style('display', 'none')
+
+            house20Leg
+                .transition()
+                .duration(300)
+                .style('opacity', 0)
+                .style('display', 'none')
+
+            houseDatestamp.innerHTML = `Source: <a href="https://cookpolitical.com/ratings/house-race-ratings"
+            target="_blank"> Cook Political House Ratings. Last updated 21 October 2020.</a>`
 
         } else if (this.id == "houseCur") {
             data.sort(function (a, b) {
@@ -922,6 +1166,45 @@ d3.json("data/house.json").then(function (data) {
                 .duration(300)
                 .style('opacity', 0)
                 .style('display', 'none')
+
+            house20Leg
+                .transition()
+                .duration(300)
+                .style('opacity', 0)
+                .style('display', 'none')
+
+            houseDatestamp.innerHTML = `Source: <a
+            href='https://www.fec.gov/introduction-campaign-finance/election-and-voting-information/' target='_blank'>
+            Federal Election Commission, 2018 election results</a>.</div>`
+
+
+        } else if (this.id == "houseresults2020") {
+
+            data.sort(function (a, b) {
+                return a.newParty < b.newParty ? -1 : a.newParty > b.newParty ? 1 : 0;
+            })
+
+            house20Leg
+                .transition()
+                .duration(300)
+                .style('opacity', 1)
+                .style('display', 'block')
+
+            houseProjLeg
+                .transition()
+                .duration(300)
+                .style('opacity', 0)
+                .style('display', 'none')
+
+            houseCurLeg
+                .transition()
+                .duration(300)
+                .style('opacity', 0)
+                .style('display', 'none')
+
+            houseDatestamp.innerHTML = `Source: <a
+                href='https://results.decisiondeskhq.com/' target='_blank'>
+                Decision Desk HQ, 2020 election results</a>. Last updated Tuesday 17 November 2020.</div>`
         }
 
         houseWafSvg
@@ -937,7 +1220,7 @@ d3.json("data/house.json").then(function (data) {
                 var colIndex = Math.floor(i / houseNumRows)
                 return colIndex * 18
             })
-            .style("fill", d => this.id == "house2020" ? getProjCol(d.seat) : getCurCol(d.seat))
+            .style("fill", d => this.id == "house2020" ? getProjCol(d.seat) : (this.id == "houseCur" ? getCurCol(d.seat) : get20ResultCol(d.seat)))
     })
 
 
