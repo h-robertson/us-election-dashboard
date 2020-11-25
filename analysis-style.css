@@ -1,3 +1,28 @@
+body {
+    background-color: #1F3138;
+
+}
+
+.methodology p {
+    margin-bottom: 0.5rem;
+    line-height: 1.3em;
+}
+
+.btn-light:hover {
+    background-color: #57747E;
+    color: #EBEBE8;
+}
+
+.btn-light:not(:disabled):not(.disabled).active {
+    background-color: #57747E;
+    color: #EBEBE8;
+}
+
+.analysis-buttons .btn-light:hover {
+    background-color: #57747E;
+    color: #EBEBE8;
+}
+
 .analysis-buttons .btn-light {
     background-color: #EBEBE8;
     color: #121212;

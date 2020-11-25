@@ -1,6 +1,6 @@
 body {
     margin: 0 7vw;
-    background-color: #1F3138;
+    background-color: #2b2e2e;
     color: #EBEBE8;
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
@@ -86,7 +86,7 @@ h1 {
 }
 
 .btn-light:hover {
-    background-color: #57747E;
+    background-color: #636e6e;
     color: #EBEBE8;
 }
 
@@ -97,11 +97,6 @@ h1 {
 
 .btn-light a:hover {
     text-decoration: none;
-    color: #EBEBE8;
-}
-
-.btn-light:not(:disabled):not(.disabled).active {
-    background-color: #57747E;
     color: #EBEBE8;
 }
 
