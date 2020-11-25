@@ -85,8 +85,13 @@ h1 {
     color: #121212;
 }
 
+.btn-light:not(:disabled):not(.disabled).active {
+    background-color: #57747E;
+    color: #EBEBE8;
+}
+
 .btn-light:hover {
-    background-color: #636e6e;
+    background-color: #57747E;
     color: #EBEBE8;
 }
 
