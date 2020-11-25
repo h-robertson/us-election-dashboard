@@ -55,13 +55,6 @@ body {
     font-size: 0.9em;
 }
 
-.mail-count-rules-mobile,
-.swing-states-outlines-mobile,
-.house-flips-mobile,
-.house-uncalled-mobile {
-    display: none;
-}
-
 .senate-stacked {
     position: relative;
     top: -15x;
@@ -72,21 +65,55 @@ body {
     top: -15x;
 }
 
+.mail-count-rules-mobile,
+.swing-states-outlines-mobile,
+.house-flips-mobile,
+.house-uncalled-mobile,
+.pop-ecv-mobile,
+.ga-az-mobile,
+.battle-header-mobile,
+.vote-counts-mobile,
+.control-congress-mobile {
+    display: none;
+}
+
 @media (max-width: 767px) {
 
     .mail-count-rules,
     .swing-states-outlines,
     .house-flips,
-    .house-uncalled {
+    .house-uncalled,
+    .pop-ecv,
+    .ga-az,
+    .battle-header,
+    .vote-counts,
+    .control-congress {
         display: none
     }
 
     .mail-count-rules-mobile,
     .swing-states-outlines-mobile,
     .house-flips-mobile,
-    .house-uncalled-mobile {
+    .house-uncalled-mobile,
+    .pop-ecv-mobile,
+    .ga-az-mobile,
+    .battle-header-mobile,
+    .vote-counts-mobile,
+    .control-congress-mobile {
         display: block;
         width: 100vw;
         padding: 0;
+    }
+
+    .ga-az-mobile {
+        margin-bottom: 5vh;
+    }
+
+    .battle-header-mobile {
+        margin-top: 3vh;
+    }
+
+    .mail-count-rules-mobile {
+        padding-top: 5vh;
     }
 }
