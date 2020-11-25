@@ -1,0 +1,4191 @@
+<!DOCTYPE html>
+ <html dir="ltr" lang="en" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+<head>
+<script type="text/javascript">
+      var _sf_startpt = (new Date()).getTime()
+
+      </script>
+<meta charset="utf-8"/><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"712abd7097",applicationID:"247647440"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(6),c=e(7),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(8);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var t=Math.round(e.timeStamp),n={type:e.type};t<=p.now()?n.fid=p.now()-t:t>p.offset&&t<=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(5),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,y=["click","keydown","mousedown","pointerdown","touchstart"];y.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],4:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],5:[function(e,t,n){function r(e){function t(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],6:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&&(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],7:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i<0?0:i);++r<i;)o[r]=e[t+r];return o}t.exports=r},{}],8:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&&e instanceof r?e:e?f(e,c,o):o()}function n(n,r,i,o){if(!p.aborted||o){e&&e(n,r,i);for(var a=t(i),c=v(n),f=c.length,u=0;u<f;u++)c[u].apply(a,r);var d=s[w[n]];return d&&d.push([b,n,r,a]),a}}function l(e,t){h[e]=v(e).concat(t)}function m(e,t){var n=h[e];if(n)for(var r=0;r<n.length;r++)n[r]===t&&n.splice(r,1)}function v(e){return h[e]||[]}function g(e){return d[e]=d[e]||i(n)}function y(e,t){u(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var h={},w={},b={on:l,addEventListener:l,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:y,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var c="nr@context",f=e("gos"),u=e(6),s={},d={},p=t.exports=i();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!E++){var e=b.info=NREUM.info,t=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return u.abort();f(h,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+b.offset],null,"api"),c("timing",["load",n]);var r=p.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===p.readyState&&o()}function o(){c("mark",["domContent",a()+b.offset],null,"api")}var a=e(2),c=e("handle"),f=e(6),u=e("ee"),s=e(4),d=window,p=d.document,l="addEventListener",m="attachEvent",v=d.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:v,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var y=""+location,h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1184.min.js"},w=v&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),b=t.exports={offset:a.getLastTimestamp(),now:a,origin:y,features:{},xhrWrappable:w,userAgent:s};e(1),e(3),p[l]?(p[l]("DOMContentLoaded",o,!1),d[l]("load",r,!1)):(p[m]("onreadystatechange",i),d[m]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0},{}],"wrap-function":[function(e,t,n){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(7),a="nr@original",c=Object.prototype.hasOwnProperty,f=!1;t.exports=function(e,t){function n(e,t,n,i){function nrWrapper(){var r,a,c,f;try{a=this,r=o(arguments),c="function"==typeof n?n(r,a):n||{}}catch(u){p([u,"",[r,a,i],c])}s(t+"start",[r,a,i],c);try{return f=e.apply(a,r)}catch(d){throw s(t+"err",[r,a,d],c),d}finally{s(t+"end",[r,a,f],c)}}return r(e)?e:(t||(t=""),nrWrapper[a]=e,d(e,nrWrapper),nrWrapper)}function u(e,t,i,o){i||(i="");var a,c,f,u="-"===i.charAt(0);for(f=0;f<t.length;f++)c=t[f],a=e[c],r(a)||(e[c]=n(a,u?c+i:i,o,c))}function s(n,r,i){if(!f||t){var o=f;f=!0;try{e.emit(n,r,i,t)}catch(a){p([a,n,r,i])}f=o}}function d(e,t){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(e);return n.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(r){p([r])}for(var i in e)c.call(e,i)&&(t[i]=e[i]);return t}function p(t){try{e.emit("internal-error",t)}catch(n){}}return e||(e=i),n.inPlace=u,n.flag=a,n}},{}]},{},["loader"]);</script>
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init', "437996269705531");fbq('track', "PageView");</script>
+<script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-104778757-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");</script>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="The Cook Political Report" property="og:site_name"/>
+<meta content="2020 House Race ratings | The Cook Political Report" name="twitter:title"/>
+<meta content="1165171463516462" name="twitter:site"/>
+<meta content="1165171463516462" property="fb:app_id"/>
+<meta content="191477653" name="twitter:site:id"/>
+<meta content="2020 House Race ratings | The Cook Political Report" property="og:title"/>
+<meta content="https://www.cookpolitical.com/themes/custom/cookpolitical/images/cookshare.png" property="og:image"/>
+<meta content="https://www.cookpolitical.com/themes/custom/cookpolitical/images/cookshare.png" property="og:image:secure_url"/>
+<meta content="Drupal 8 (https://www.drupal.org)" name="Generator"/>
+<meta content="width" name="MobileOptimized"/>
+<meta content="true" name="HandheldFriendly"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://use.typekit.com/nmt4vdj.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
+<script src="https://use.typekit.com/nki3dfk.js"></script>
+<link href="/themes/custom/cookpolitical/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
+<title>2020 House Race ratings | The Cook Political Report</title>
+<link href="/sites/default/files/css/css_QugBiHhfnVWzDuDSTFKqIkscYULi_-F6vra9xjMGdHc.css" media="all" rel="stylesheet"/>
+<link href="/sites/default/files/css/css_QtYQwM-OXqhWYQSOlNP4jm6IU36RWEiN2PhbivZB9yE.css" media="all" rel="stylesheet"/>
+<link href="/sites/default/files/css/css_5MzpNWDLqkPNe9N4b5RZetzgVw2uwMpRow1SzO2jwRE.css" media="print" rel="stylesheet"/>
+<!--[if lte IE 8]>
+<script src="/core/assets/vendor/html5shiv/html5shiv.min.js?v=3.7.3"></script>
+<![endif]-->
+<link href="https://cookpolitical.com/themes/custom/cookpolitical/images/apple-touch/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="https://cookpolitical.com/themes/custom/cookpolitical/images/apple-touch/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76"/>
+<link href="https://cookpolitical.com/themes/custom/cookpolitical/images/apple-touch/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120"/>
+<link href="https://cookpolitical.com/themes/custom/cookpolitical/images/apple-touch/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152"/>
+<link href="https://cookpolitical.com/themes/custom/cookpolitical/images/apple-touch/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180"/>
+</head>
+<body class="fontyourface page-ratings-house-race-ratings section-ratings role--anonymous path-ratings with-subnav no-sidebar">
+<div id="skip">
+<a class="visually-hidden focusable skip-link" href="#main-menu">
+        Skip to main navigation
+      </a>
+</div>
+<noscript><img height="1" src="https://www.facebook.com/tr?id=437996269705531&amp;ev=PageView&amp;noscript=1" width="1"/></noscript> <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas="">
+<div class="layout-container">
+<!-- ______________________ HEADER _______________________ -->
+<div id="fixed-header"><div class="fh-inner">
+<header id="header">
+<div class="container">
+<div id="header-region">
+<div>
+<div class="block block-system block-cookpolitical-branding" id="block-cookpolitical-branding">
+<a class="site-logo" href="/" rel="home" title="Home">
+<img alt="Home" src="/themes/custom/cookpolitical/logo.svg"/>
+</a>
+</div>
+<div class="custom-search-block-form block block-custom-search block-customsearchform" data-drupal-selector="custom-search-block-form" id="block-customsearchform" role="search">
+<form accept-charset="UTF-8" action="/ratings/house-race-ratings" id="custom-search-block-form" method="post">
+<div class="js-form-item form-item js-form-type-search form-item-keys js-form-item-keys">
+<label for="edit-keys">Search</label>
+<input class="custom_search-keys form-search" data-drupal-selector="edit-keys" id="edit-keys" maxlength="128" name="keys" size="15" title="Enter the terms you wish to search for." type="search" value=""/>
+</div>
+<input autocomplete="off" data-drupal-selector="form-aib1slusacqwxunzxvz2wobjletbbotsrenpmtik5y0" name="form_build_id" type="hidden" value="form-Aib1SlusAcQwxUNZXVZ2WobjlETbBOtSrEnpMtIK5Y0"/>
+<input data-drupal-selector="edit-custom-search-block-form" name="form_id" type="hidden" value="custom_search_block_form"/>
+<div class="form-actions js-form-wrapper form-wrapper" data-drupal-selector="edit-actions" id="edit-actions--2"><input class="button js-form-submit form-submit" data-drupal-selector="edit-submit" id="edit-submit--2" type="submit" value="Search"/>
+</div>
+</form>
+</div>
+<nav aria-labelledby="block-cookpolitical-account-menu-menu" class="block block-menu navigation menu--account" id="block-cookpolitical-account-menu" role="navigation">
+<h2 class="visually-hidden" id="block-cookpolitical-account-menu-menu">User account menu</h2>
+<ul class="menu">
+<li class="menu-item">
+<a data-drupal-link-system-path="user/login" href="/user/login">Member Login</a>
+</li>
+</ul>
+</nav>
+<nav aria-labelledby="block-mainnavigation-3-menu" class="block block-menu navigation menu--main" id="block-mainnavigation-3" role="navigation">
+<h2 class="visually-hidden" id="block-mainnavigation-3-menu">Main navigation</h2>
+<ul class="menu">
+<li class="menu-item menu-item--expanded">
+<a data-drupal-link-system-path="node/15" href="/about">About Us</a>
+<ul class="menu">
+<li class="menu-item menu-item--collapsed">
+<a data-drupal-link-system-path="node/14" href="/about/staff">Team</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/13" href="/history">History</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/11" href="/contact-us">Contact Us</a>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item--expanded menu-item--active-trail">
+<a data-drupal-link-system-path="node/58" href="/ratings" rel="" target="">Ratings</a>
+<ul class="menu">
+<li class="menu-item menu-item--active-trail">
+<a class="is-active" data-drupal-link-system-path="ratings/house-race-ratings" href="/ratings/house-race-ratings" rel="" target="">House</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="ratings/senate-race-ratings" href="/ratings/senate-race-ratings" rel="" target="">Senate</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="ratings/governor-race-ratings" href="/ratings/governor-race-ratings" rel="" target="">Governors</a>
+</li>
+<li class="menu-item">
+<a href="https://cookpolitical.com/sites/default/files/2020-10/EC%20Ratings.102820.pdf" target="_self">Electoral College</a>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item--expanded">
+<a data-drupal-link-system-path="node/28" href="/analysis" title="What we're saying">Analysis</a>
+<ul class="menu">
+<li class="menu-item menu-item--collapsed">
+<a data-drupal-link-system-path="taxonomy/term/28" href="/analysis/house" rel="" target="">House</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="taxonomy/term/29" href="/analysis/senate" rel="" target="">Senate</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="taxonomy/term/30" href="/analysis/governors" rel="" target="">Governors</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="taxonomy/term/31" href="/analysis/national">Presidential</a>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item--expanded">
+<a data-drupal-link-system-path="node/1921" href="/charts">Charts</a>
+<ul class="menu">
+<li class="menu-item">
+<a data-drupal-link-system-path="node/1924" href="/house-charts">House</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/1925" href="/senate-charts">Senate</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/1928" href="/governors-charts">Governors</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/1929" href="/national-charts" title="National">Presidential</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="2020-house-vote-tracker" href="/2020-house-vote-tracker">2020 National House Vote Tracker</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="2020-national-popular-vote-tracker" href="/2020-national-popular-vote-tracker">2020 National Popular Vote Tracker</a>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item--expanded">
+<a data-drupal-link-system-path="node/2386" href="/pvi-0" rel="" target="">PVI</a>
+<ul class="menu">
+<li class="menu-item">
+<a data-drupal-link-system-path="node/2387" href="/introducing-2017-cook-political-report-partisan-voter-index" rel="" target="">2017 Report</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/2313" href="/pvi-map-and-district-list">District PVI Map and List</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/5656" href="/state-pvis">State PVI Map and List</a>
+</li>
+</ul>
+</li>
+<li class="menu-item">
+<a class="privacy" data-drupal-link-system-path="&lt;front&gt;" href="/" rel="" target="">Privacy Policy</a>
+</li>
+<li class="menu-item menu-item--expanded">
+<a class="subscribe" data-drupal-link-system-path="node/45" href="/subscribe" rel="" target="">Subscribe</a>
+<ul class="menu">
+<li class="menu-item menu-item--collapsed">
+<a data-drupal-link-system-path="node/42" href="/subscribe/why-subscribe">Why Subscribe?</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/43" href="/subscribe/subscription-levels">Subscription Levels</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/44" href="/subscribe/renewals">Renewals</a>
+</li>
+</ul>
+</li>
+<li class="menu-item">
+<a class="terms" data-drupal-link-system-path="&lt;front&gt;" href="/" rel="" target="">Terms &amp; Conditions</a>
+</li>
+</ul>
+</nav>
+</div>
+<div id="mobile-menu-button">
+<div class="open-menu"><span class="icon-menu"></span> Menu</div>
+<div class="close-menu"><span class="icon-close"></span> Close</div>
+</div>
+</div>
+</div>
+</header><!-- /#header -->
+<div id="mobile-menu-region">
+<div class="container">
+<div>
+<div class="custom-search-block-form block block-custom-search block-customsearchform-2" data-drupal-selector="custom-search-block-form" id="block-customsearchform-2" role="search">
+<form accept-charset="UTF-8" action="/ratings/house-race-ratings" id="custom-search-block-form" method="post">
+<div class="js-form-item form-item js-form-type-search form-item-keys js-form-item-keys">
+<label for="edit-keys">Search</label>
+<input class="custom_search-keys form-search" data-drupal-selector="edit-keys" id="edit-keys" maxlength="128" name="keys" size="15" title="Enter the terms you wish to search for." type="search" value=""/>
+</div>
+<input autocomplete="off" data-drupal-selector="form-eb-1gft1jic5h9t3q12vdgl-ntv0ntldgasvdocn1jy" name="form_build_id" type="hidden" value="form-eb-1gFt1JIc5H9T3q12vdgl_ntv0nTLDGAsVDocn1jY"/>
+<input data-drupal-selector="edit-custom-search-block-form" name="form_id" type="hidden" value="custom_search_block_form"/>
+<div class="form-actions js-form-wrapper form-wrapper" data-drupal-selector="edit-actions" id="edit-actions--2"><input class="button js-form-submit form-submit" data-drupal-selector="edit-submit" id="edit-submit--2" type="submit" value="Search"/>
+</div>
+</form>
+</div>
+<nav aria-labelledby="block-mainnavigation-menu" class="block block-menu navigation menu--main" id="block-mainnavigation" role="navigation">
+<h2 class="visually-hidden" id="block-mainnavigation-menu">Mobile: Main navigation</h2>
+<ul class="menu">
+<li class="menu-item menu-item--expanded">
+<a data-drupal-link-system-path="node/15" href="/about">About Us</a>
+<ul class="menu">
+<li class="menu-item menu-item--expanded">
+<a data-drupal-link-system-path="node/14" href="/about/staff">Team</a>
+<ul class="menu">
+<li class="menu-item">
+<a data-drupal-link-system-path="node/16" href="/about/staff/charles-e-cook-jr">Charles E. Cook, Jr.</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/20" href="/about/staff/amy-walter">Amy Walter</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/18" href="/about/staff/david-wasserman">David Wasserman</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/23" href="/about/staff/ally-flinn">Ally Flinn</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/22" href="/about/staff/susanna-dean">Susanna Dean</a>
+</li>
+</ul>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/13" href="/history">History</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/11" href="/contact-us">Contact Us</a>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item--expanded menu-item--active-trail">
+<a data-drupal-link-system-path="node/58" href="/ratings" rel="" target="">Ratings</a>
+<ul class="menu">
+<li class="menu-item menu-item--active-trail">
+<a class="is-active" data-drupal-link-system-path="ratings/house-race-ratings" href="/ratings/house-race-ratings" rel="" target="">House</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="ratings/senate-race-ratings" href="/ratings/senate-race-ratings" rel="" target="">Senate</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="ratings/governor-race-ratings" href="/ratings/governor-race-ratings" rel="" target="">Governors</a>
+</li>
+<li class="menu-item">
+<a href="https://cookpolitical.com/sites/default/files/2020-10/EC%20Ratings.102820.pdf" target="_self">Electoral College</a>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item--expanded">
+<a data-drupal-link-system-path="node/28" href="/analysis" title="What we're saying">Analysis</a>
+<ul class="menu">
+<li class="menu-item menu-item--expanded">
+<a data-drupal-link-system-path="taxonomy/term/28" href="/analysis/house" rel="" target="">House</a>
+<ul class="menu">
+<li class="menu-item">
+<a data-drupal-link-system-path="node/1900" href="/house-glance">House At-A-Glance</a>
+</li>
+</ul>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="taxonomy/term/29" href="/analysis/senate" rel="" target="">Senate</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="taxonomy/term/30" href="/analysis/governors" rel="" target="">Governors</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="taxonomy/term/31" href="/analysis/national">Presidential</a>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item--expanded">
+<a data-drupal-link-system-path="node/1921" href="/charts">Charts</a>
+<ul class="menu">
+<li class="menu-item">
+<a data-drupal-link-system-path="node/1924" href="/house-charts">House</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/1925" href="/senate-charts">Senate</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/1928" href="/governors-charts">Governors</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/1929" href="/national-charts" title="National">Presidential</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="2020-house-vote-tracker" href="/2020-house-vote-tracker">2020 National House Vote Tracker</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="2020-national-popular-vote-tracker" href="/2020-national-popular-vote-tracker">2020 National Popular Vote Tracker</a>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item--expanded">
+<a data-drupal-link-system-path="node/2386" href="/pvi-0" rel="" target="">PVI</a>
+<ul class="menu">
+<li class="menu-item">
+<a data-drupal-link-system-path="node/2387" href="/introducing-2017-cook-political-report-partisan-voter-index" rel="" target="">2017 Report</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/2313" href="/pvi-map-and-district-list">District PVI Map and List</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/5656" href="/state-pvis">State PVI Map and List</a>
+</li>
+</ul>
+</li>
+<li class="menu-item">
+<a class="privacy" data-drupal-link-system-path="&lt;front&gt;" href="/" rel="" target="">Privacy Policy</a>
+</li>
+<li class="menu-item menu-item--expanded">
+<a class="subscribe" data-drupal-link-system-path="node/45" href="/subscribe" rel="" target="">Subscribe</a>
+<ul class="menu">
+<li class="menu-item menu-item--expanded">
+<a data-drupal-link-system-path="node/42" href="/subscribe/why-subscribe">Why Subscribe?</a>
+<ul class="menu">
+<li class="menu-item menu-item--expanded">
+<a data-drupal-link-system-path="resources" href="/resources">Resources</a>
+<ul class="menu">
+<li class="menu-item">
+<a data-drupal-link-system-path="node/1909" href="/house-maps" title="Ratings and 2016 Winner">House Maps</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/43" href="/subscribe/subscription-levels">Subscription Levels</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/44" href="/subscribe/renewals">Renewals</a>
+</li>
+</ul>
+</li>
+<li class="menu-item">
+<a class="terms" data-drupal-link-system-path="&lt;front&gt;" href="/" rel="" target="">Terms &amp; Conditions</a>
+</li>
+</ul>
+</nav>
+<nav aria-labelledby="block-useraccountmenu-menu" class="block block-menu navigation menu--account" id="block-useraccountmenu" role="navigation">
+<h2 class="visually-hidden" id="block-useraccountmenu-menu">Mobile: User account menu</h2>
+<ul class="menu">
+<li class="menu-item">
+<a data-drupal-link-system-path="user/login" href="/user/login">Member Login</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+</div></div>
+<!-- ______________________ MAIN _______________________ -->
+<div id="main">
+<div class="container">
+<!-- ______________________ Above Content _______________________ -->
+<div id="above-content-region">
+<div class="container">
+<div>
+<div class="block block-system block-cookpolitical-breadcrumbs" id="block-cookpolitical-breadcrumbs">
+<nav aria-labelledby="system-breadcrumb" class="breadcrumb" role="navigation">
+<h2 class="visually-hidden" id="system-breadcrumb">Breadcrumb</h2>
+<ol>
+<li>
+<a href="/">The Cook Political Report</a>
+</li>
+<li>
+<a href="/ratings">Ratings</a>
+</li>
+<li>
+                  House
+              </li>
+</ol>
+</nav>
+</div>
+</div>
+</div>
+</div>
+<section id="content">
+<div id="content-header">
+<div id="highlighted"> <div>
+<div class="hidden" data-drupal-messages-fallback=""></div>
+</div>
+</div>
+</div><!-- /#content-header -->
+<div id="content-area">
+<div>
+<div class="main-content-block block block-system block-cookpolitical-content" id="block-cookpolitical-content">
+<div class="ratings-detail-page">
+<div class="ratings-detail-page-data">
+<div class="ratings-detail-page-data-left">
+<span class="ratings-detail-page-tag">HOUSE</span>
+<h1 class="ratings-detail-page-title">2020
+        House Race Ratings</h1>
+<span class="ratings-detail-page-date">Nov 2, 2020</span>
+</div>
+<div class="ratings-detail-page-data-right">
+<div class="ratings-detail-page-data-right-div-select">
+<select class="ratings-detail-page-data-right-select" id="archive-selector">
+<option value="">Current rating</option>
+<option value="230616">2020 House Race Ratings for October 21, 2020</option>
+<option value="230521">2020 House Race Ratings for October 8, 2020</option>
+<option value="230471">2020 House Race Ratings for October 2, 2020</option>
+<option value="228211">2020 House Race Ratings for September 29, 2020</option>
+<option value="228146">2020 House Race Ratings for September 18, 2020</option>
+<option value="228111">2020 House Race Ratings for September 11, 2019</option>
+<option value="227601">2020 House Race Ratings for August 21, 2020</option>
+<option value="227581">2020 House Race Ratings for August 14, 2020</option>
+<option value="227501">2020 House Race Ratings for August 7, 2020</option>
+<option value="226916">2020 House Race Ratings for July 31, 2020</option>
+<option value="226821">2020 House Race Ratings for July 17, 2020</option>
+<option value="226716">2020 House Race Ratings for July 2, 2020</option>
+<option value="225036">2020 House Race Ratings for June 26, 2020</option>
+<option value="223641">2020 House Race Ratings for June 16, 2020</option>
+<option value="223541">2020 House Ratings</option>
+<option value="223521">2020 House Race Ratings for June 3, 2020</option>
+<option value="223486">2020 House Race Ratings for April 24, 2020</option>
+<option value="223471">2020 House Race Ratings for April 10, 2020</option>
+<option value="223451">2020 House Race Ratings for March 27, 2020</option>
+<option value="223376">2020 House Race Ratings for March 19, 2020</option>
+<option value="223331">2020 House Race Ratings for February 28, 2020</option>
+<option value="221696">2020 House Race Ratings for January 31, 2020</option>
+<option value="221686">2020 House Race Ratings for January 24, 2020</option>
+<option value="221606">2020 House Race Ratings for December 20, 2019</option>
+<option value="221571">2020 House Race Ratings for December 16, 2019</option>
+<option value="221551">2020 House Race Ratings for December 2, 2019</option>
+<option value="221531">2020 House Race Ratings for December 2, 2019</option>
+<option value="221451">2020 House Race Ratings for November 11, 2019</option>
+<option value="221326">2020 House Race Ratings for November 11, 2019</option>
+<option value="221236">2020 House Race Ratings for October 28, 2019</option>
+<option value="221191">2020 House Race Ratings for October 25, 2019</option>
+<option value="219656">2020 House Race Ratings for September 30, 2019</option>
+<option value="219376">2020 House Race Ratings for September 11, 2019</option>
+<option value="205126">2020 House Race Ratings for September 6, 2019</option>
+<option value="200266">2020 House Race Ratings for August 26, 2019</option>
+<option value="199706">2020 House Race Ratings for August 2, 2019</option>
+<option value="199076">2020 House Race Ratings for July 26, 2019</option>
+<option value="199061">2020 House Race Ratings for July 25, 2019</option>
+<option value="198601">2020 House Race Ratings for July 8, 2019</option>
+<option value="195331">2020 House Race Ratings for June 14, 2019</option>
+<option value="193606">2020 House Race Rating for April 12, 2019</option>
+<option value="190736">2020 House Race Ratings</option>
+<option value="187562">2018 House Race Ratings for November 5, 2018</option>
+<option value="187550">2018 House Race Ratings for October 30, 2018</option>
+<option value="186709">2018 House Race Ratings for October 23, 2018</option>
+<option value="186618">2018 House Race Ratings for October 17, 2018</option>
+<option value="186598">2018 House Race Ratings for October 16, 2018</option>
+<option value="185884">2018 House Race Rating for October 12, 2018</option>
+<option value="185734">2018 House Race Ratings for October 3, 2018</option>
+<option value="185459">2018 House Race Ratings for September 26, 2018</option>
+<option value="185417">2018 House Race Rating for September 19, 2018</option>
+<option value="185410">2018 Race Ratings for September 18, 2018</option>
+<option value="185306">2018 House Race Ratings for September 12, 2018</option>
+<option value="185302">2018 House Ratings for September 7, 2018</option>
+<option value="185298">2018 House Race Ratings for September 6, 2018</option>
+<option value="185288">2018 House Ratings for August 24, 2018</option>
+<option value="185282">2018 Race Ratings for August 22, 2018 (PM)</option>
+<option value="185279">2018 House Race Ratings for August 22, 2018</option>
+<option value="185277">2018 House Race Ratings for August 17, 2018</option>
+<option value="185273">2018 House Race Ratings for August 15, 2018</option>
+<option value="185261">2018 House Race Ratings for June 8, 2018 (2)</option>
+<option value="185026">2018 House Race Ratings for July 27, 2018</option>
+<option value="185021">2018 House Race Ratings for July 24, 2018</option>
+<option value="184939">2018 Race Ratings for July 18, 2018</option>
+<option value="184921">2018 House Race Ratings for July 13, 2018</option>
+<option value="184895">2018 House Race Ratings for July 10, 2018</option>
+<option value="184883">2018 House Race Ratings for July 6, 2018</option>
+<option value="184546">2018 House Race Ratings for June 20, 2018</option>
+<option value="184530">2018 House Race Ratings for June 18, 2018</option>
+<option value="184514">2018 House Race Ratings for June 15, 2018</option>
+<option value="184512">2018 Race Ratings for June 9, 2018</option>
+<option value="184434">2018 House Race Ratings for June 8, 2018</option>
+<option value="184125">2018 House Race Ratings for June 1, 2018</option>
+<option value="184087">House Race Ratings for May 22, 2018</option>
+<option value="184043">2018 House Race Ratings for May 10, 2018</option>
+<option value="183927">2018 House Race Ratings for May 4, 2018</option>
+<option value="183849">2018 House Race Ratings for April 27, 2018</option>
+<option value="183842">2018 House Race Ratings for April 11, 20188</option>
+<option value="183834">2018 Race Ratings for April 11, 2018</option>
+<option value="183822">2018 House Race Ratings for April 6, 2018.2</option>
+<option value="182937">2018 House Race Ratings for April 2, 2018</option>
+<option value="182934">2018 House Race Ratings for March 30, 2018</option>
+<option value="182915">2018 House Race Ratings for March 26, 2018</option>
+<option value="182871">2018 House Race Ratings for March 23, 2018</option>
+<option value="182841">2018 House Race Ratings for March 16, 2018</option>
+<option value="182753">2018 House Race Ratings for March 9, 2018</option>
+<option value="182390">2018 House Race Ratings for February 27, 2018</option>
+<option value="182276">2018 House Race Ratings for February 20, 2018</option>
+<option value="182104">2018 House Race Ratings for February 8, 2018</option>
+<option value="181948">2018 House Race Ratings for January 28, 2018</option>
+<option value="181804">2018 Race Ratings for January 12, 2018</option>
+<option value="181801">2018 House Race Ratings for January 12, 2018</option>
+<option value="181799">2018 House Race Ratings for January 10, 2018</option>
+<option value="181797">2018 House Race Ratings for January 8, 2018</option>
+<option value="181793">2018 House Race Ratings for December 15, 2017</option>
+<option value="181789">2018 House Race Ratings for December 8, 2017</option>
+<option value="181760">2018 House Race Ratings for November 17, 2017</option>
+<option value="181758">2018 House Race Ratings for November 17, 2017</option>
+<option value="181682">2018 House Race Ratings for November 7, 2017</option>
+<option value="181654">2018 House Race Ratings for October 13, 2017</option>
+<option value="181638">2018 House Race Ratings for October 5, 2017</option>
+<option value="181604">2018 House Race Ratings for September 11, 2017</option>
+<option value="181602">2018 House Race Ratings for September 7, 2018</option>
+<option value="181600">2018 House Race Ratings for September 6, 2018</option>
+<option value="181586">2018 House Race Ratings for August 25, 2017</option>
+<option value="181382">2018 House Race Ratings for August 16, 2018</option>
+<option value="181358">2018 HOUSE RACE RATINGS FOR AUGUST 11, 2017</option>
+<option value="181359">House Race Ratings for August 11, 2017</option>
+<option value="180896">2018 HOUSE RACE RATINGS FOR JULY 28, 2017</option>
+<option value="180745">2018 House Race Ratings for July 28, 2017</option>
+<option value="180212">2018 House Race Ratings for July 7, 2017</option>
+<option value="180176">House Race Ratings for June 29, 2017</option>
+<option value="177814">2018 House Race Ratings</option>
+<option value="139363">2016 House Election Results by Race Rating</option>
+<option value="139361">2016 House Race Ratings for November 7, 2016</option>
+<option value="139359">2016 House Race Ratings for November 2, 2016</option>
+<option value="139358">2016 House Race Ratings for October 27, 2016</option>
+<option value="139356">2016 House Race Ratings for October 25, 2016</option>
+<option value="139357">2016 House Race Ratings for October 25, 2016</option>
+<option value="139355">2016 House Race Ratings for October 25, 2016</option>
+<option value="139351">2016 House Race Ratings for October 20, 2016</option>
+<option value="139354">2016 House Race Ratings for October 14, 2016</option>
+<option value="139353">2016 House Race Ratings for October 4, 2016</option>
+<option value="139349">2016 House Race Ratings for September 29, 2016</option>
+<option value="139350">2016 House Race Ratings for September 23, 2016</option>
+<option value="139348">2016 House Race Ratings for September 16, 2016</option>
+<option value="139347">2016 House Race Ratings for September 14, 2016</option>
+<option value="139346">2016 House Race Ratings for September 9, 2016</option>
+<option value="139342">2016 House Race Ratings for August 10, 2016</option>
+<option value="139340">2016 House Race Ratings for July 22, 2016</option>
+<option value="139336">2016 House Race Ratings for June 17, 2016</option>
+<option value="139334">2016 House Race Ratings for June 17, 2016</option>
+<option value="139333">2016 House Race Ratings for June 10, 2016</option>
+<option value="139331">2016 House Race Ratings for May 27, 2016</option>
+<option value="139330">2016 House Race Ratings for May 13, 2016</option>
+<option value="139327">2016 House Race Ratings for April 22, 2016</option>
+<option value="139328">2016 House Race Ratings for April 19, 2016</option>
+<option value="139326">2016 House Race Ratings for April 15, 2016</option>
+<option value="139325">2016 House Race Ratings for April 8, 2016</option>
+<option value="139324">2016 House Race Ratings for April 1, 2016</option>
+<option value="139322">2016 House Race Ratings for March 18, 2016</option>
+<option value="139320">2016 House Race Ratings for February 9, 2016</option>
+<option value="139319">2016 House Race Ratings for February 1, 2016</option>
+<option value="139318">2016 House Race Ratings for January 15, 2016</option>
+<option value="139316">2016 House Race Ratings for January 14, 2016</option>
+<option value="139317">2016 House Race Ratings for January 8, 2016</option>
+<option value="139315">2016 House Race Ratings for January 5, 2016</option>
+<option value="139314">2016 House Race Ratings for December 21, 2015</option>
+<option value="139313">2016 House Race Ratings for December 18, 2015</option>
+<option value="139311">2016 House Race Ratings for December 4, 2015</option>
+<option value="139308">2016 House Race Ratings for November 20, 2015</option>
+<option value="139306">2016 House Race Ratings for October 30, 2015</option>
+<option value="139304">2016 House Race Ratings for October 16, 2015</option>
+<option value="139303">2016 House Race Ratings for October 9, 2015</option>
+<option value="139299">2016 House Race Ratings for September 11, 2015</option>
+<option value="139298">2016 House Race Ratings for September 3, 2015</option>
+<option value="139297">2016 House Race Ratings for September 3, 2015</option>
+<option value="139296">2016 House Race Ratings for August 28, 2015</option>
+<option value="139293">2016 House Race Ratings for August 7, 2015</option>
+<option value="139292">2016 House Race Ratings for July 31, 2015</option>
+<option value="139290">2016 House Race Ratings for July 24, 2015</option>
+<option value="139288">2016 House Race Ratings for July 17, 2015</option>
+<option value="139287">2016 House Race Ratings for July 15, 2015</option>
+<option value="139286">2016 House Race Ratings for July 7, 2015</option>
+<option value="139281">2016 House Race Ratings for May 26, 2015</option>
+<option value="139280">2016 House Race Ratings for May 22, 2015</option>
+<option value="139276">2016 House Race Ratings for May 1, 2015</option>
+<option value="139274">2016 House Race Ratings for April 17, 2015</option>
+<option value="139270">2016 House Race Ratings for March 24, 2015</option>
+<option value="139268">2016 House Race Ratings for January 21, 2015</option>
+<option value="139267">2016 House Race Ratings for January 15, 2015</option>
+<option value="139265">2016 House Race Ratings for December 12, 2014</option>
+<option value="139260">2014 House Election Results by Race Rating</option>
+<option value="139258">2014 House Race Ratings for November 3, 2014</option>
+<option value="139254">2014 House Race Ratings for October 29, 2014</option>
+<option value="139253">2014 House Race Ratings for October 22, 2014</option>
+<option value="139252">2014 House Race Ratings for October 17, 2014</option>
+<option value="139247">2014 House Race Ratings for October 10, 2014</option>
+<option value="139246">2014 House Race Ratings for October 3, 2014</option>
+<option value="139242">2014 House Race Ratings for September 19, 2014</option>
+<option value="139239">2014 House Race Ratings for September 12, 2014</option>
+<option value="139233">2014 House Race Ratings for August 8, 2014</option>
+<option value="139230">2014 House Race Ratings for August 1, 2014</option>
+<option value="139225">2014 House Race Ratings for June 26, 2014</option>
+<option value="139222">2014 House Race Ratings for June 6, 2014</option>
+<option value="139221">2014 House Race Ratings for May 30, 2014</option>
+<option value="139217">2014 House Race Ratings for May 16, 2014</option>
+<option value="139214">2014 House Race Ratings for April 28, 2014</option>
+<option value="139212">2014 House Race Ratings for April 18, 2014</option>
+<option value="139211">2014 House Race Ratings for April 11, 2014</option>
+<option value="139210">2014 House Race Ratings for April 11, 2014</option>
+<option value="139209">2014 House Race Ratings for April 4, 2014</option>
+<option value="139208">2014 House Race Ratings for March 28, 2014</option>
+<option value="139207">2014 House Race Ratings for March 28, 2014</option>
+<option value="139205">2014 House Race Ratings for March 13, 2014</option>
+<option value="139204">2014 House Race Ratings for February 27, 2014</option>
+<option value="139201">2014 House Race Ratings for February 24, 2014</option>
+<option value="139200">2014 House Race Ratings for February 18, 2014</option>
+<option value="139199">2014 House Race Ratings for February 13, 2014</option>
+<option value="139197">2014 House Race Ratings for February 12, 2014</option>
+<option value="139198">2014 House Race Ratings for February 6, 2014</option>
+<option value="139195">2014 House Race Ratings for January 30, 2014</option>
+<option value="139194">2014 House Race Ratings for January 27, 2014</option>
+<option value="139193">2014 House Race Ratings for January 23, 2014</option>
+<option value="139190">2014 House Race Ratings for January 15, 2014</option>
+<option value="139189">2014 House Race Ratings for January 15, 2014</option>
+<option value="139188">2014 House Race Ratings for January 14, 2014</option>
+<option value="139187">2014 House Race Ratings for January 13, 2014</option>
+<option value="139186">2014 House Race Ratings for January 8, 2014</option>
+<option value="139185">2014 House Race Ratings for January 6, 2014</option>
+<option value="139182">2014 House Race Ratings for December 18, 2013</option>
+<option value="139181">2014 House Race Ratings for December 12, 2013</option>
+<option value="139179">2014 House Race Ratings for December 5, 2013</option>
+<option value="139177">2014 House Race Ratings for November 6, 2013</option>
+<option value="139176">2014 House Race Ratings for October 24, 2013</option>
+<option value="139173">2014 House Race Ratings for October 21, 2013</option>
+<option value="139171">2014 House Race Ratings for October 17, 2013</option>
+<option value="139170">2014 House Race Ratings for October 9, 2013</option>
+<option value="139168">2014 House Race Ratings for September 5, 2013</option>
+<option value="139166">2014 House Race Ratings for August 22, 2013</option>
+<option value="139165">2014 House Race Ratings for August 8, 2013</option>
+<option value="139164">2014 House Race Ratings for August 1, 2013</option>
+<option value="139162">2014 House Race Ratings for July 31, 2013</option>
+<option value="139157">2014 House Race Ratings for July 11, 2013</option>
+<option value="139152">2014 House Race Ratings for June 20, 2013</option>
+<option value="139151">2014 House Race Ratings for June 6, 2013</option>
+<option value="139096">2014 House Race Ratings for June 5, 2013</option>
+<option value="139086">2014 House Race Ratings for May 31, 2013</option>
+<option value="139089">2014 House Race Ratings for May 29, 2013</option>
+<option value="139079">2014 House Race Ratings for May 16, 2013</option>
+<option value="139085">2014 House Race Ratings for May 9, 2013</option>
+<option value="139094">2014 House Race Ratings for May 8, 2013</option>
+<option value="139148">2014 House Race Ratings for May 2, 2013</option>
+<option value="139138">2014 House Race Ratings for April 25, 2013</option>
+<option value="139084">2014 House Race Ratings for April 17, 2013</option>
+<option value="139145">2014 House Race Ratings for April 4, 2013</option>
+<option value="139142">2014 House Race Ratings for February 21, 2013</option>
+<option value="139140">2014 House Race Ratings for February 15, 2013</option>
+<option value="139137">2014 House Race Ratings for February 8, 2013</option>
+<option value="139133">2014 House Race Ratings for January 24, 2013</option>
+<option value="139132">2014 House Race Ratings for January 17, 2013</option>
+<option value="139123">2014 House Race Ratings for November 30, 2012</option>
+<option value="139120">2012 House Election Results by Race Rating</option>
+<option value="139119">2012 House Race Ratings for November 5, 2012</option>
+<option value="139118">2012 House Race Ratings for November 1, 2012</option>
+<option value="139116">2012 House Race Ratings for October 30, 2012</option>
+<option value="139115">2012 House Race Ratings for October 25, 2012</option>
+<option value="139114">2012 House Race Ratings for October 18, 2012</option>
+<option value="139113">2012 House Race Ratings for October 11, 2012</option>
+<option value="139112">2012 House Race Ratings for October 5, 2012</option>
+<option value="139110">2012 House Race Ratings for September 27, 2012</option>
+<option value="139109">2012 House Race Ratings for September 20, 2012</option>
+<option value="139107">2012 House Race Ratings for September 13, 2012</option>
+<option value="139106">2012 House Race Ratings for September 6, 2012</option>
+<option value="139105">2012 House Race Ratings for August 20, 2012</option>
+<option value="139104">2012 House Race Ratings for August 15, 2012</option>
+<option value="139097">2012 House Race Ratings for August 12, 2012</option>
+<option value="139081">Final 2008 House Charts and New 2010 Charts</option>
+</select>
+</div>
+<a class="ratings-detail-page-data-right-pdf" download="download" href="/print/ratings/races/house" target="_blank">
+<span>PDF Document</span>
+</a>
+</div>
+</div>
+<div class="ratings-detail-page-block">
+<div class="ratings-detail-page-block-head">
+<span class="ratings-detail-page-block-head-title">RATINGS SUMMARY</span>
+</div>
+<div class="ratings-detail-page-block-body">
+<div class="ratings_container-labels hide-mobile rating-label">
+<span class="flex-one">HOUSE SEATS</span>
+</div>
+<div class="ratings_container-labels hide-mobile">
+<span class="flex-one">Solid Democrat</span><span>Solid Republican</span></div>
+<div class="ratings_container hide-mobile">
+<div class="control"></div>
+<span class="dem solid" id="dem_solid" style="border-radius: 15px 0px 0px 15px;flex:88.532110091743%;">
+<p>193</p>
+</span>
+<span class="dem likely" id="dem_likely" style="flex:8.256880733945%;">
+<p>18</p>
+</span>
+<span class="dem lean" id="dem_lean" style="flex:8.256880733945%;">
+<p>18</p>
+</span>
+<span class="toss_ups" id="toss_ups" style="flex:11.926605504587%;">
+<p>26</p>
+</span>
+<span class="rep lean" id="rep_lean" style="flex:6.4220183486239%;">
+<p>14</p>
+</span>
+<span class="rep likely" id="rep_likely" style="flex:5.5045871559633%;">
+<p>12</p>
+</span>
+<span class="rep solid" id="rep_solid" style="border-radius: 0px 15px 15px 0px;flex:70.183486238532%;">
+<p>153</p>
+</span>
+</div>
+<div class="ratings-detail-page-block-body-stats hide-nonmobile">
+<div class="ratings-detail-page-block-body-stats-left">
+<p class="ratings-detail-page-block-body-stats-left-title">SOLID SEATS</p>
+<div class="ratings-detail-page-block-body-stats-left-dr">
+<div class="ratings-detail-page-block-body-stats-left-d" style="cursor: pointer;">
+<span>D
+                -
+                193</span></div>
+<div class="ratings-detail-page-block-body-stats-left-r" style="cursor: pointer;">
+<span>R
+                -
+                153</span></div>
+</div>
+<span class="ratings-detail-page-block-body-stats-left-click">Click on bars to see solid seats breakdown</span>
+</div>
+<div class="ratings-detail-page-block-body-stats-mid">
+<p class="ratings-detail-page-block-body-stats-mid-title">LIKELY/LEAN SEATS</p>
+<div class="ratings-detail-page-block-body-stats-mid-dr">
+<div class="ratings-detail-page-block-body-stats-mid-d">
+<span>D
+                -
+                31</span></div>
+<div class="ratings-detail-page-block-body-stats-mid-r">
+<span>R
+                -
+                26</span></div>
+</div>
+<span class="ratings-detail-page-block-body-stats-mid-click"> </span>
+</div>
+<div class="ratings-detail-page-block-body-stats-right">
+<p class="ratings-detail-page-block-body-stats-right-title">Toss Up or Worse</p>
+<div class="ratings-detail-page-block-body-stats-right-dr">
+<div class="ratings-detail-page-block-body-stats-right-d">
+<span>D
+                -
+                9
+              </span>
+</div>
+<div class="ratings-detail-page-block-body-stats-right-r">
+<span>R
+                -
+                22
+              </span>
+</div>
+</div>
+<span class="ratings-detail-page-block-body-stats-right-click"> </span>
+</div>
+</div>
+<div class="ratings-detail-page-block-body-conclusion">
+<p class="ratings-detail-page-block-body-conclusion-likely">
+<span class="bold">
+<b>Likely
+              :</b>
+</span>
+          These seats are not considered competitive at this point, but have the potential to become engaged.
+        </p>
+<p class="ratings-detail-page-block-body-conclusion-lean">
+<span class="bold">
+<b>Lean
+              :</b>
+</span>
+          These are considered competitive races, but one party has an advantage.</p>
+<p class="ratings-detail-page-block-body-conclusion-toss">
+<span class="bold">
+<b>Toss Up
+              :</b>
+</span>
+          These are the most competitive; either party has a good chance of winning.
+        </p>
+</div>
+</div>
+</div>
+<div class="ratings-detail-page-table">
+<div class="ratings-detail-page-table-title">
+<p class="ratings-detail-page-table-title-left">COMPETITIVE RACES</p>
+<p class="ratings-detail-page-table-title-right">*Italicized name denotes Freshman member</p>
+</div>
+<div class="ratings-detail-page-table-6-column-main">
+<div class="ratings-detail-page-table-6-column ratings-detail-page-table-6-column-pdf">
+<div class="ratings-detail-page-table-6-column-body">
+<div class="ratings-detail-page-table-6-column-row clearfix column-row-f">
+<div class="ratings-detail-page-table-6-column-cell column-column-1">
+<p class="ratings-detail-page-table-6-column-cell-title">LIKELY DEMOCRATIC</p>
+<p class="ratings-detail-page-table-6-column-cell-score">
+<span class="score-dem">16
+                  Dem</span>
+                •
+                <span class="score-rep">2
+                  Rep</span>
+<br/>
+<span class="score-indy">0
+                  Ind</span>
+</p>
+</div>
+<div class="ratings-detail-page-table-6-column-cell column-column-2">
+<p class="ratings-detail-page-table-6-column-cell-title">LEAN DEMOCRATIC</p>
+<p class="ratings-detail-page-table-6-column-cell-score">
+<span class="score-dem">15
+                  Dem</span>
+                •
+                <span class="score-rep">3
+                  Rep</span>
+<br/>
+<span class="score-indy">0
+                  Ind</span>
+</p>
+</div>
+</div>
+<div class="ratings-detail-page-table-6-column-row clearfix">
+<div class="ratings-detail-page-table-6-column-cell">
+<ul class="ratings-detail-page-table-6-column-ul">
+<li class="dem-li-color fresh-li-font">
+                                          CA-10
+                      Harder
+                                      </li>
+<li class="dem-li-color fresh-li-font">
+                                          CA-39
+                      Cisneros
+                                      </li>
+<li class="dem-li-color fresh-li-font">
+                                          FL-27
+                      Shalala
+                                      </li>
+<li class="dem-li-color fresh-li-font">
+                                          GA-06
+                      McBath
+                                      </li>
+<li class="dem-li-color fresh-li-font">
+                                          IL-14
+                      Underwood
+                                      </li>
+<li class="dem-li-color fresh-li-font">
+                                          ME-02
+                      Golden
+                                      </li>
+<li class="dem-li-color fresh-li-font">
+                                          MN-02
+                      Craig
+                                      </li>
+<li class="rep-li-color">
+                                          NC-02
+                      Open
+                                      </li>
+<li class="rep-li-color">
+                                          NC-06
+                      Open
+                                      </li>
+<li class="dem-li-color fresh-li-font">
+                                          NH-01
+                      Pappas
+                                      </li>
+<li class="dem-li-color fresh-li-font">
+                                          NJ-03
+                      Kim
+                                      </li>
+<li class="dem-li-color fresh-li-font">
+                                          NV-04
+                      Horsford
+                                      </li>
+<li class="dem-li-color fresh-li-font">
+                                          NY-19
+                      Delgado
+                                      </li>
+<li class="dem-li-color fresh-li-font">
+                                          PA-07
+                      Wild
+                                      </li>
+<li class="dem-li-color fresh-li-font">
+                                          PA-17
+                      Lamb
+                                      </li>
+<li class="dem-li-color fresh-li-font">
+                                          TX-07
+                      Fletcher
+                                      </li>
+<li class="dem-li-color fresh-li-font">
+                                          TX-32
+                      Allred
+                                      </li>
+<li class="dem-li-color fresh-li-font">
+                                          WA-08
+                      Schrier
+                                      </li>
+</ul>
+</div>
+<div class="ratings-detail-page-table-6-column-cell">
+<ul class="ratings-detail-page-table-6-column-ul">
+<li class="dem-li-color">
+                                          AZ-01
+                      O'Halleran
+                                      </li>
+<li class="dem-li-color fresh-li-font">
+                                          CA-48
+                      Rouda
+                                      </li>
+<li class="dem-li-color fresh-li-font">
+                                          FL-26
+                      Mucarsel-Powell
+                                      </li>
+<li class="rep-li-color">
+                                          GA-07
+                      Open
+                                      </li>
+<li class="dem-li-color fresh-li-font">
+                                          IA-03
+                      Axne
+                                      </li>
+<li class="dem-li-color">
+                                          IL-17
+                      Bustos
+                                      </li>
+<li class="dem-li-color fresh-li-font">
+                                          MI-08
+                      Slotkin
+                                      </li>
+<li class="dem-li-color fresh-li-font">
+                                          MI-11
+                      Stevens
+                                      </li>
+<li class="dem-li-color fresh-li-font">
+                                          NJ-07
+                      Malinowski
+                                      </li>
+<li class="dem-li-color fresh-li-font">
+                                          NV-03
+                      Lee
+                                      </li>
+<li class="dem-li-color">
+                                          OR-04
+                      DeFazio
+                                      </li>
+<li class="dem-li-color">
+                                          PA-08
+                      Cartwright
+                                      </li>
+<li class="dem-li-color fresh-li-font">
+                                          SC-01
+                      Cunningham
+                                      </li>
+<li class="rep-li-color">
+                                          TX-23
+                      Open
+                                      </li>
+<li class="rep-li-color">
+                                          TX-24
+                      Open
+                                      </li>
+<li class="dem-li-color fresh-li-font">
+                                          VA-02
+                      Luria
+                                      </li>
+<li class="dem-li-color fresh-li-font">
+                                          VA-07
+                      Spanberger
+                                      </li>
+<li class="dem-li-color">
+                                          WI-03
+                      Kind
+                                      </li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="ratings-detail-page-table-6-column ratings-detail-page-table-6-column-pdf">
+<div class="ratings-detail-page-table-6-column-body">
+<div class="ratings-detail-page-table-6-column-row clearfix column-row-f">
+<div class="ratings-detail-page-table-6-column-cell column-column-3">
+<p class="ratings-detail-page-table-6-column-cell-title">DEMOCRATIC TOSS UP</p>
+<p class="ratings-detail-page-table-6-column-cell-score">
+<span class="score-dem">9
+                  Dem</span>
+                •
+                <span class="score-rep">0
+                  Rep</span>
+<br/>
+<span class="score-indy">0
+                  Ind</span>
+</p>
+</div>
+<div class="ratings-detail-page-table-6-column-cell column-column-4">
+<p class="ratings-detail-page-table-6-column-cell-title">REPUBLICAN TOSS UP</p>
+<p class="ratings-detail-page-table-6-column-cell-score">
+<span class="score-dem">0
+                  Dem</span>
+                •
+                <span class="score-rep">17
+                  Rep</span>
+<br/>
+<span class="score-indy">1
+                  Ind</span>
+</p>
+</div>
+</div>
+<div class="ratings-detail-page-table-6-column-row clearfix">
+<div class="ratings-detail-page-table-6-column-cell">
+<ul class="ratings-detail-page-table-6-column-ul">
+<li class="dem-li-color fresh-li-font">
+                                          CA-21
+                      Cox
+                                      </li>
+<li class="dem-li-color fresh-li-font">
+                                          IA-01
+                      Finkenauer
+                                      </li>
+<li class="dem-li-color">
+                                          IA-02
+                      Open
+                                      </li>
+<li class="dem-li-color">
+                                          MN-07
+                      Peterson
+                                      </li>
+<li class="dem-li-color fresh-li-font">
+                                          NM-02
+                      Torres Small
+                                      </li>
+<li class="dem-li-color fresh-li-font">
+                                          NY-11
+                      Rose
+                                      </li>
+<li class="dem-li-color fresh-li-font">
+                                          NY-22
+                      Brindisi
+                                      </li>
+<li class="dem-li-color fresh-li-font">
+                                          OK-05
+                      Horn
+                                      </li>
+<li class="dem-li-color fresh-li-font">
+                                          UT-04
+                      McAdams
+                                      </li>
+</ul>
+</div>
+<div class="ratings-detail-page-table-6-column-cell">
+<ul class="ratings-detail-page-table-6-column-ul">
+<li class="rep-li-color">
+
+                                          AR-02
+                      Hill
+                                      </li>
+<li class="rep-li-color">
+
+                                          AZ-06
+                      Schweikert
+                                      </li>
+<li class="rep-li-color">
+
+                                          CA-25
+                      Garcia
+                                      </li>
+<li class="rep-li-color">
+
+                                          IL-13
+                      Davis
+                                      </li>
+<li class="rep-li-color">
+
+                                          IN-05
+                      Open
+                                      </li>
+<li class="indy-li-color">
+
+                                          MI-03
+                      Open
+                                      </li>
+<li class="rep-li-color fresh-li-font">
+
+                                          MN-01
+                      Hagedorn
+                                      </li>
+<li class="rep-li-color">
+
+                                          MO-02
+                      Wagner
+                                      </li>
+<li class="rep-li-color">
+
+                                          NE-02
+                      Bacon
+                                      </li>
+<li class="rep-li-color fresh-li-font">
+
+                                          NJ-02
+                      Van Drew
+                                      </li>
+<li class="rep-li-color">
+
+                                          NY-02
+                      Open
+                                      </li>
+<li class="rep-li-color">
+
+                                          NY-24
+                      Katko
+                                      </li>
+<li class="rep-li-color">
+
+                                          OH-01
+                      Chabot
+                                      </li>
+<li class="rep-li-color">
+
+                                          PA-10
+                      Perry
+                                      </li>
+<li class="rep-li-color">
+
+                                          TX-10
+                      McCaul
+                                      </li>
+<li class="rep-li-color fresh-li-font">
+
+                                          TX-21
+                      Roy
+                                      </li>
+<li class="rep-li-color">
+
+                                          TX-22
+                      Open
+                                      </li>
+<li class="rep-li-color fresh-li-font">
+
+                                          VA-05
+                      Open
+                                      </li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="ratings-detail-page-table-6-column ratings-detail-page-table-6-column-pdf">
+<div class="ratings-detail-page-table-6-column-body">
+<div class="ratings-detail-page-table-6-column-row clearfix column-row-f">
+<div class="ratings-detail-page-table-6-column-cell column-column-5">
+<p class="ratings-detail-page-table-6-column-cell-title">LEAN REPUBLICAN</p>
+<p class="ratings-detail-page-table-6-column-cell-score">
+<span class="score-dem">0
+                  Dem</span>
+                •
+                <span class="score-rep">14
+                  Rep</span>
+<br/>
+<span class="score-indy">0
+                  Ind</span>
+</p>
+</div>
+<div class="ratings-detail-page-table-6-column-cell column-column-6">
+<p class="ratings-detail-page-table-6-column-cell-title">LIKELY REPUBLICAN</p>
+<p class="ratings-detail-page-table-6-column-cell-score">
+<span class="score-dem">0
+                  Dem</span>
+                •
+                <span class="score-rep">12
+                  Rep</span>
+<br/>
+<span class="score-indy">0
+                  Ind</span>
+</p>
+</div>
+</div>
+<div class="ratings-detail-page-table-6-column-row clearfix">
+<div class="ratings-detail-page-table-6-column-cell cell-f">
+<ul class="ratings-detail-page-table-6-column-ul">
+<li class="rep-li-color">
+
+                                          AK-AL
+                      Young
+                                      </li>
+<li class="rep-li-color">
+
+                                          CA-50
+                      Vacant
+                                      </li>
+<li class="rep-li-color">
+
+                                          CO-03
+                      Open
+                                      </li>
+<li class="rep-li-color fresh-li-font">
+
+                                          FL-15
+                      Open
+                                      </li>
+<li class="rep-li-color">
+
+                                          MI-06
+                      Upton
+                                      </li>
+<li class="rep-li-color">
+
+                                          MT-AL
+                      Open
+                                      </li>
+<li class="rep-li-color">
+
+                                          NC-08
+                      Hudson
+                                      </li>
+<li class="rep-li-color fresh-li-font">
+
+                                          NC-09
+                      Bishop
+                                      </li>
+<li class="rep-li-color">
+
+                                          NC-11
+                      Vacant
+                                      </li>
+<li class="rep-li-color">
+
+                                          NY-01
+                      Zeldin
+                                      </li>
+<li class="rep-li-color">
+
+                                          PA-01
+                      Fitzpatrick
+                                      </li>
+<li class="rep-li-color fresh-li-font">
+
+                                          TX-03
+                      Taylor
+                                      </li>
+<li class="rep-li-color">
+
+                                          TX-31
+                      Carter
+                                      </li>
+<li class="rep-li-color">
+
+                                          WA-03
+                      Herrera Beutler
+                                      </li>
+</ul>
+</div>
+<div class="ratings-detail-page-table-6-column-cell">
+<ul class="ratings-detail-page-table-6-column-ul">
+<li class="rep-li-color">
+
+                                          CA-04
+                      McClintock
+                                      </li>
+<li class="rep-li-color">
+
+                                          CA-22
+                      Nunes
+                                      </li>
+<li class="rep-li-color">
+
+                                          FL-16
+                      Buchanan
+                                      </li>
+<li class="rep-li-color">
+
+                                          FL-18
+                      Mast
+                                      </li>
+<li class="rep-li-color fresh-li-font">
+
+                                          KS-02
+                      Open
+                                      </li>
+<li class="rep-li-color">
+
+                                          KY-06
+                      Barr
+                                      </li>
+<li class="rep-li-color">
+
+                                          OH-10
+                      Turner
+                                      </li>
+<li class="rep-li-color fresh-li-font">
+
+                                          OH-12
+                      Balderson
+                                      </li>
+<li class="rep-li-color">
+
+                                          PA-16
+                      Kelly
+                                      </li>
+<li class="rep-li-color fresh-li-font">
+
+                                          TX-02
+                      Crenshaw
+                                      </li>
+<li class="rep-li-color fresh-li-font">
+
+                                          TX-06
+                      Wright
+                                      </li>
+<li class="rep-li-color">
+
+                                          TX-25
+                      Williams
+                                      </li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="solid-seats-modal" id="solid-seats-d">
+<div class="solid-seats-modal-in"><a class="solid-seats-modal-close" title="Close">✕</a>
+<p class="solid-seats-modal-in-title">Solid Democrat</p>
+<div class="scroll-table-block">
+<div class="popup-table-data">
+<div class="popup-table-data-body">
+<div class="popup-table-data-row likely-d">
+<div class="popup-table-data-cell">DISTRICT</div>
+<div class="popup-table-data-cell">REPRESENTATIVE</div>
+<div class="popup-table-data-cell">PVI</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/187995">
+                            AL-07</a>
+<div class="popup-table-data-cell"> Terri Sewell</div>
+<div class="popup-table-data-cell">D+20</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188009">
+                            AZ-02</a>
+<div class="popup-table-data-cell"> Ann Kirkpatrick</div>
+<div class="popup-table-data-cell">R+1</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188013">
+                            AZ-03</a>
+<div class="popup-table-data-cell"> Raúl Grijalva</div>
+<div class="popup-table-data-cell">D+13</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188032">
+                            AZ-07</a>
+<div class="popup-table-data-cell"> Ruben Gallego</div>
+<div class="popup-table-data-cell">D+23</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188040">
+                            AZ-09</a>
+<div class="popup-table-data-cell"> Greg Stanton </div>
+<div class="popup-table-data-cell">D+4</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188131">
+                            CA-02</a>
+<div class="popup-table-data-cell"> Jared Huffman</div>
+<div class="popup-table-data-cell">D+22</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188136">
+                            CA-03</a>
+<div class="popup-table-data-cell"> John Garamendi</div>
+<div class="popup-table-data-cell">D+5</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188146">
+                            CA-05</a>
+<div class="popup-table-data-cell"> Mike Thompson</div>
+<div class="popup-table-data-cell">D+21</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188151">
+                            CA-06</a>
+<div class="popup-table-data-cell"> Doris Matsui</div>
+<div class="popup-table-data-cell">D+21</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188156">
+                            CA-07</a>
+<div class="popup-table-data-cell"> Ami Bera</div>
+<div class="popup-table-data-cell">D+3</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188166">
+                            CA-09</a>
+<div class="popup-table-data-cell"> Jerry McNerney</div>
+<div class="popup-table-data-cell">D+8</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188175">
+                            CA-11</a>
+<div class="popup-table-data-cell"> Mark DeSaulnier</div>
+<div class="popup-table-data-cell">D+21</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188179">
+                            CA-12</a>
+<div class="popup-table-data-cell"> Nancy Pelosi</div>
+<div class="popup-table-data-cell">D+37</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188184">
+                            CA-13</a>
+<div class="popup-table-data-cell"> Barbara Lee</div>
+<div class="popup-table-data-cell">D+40</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188189">
+                            CA-14</a>
+<div class="popup-table-data-cell"> Jackie Speier</div>
+<div class="popup-table-data-cell">D+27</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188194">
+                            CA-15</a>
+<div class="popup-table-data-cell"> Eric Swalwell</div>
+<div class="popup-table-data-cell">D+20</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188198">
+                            CA-16</a>
+<div class="popup-table-data-cell"> Jim Costa</div>
+<div class="popup-table-data-cell">D+9</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188203">
+                            CA-17</a>
+<div class="popup-table-data-cell"> Ro Khanna</div>
+<div class="popup-table-data-cell">D+25</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188207">
+                            CA-18</a>
+<div class="popup-table-data-cell"> Anna Eshoo</div>
+<div class="popup-table-data-cell">D+23</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188212">
+                            CA-19</a>
+<div class="popup-table-data-cell"> Zoe Lofgren</div>
+<div class="popup-table-data-cell">D+24</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188217">
+                            CA-20</a>
+<div class="popup-table-data-cell"> Jimmy Panetta</div>
+<div class="popup-table-data-cell">D+23</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188236">
+                            CA-24</a>
+<div class="popup-table-data-cell"> Salud Carbajal</div>
+<div class="popup-table-data-cell">D+7</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188244">
+                            CA-26</a>
+<div class="popup-table-data-cell"> Julia Brownley</div>
+<div class="popup-table-data-cell">D+7</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188249">
+                            CA-27</a>
+<div class="popup-table-data-cell"> Judy Chu</div>
+<div class="popup-table-data-cell">D+16</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188254">
+                            CA-28</a>
+<div class="popup-table-data-cell"> Adam Schiff</div>
+<div class="popup-table-data-cell">D+23</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188259">
+                            CA-29</a>
+<div class="popup-table-data-cell"> Tony Cárdenas</div>
+<div class="popup-table-data-cell">D+29</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188264">
+                            CA-30</a>
+<div class="popup-table-data-cell"> Brad Sherman</div>
+<div class="popup-table-data-cell">D+18</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188269">
+                            CA-31</a>
+<div class="popup-table-data-cell"> Pete Aguilar</div>
+<div class="popup-table-data-cell">D+8</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188274">
+                            CA-32</a>
+<div class="popup-table-data-cell"> Grace Napolitano</div>
+<div class="popup-table-data-cell">D+17</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188279">
+                            CA-33</a>
+<div class="popup-table-data-cell"> Ted Lieu</div>
+<div class="popup-table-data-cell">D+16</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188283">
+                            CA-34</a>
+<div class="popup-table-data-cell"> Jimmy Gomez</div>
+<div class="popup-table-data-cell">D+35</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188287">
+                            CA-35</a>
+<div class="popup-table-data-cell"> Norma Torres</div>
+<div class="popup-table-data-cell">D+19</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188291">
+                            CA-36</a>
+<div class="popup-table-data-cell"> Raul Ruiz</div>
+<div class="popup-table-data-cell">D+2</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188296">
+                            CA-37</a>
+<div class="popup-table-data-cell"> Karen Bass</div>
+<div class="popup-table-data-cell">D+37</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188301">
+                            CA-38</a>
+<div class="popup-table-data-cell"> Linda Sánchez</div>
+<div class="popup-table-data-cell">D+17</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188311">
+                            CA-40</a>
+<div class="popup-table-data-cell"> Lucille Roybal-Allard</div>
+<div class="popup-table-data-cell">D+33</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188316">
+                            CA-41</a>
+<div class="popup-table-data-cell"> Mark Takano</div>
+<div class="popup-table-data-cell">D+12</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188326">
+                            CA-43</a>
+<div class="popup-table-data-cell"> Maxine Waters</div>
+<div class="popup-table-data-cell">D+29</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188331">
+                            CA-44</a>
+<div class="popup-table-data-cell"> Nanette  Barragan</div>
+<div class="popup-table-data-cell">D+35</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188335">
+                            CA-45</a>
+<div class="popup-table-data-cell"> Katie Porter</div>
+<div class="popup-table-data-cell">R+3</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188339">
+                            CA-46</a>
+<div class="popup-table-data-cell"> Lou  Correa</div>
+<div class="popup-table-data-cell">D+15</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188343">
+                            CA-47</a>
+<div class="popup-table-data-cell"> Alan Lowenthal</div>
+<div class="popup-table-data-cell">D+13</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188352">
+                            CA-49</a>
+<div class="popup-table-data-cell"> Mike Levin</div>
+<div class="popup-table-data-cell">R+1</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188361">
+                            CA-51</a>
+<div class="popup-table-data-cell"> Juan Vargas</div>
+<div class="popup-table-data-cell">D+22</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188366">
+                            CA-52</a>
+<div class="popup-table-data-cell"> Scott Peters</div>
+<div class="popup-table-data-cell">D+6</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188371">
+                            CA-53</a>
+<div class="popup-table-data-cell">Open</div>
+<div class="popup-table-data-cell">D+14</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188376">
+                            CO-01</a>
+<div class="popup-table-data-cell"> Diana DeGette</div>
+<div class="popup-table-data-cell">D+21</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188381">
+                            CO-02</a>
+<div class="popup-table-data-cell"> Joe Neguse</div>
+<div class="popup-table-data-cell">D+9</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188400">
+                            CO-06</a>
+<div class="popup-table-data-cell"> Jason Crow</div>
+<div class="popup-table-data-cell">D+2</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188405">
+                            CO-07</a>
+<div class="popup-table-data-cell"> Ed Perlmutter</div>
+<div class="popup-table-data-cell">D+6</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188409">
+                            CT-01</a>
+<div class="popup-table-data-cell"> John Larson</div>
+<div class="popup-table-data-cell">D+12</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188414">
+                            CT-02</a>
+<div class="popup-table-data-cell"> Joe Courtney</div>
+<div class="popup-table-data-cell">D+3</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188419">
+                            CT-03</a>
+<div class="popup-table-data-cell"> Rosa DeLauro</div>
+<div class="popup-table-data-cell">D+9</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188424">
+                            CT-04</a>
+<div class="popup-table-data-cell"> Jim Himes</div>
+<div class="popup-table-data-cell">D+7</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188429">
+                            CT-05</a>
+<div class="popup-table-data-cell"> Jahana Hayes</div>
+<div class="popup-table-data-cell">D+2</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188434">
+                            DE-00</a>
+<div class="popup-table-data-cell"> Lisa Blunt Rochester</div>
+<div class="popup-table-data-cell">D+6</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188456">
+                            FL-05</a>
+<div class="popup-table-data-cell"> Al Lawson</div>
+<div class="popup-table-data-cell">D+12</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188465">
+                            FL-07</a>
+<div class="popup-table-data-cell"> Stephanie  Murphy</div>
+<div class="popup-table-data-cell">EVEN</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188474">
+                            FL-09</a>
+<div class="popup-table-data-cell"> Darren  Soto</div>
+<div class="popup-table-data-cell">D+5</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188478">
+                            FL-10</a>
+<div class="popup-table-data-cell"> Val Demings</div>
+<div class="popup-table-data-cell">D+11</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188491">
+                            FL-13</a>
+<div class="popup-table-data-cell"> Charlie Crist</div>
+<div class="popup-table-data-cell">D+2</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188495">
+                            FL-14</a>
+<div class="popup-table-data-cell"> Kathy Castor</div>
+<div class="popup-table-data-cell">D+7</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188521">
+                            FL-20</a>
+<div class="popup-table-data-cell"> Alcee Hastings</div>
+<div class="popup-table-data-cell">D+31</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188526">
+                            FL-21</a>
+<div class="popup-table-data-cell"> Lois Frankel</div>
+<div class="popup-table-data-cell">D+9</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188531">
+                            FL-22</a>
+<div class="popup-table-data-cell"> Ted Deutch</div>
+<div class="popup-table-data-cell">D+6</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188536">
+                            FL-23</a>
+<div class="popup-table-data-cell"> Debbie Wasserman Schultz</div>
+<div class="popup-table-data-cell">D+11</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188541">
+                            FL-24</a>
+<div class="popup-table-data-cell"> Frederica Wilson</div>
+<div class="popup-table-data-cell">D+34</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188566">
+                            GA-02</a>
+<div class="popup-table-data-cell"> Sanford Bishop</div>
+<div class="popup-table-data-cell">D+6</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188576">
+                            GA-04</a>
+<div class="popup-table-data-cell"> Henry Johnson</div>
+<div class="popup-table-data-cell">D+24</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188580">
+                            GA-05</a>
+<div class="popup-table-data-cell"> John Lewis</div>
+<div class="popup-table-data-cell">D+34</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188620">
+                            GA-13</a>
+<div class="popup-table-data-cell"> David Scott</div>
+<div class="popup-table-data-cell">D+20</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188630">
+                            HI-01</a>
+<div class="popup-table-data-cell"> Ed Case</div>
+<div class="popup-table-data-cell">D+17</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188635">
+                            HI-02</a>
+<div class="popup-table-data-cell"> Tulsi Gabbard</div>
+<div class="popup-table-data-cell">D+19</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188650">
+                            IL-01</a>
+<div class="popup-table-data-cell"> Bobby Rush</div>
+<div class="popup-table-data-cell">D+27</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188655">
+                            IL-02</a>
+<div class="popup-table-data-cell"> Robin Kelly</div>
+<div class="popup-table-data-cell">D+29</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188660">
+                            IL-03</a>
+<div class="popup-table-data-cell">Open</div>
+<div class="popup-table-data-cell">D+6</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188664">
+                            IL-04</a>
+<div class="popup-table-data-cell"> Jesus Garcia</div>
+<div class="popup-table-data-cell">D+33</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188668">
+                            IL-05</a>
+<div class="popup-table-data-cell"> Mike Quigley</div>
+<div class="popup-table-data-cell">D+20</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188673">
+                            IL-06</a>
+<div class="popup-table-data-cell"> Sean Casten</div>
+<div class="popup-table-data-cell">R+2</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188678">
+                            IL-07</a>
+<div class="popup-table-data-cell"> Danny Davis</div>
+<div class="popup-table-data-cell">D+38</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188683">
+                            IL-08</a>
+<div class="popup-table-data-cell"> Raja  Krishnamoorthi</div>
+<div class="popup-table-data-cell">D+8</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188687">
+                            IL-09</a>
+<div class="popup-table-data-cell"> Janice Schakowsky</div>
+<div class="popup-table-data-cell">D+18</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188691">
+                            IL-10</a>
+<div class="popup-table-data-cell"> Bradley Schneider</div>
+<div class="popup-table-data-cell">D+10</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188695">
+                            IL-11</a>
+<div class="popup-table-data-cell"> Bill Foster</div>
+<div class="popup-table-data-cell">D+9</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188732">
+                            IN-01</a>
+<div class="popup-table-data-cell">Open</div>
+<div class="popup-table-data-cell">D+8</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188760">
+                            IN-07</a>
+<div class="popup-table-data-cell"> André Carson</div>
+<div class="popup-table-data-cell">D+11</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188800">
+                            KS-03</a>
+<div class="popup-table-data-cell"> Sharice Davids</div>
+<div class="popup-table-data-cell">R+4</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188818">
+                            KY-03</a>
+<div class="popup-table-data-cell"> John Yarmuth</div>
+<div class="popup-table-data-cell">D+6</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188842">
+                            LA-02</a>
+<div class="popup-table-data-cell"> Cedric Richmond</div>
+<div class="popup-table-data-cell">D+25</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188909">
+                            MA-01</a>
+<div class="popup-table-data-cell"> Richard Neal</div>
+<div class="popup-table-data-cell">D+12</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188914">
+                            MA-02</a>
+<div class="popup-table-data-cell"> James McGovern</div>
+<div class="popup-table-data-cell">D+9</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188918">
+                            MA-03</a>
+<div class="popup-table-data-cell"> Lori Trahan</div>
+<div class="popup-table-data-cell">D+9</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188923">
+                            MA-04</a>
+<div class="popup-table-data-cell">Open</div>
+<div class="popup-table-data-cell">D+9</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188927">
+                            MA-05</a>
+<div class="popup-table-data-cell"> Katherine Clark</div>
+<div class="popup-table-data-cell">D+18</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188931">
+                            MA-06</a>
+<div class="popup-table-data-cell"> Seth Moulton</div>
+<div class="popup-table-data-cell">D+6</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188936">
+                            MA-07</a>
+<div class="popup-table-data-cell"> Ayanna Pressley</div>
+<div class="popup-table-data-cell">D+34</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188941">
+                            MA-08</a>
+<div class="popup-table-data-cell"> Stephen Lynch</div>
+<div class="popup-table-data-cell">D+10</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188946">
+                            MA-09</a>
+<div class="popup-table-data-cell"> Bill Keating</div>
+<div class="popup-table-data-cell">D+4</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188877">
+                            MD-02</a>
+<div class="popup-table-data-cell"> Dutch Ruppersberger</div>
+<div class="popup-table-data-cell">D+11</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188882">
+                            MD-03</a>
+<div class="popup-table-data-cell"> John Sarbanes</div>
+<div class="popup-table-data-cell">D+13</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188887">
+                            MD-04</a>
+<div class="popup-table-data-cell"> Anthony Brown</div>
+<div class="popup-table-data-cell">D+28</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188891">
+                            MD-05</a>
+<div class="popup-table-data-cell"> Steny Hoyer</div>
+<div class="popup-table-data-cell">D+16</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188896">
+                            MD-06</a>
+<div class="popup-table-data-cell"> David Trone</div>
+<div class="popup-table-data-cell">D+6</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188900">
+                            MD-07</a>
+<div class="popup-table-data-cell">Vacant</div>
+<div class="popup-table-data-cell">D+26</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188905">
+                            MD-08</a>
+<div class="popup-table-data-cell"> Jamie  Raskin</div>
+<div class="popup-table-data-cell">D+14</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188863">
+                            ME-01</a>
+<div class="popup-table-data-cell"> Chellie Pingree</div>
+<div class="popup-table-data-cell">D+8</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188970">
+                            MI-05</a>
+<div class="popup-table-data-cell"> Daniel Kildee</div>
+<div class="popup-table-data-cell">D+5</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188989">
+                            MI-09</a>
+<div class="popup-table-data-cell"> Andy Levin</div>
+<div class="popup-table-data-cell">D+4</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189002">
+                            MI-12</a>
+<div class="popup-table-data-cell"> Debbie Dingell</div>
+<div class="popup-table-data-cell">D+14</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189006">
+                            MI-13</a>
+<div class="popup-table-data-cell"> Rashida Tlaib</div>
+<div class="popup-table-data-cell">D+32</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189011">
+                            MI-14</a>
+<div class="popup-table-data-cell"> Brenda Lawrence</div>
+<div class="popup-table-data-cell">D+30</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189024">
+                            MN-03</a>
+<div class="popup-table-data-cell"> Dean Phillips</div>
+<div class="popup-table-data-cell">D+1</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189028">
+                            MN-04</a>
+<div class="popup-table-data-cell"> Betty McCollum</div>
+<div class="popup-table-data-cell">D+14</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189033">
+                            MN-05</a>
+<div class="popup-table-data-cell"> Ilhan Omar</div>
+<div class="popup-table-data-cell">D+26</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189071">
+                            MO-01</a>
+<div class="popup-table-data-cell">Open</div>
+<div class="popup-table-data-cell">D+29</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189088">
+                            MO-05</a>
+<div class="popup-table-data-cell"> Emanuel Cleaver</div>
+<div class="popup-table-data-cell">D+7</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189056">
+                            MS-02</a>
+<div class="popup-table-data-cell"> Bennie Thompson</div>
+<div class="popup-table-data-cell">D+14</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189350">
+                            NC-01</a>
+<div class="popup-table-data-cell"> G.K. Butterfield</div>
+<div class="popup-table-data-cell">D+5</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189364">
+                            NC-04</a>
+<div class="popup-table-data-cell"> David Price</div>
+<div class="popup-table-data-cell">D+14</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189403">
+                            NC-12</a>
+<div class="popup-table-data-cell"> Alma Adams</div>
+<div class="popup-table-data-cell">D+17</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189146">
+                            NH-02</a>
+<div class="popup-table-data-cell"> Ann Kuster</div>
+<div class="popup-table-data-cell">D+2</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189151">
+                            NJ-01</a>
+<div class="popup-table-data-cell"> Donald Norcross</div>
+<div class="popup-table-data-cell">D+13</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189168">
+                            NJ-05</a>
+<div class="popup-table-data-cell"> Josh  Gottheimer</div>
+<div class="popup-table-data-cell">R+3</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189172">
+                            NJ-06</a>
+<div class="popup-table-data-cell"> Frank Pallone</div>
+<div class="popup-table-data-cell">D+9</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189182">
+                            NJ-08</a>
+<div class="popup-table-data-cell"> Albio Sires</div>
+<div class="popup-table-data-cell">D+27</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189187">
+                            NJ-09</a>
+<div class="popup-table-data-cell"> Bill Pascrell</div>
+<div class="popup-table-data-cell">D+16</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189192">
+                            NJ-10</a>
+<div class="popup-table-data-cell"> Donald Payne</div>
+<div class="popup-table-data-cell">D+36</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189196">
+                            NJ-11</a>
+<div class="popup-table-data-cell"> Mikie Sherrill</div>
+<div class="popup-table-data-cell">R+3</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189201">
+                            NJ-12</a>
+<div class="popup-table-data-cell"> Bonnie Watson Coleman</div>
+<div class="popup-table-data-cell">D+16</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189206">
+                            NM-01</a>
+<div class="popup-table-data-cell"> Deb Haaland</div>
+<div class="popup-table-data-cell">D+7</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189216">
+                            NM-03</a>
+<div class="popup-table-data-cell">Open</div>
+<div class="popup-table-data-cell">D+8</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189124">
+                            NV-01</a>
+<div class="popup-table-data-cell"> Dina Titus</div>
+<div class="popup-table-data-cell">D+15</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189230">
+                            NY-03</a>
+<div class="popup-table-data-cell"> Tom  Suozzi</div>
+<div class="popup-table-data-cell">D+1</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189235">
+                            NY-04</a>
+<div class="popup-table-data-cell"> Kathleen Rice</div>
+<div class="popup-table-data-cell">D+4</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189240">
+                            NY-05</a>
+<div class="popup-table-data-cell"> Gregory Meeks</div>
+<div class="popup-table-data-cell">D+37</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189245">
+                            NY-06</a>
+<div class="popup-table-data-cell"> Grace Meng</div>
+<div class="popup-table-data-cell">D+16</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189250">
+                            NY-07</a>
+<div class="popup-table-data-cell"> Nydia Velázquez</div>
+<div class="popup-table-data-cell">D+38</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189255">
+                            NY-08</a>
+<div class="popup-table-data-cell"> Hakeem Jeffries</div>
+<div class="popup-table-data-cell">D+36</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189260">
+                            NY-09</a>
+<div class="popup-table-data-cell"> Yvette Clarke</div>
+<div class="popup-table-data-cell">D+34</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189265">
+                            NY-10</a>
+<div class="popup-table-data-cell"> Jerrold Nadler</div>
+<div class="popup-table-data-cell">D+26</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189275">
+                            NY-12</a>
+<div class="popup-table-data-cell"> Carolyn Maloney</div>
+<div class="popup-table-data-cell">D+31</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189280">
+                            NY-13</a>
+<div class="popup-table-data-cell"> Adriano Espaillat</div>
+<div class="popup-table-data-cell">D+43</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189284">
+                            NY-14</a>
+<div class="popup-table-data-cell"> Alexandria Ocasio-Cortez</div>
+<div class="popup-table-data-cell">D+29</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189289">
+                            NY-15</a>
+<div class="popup-table-data-cell">Open</div>
+<div class="popup-table-data-cell">D+44</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189293">
+                            NY-16</a>
+<div class="popup-table-data-cell">Open</div>
+<div class="popup-table-data-cell">D+24</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189298">
+                            NY-17</a>
+<div class="popup-table-data-cell">Open</div>
+<div class="popup-table-data-cell">D+7</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189303">
+                            NY-18</a>
+<div class="popup-table-data-cell"> Sean Maloney</div>
+<div class="popup-table-data-cell">R+1</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189312">
+                            NY-20</a>
+<div class="popup-table-data-cell"> Paul Tonko</div>
+<div class="popup-table-data-cell">D+7</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189336">
+                            NY-25</a>
+<div class="popup-table-data-cell"> Joseph Morelle</div>
+<div class="popup-table-data-cell">D+8</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189340">
+                            NY-26</a>
+<div class="popup-table-data-cell"> Brian Higgins</div>
+<div class="popup-table-data-cell">D+11</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189427">
+                            OH-03</a>
+<div class="popup-table-data-cell"> Joyce Beatty</div>
+<div class="popup-table-data-cell">D+19</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189455">
+                            OH-09</a>
+<div class="popup-table-data-cell"> Marcy Kaptur</div>
+<div class="popup-table-data-cell">D+14</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189465">
+                            OH-11</a>
+<div class="popup-table-data-cell"> Marcia Fudge</div>
+<div class="popup-table-data-cell">D+32</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189474">
+                            OH-13</a>
+<div class="popup-table-data-cell"> Tim Ryan</div>
+<div class="popup-table-data-cell">D+7</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189517">
+                            OR-01</a>
+<div class="popup-table-data-cell"> Suzanne Bonamici</div>
+<div class="popup-table-data-cell">D+9</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189527">
+                            OR-03</a>
+<div class="popup-table-data-cell"> Earl Blumenauer</div>
+<div class="popup-table-data-cell">D+24</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189537">
+                            OR-05</a>
+<div class="popup-table-data-cell"> Kurt Schrader</div>
+<div class="popup-table-data-cell">EVEN</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189546">
+                            PA-02</a>
+<div class="popup-table-data-cell"> Brendan Boyle</div>
+<div class="popup-table-data-cell">D+25</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189551">
+                            PA-03</a>
+<div class="popup-table-data-cell"> Dwight Evans</div>
+<div class="popup-table-data-cell">D+41</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189555">
+                            PA-04</a>
+<div class="popup-table-data-cell"> Madeleine Dean</div>
+<div class="popup-table-data-cell">D+7</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189559">
+                            PA-05</a>
+<div class="popup-table-data-cell"> Mary Gay Scanlon</div>
+<div class="popup-table-data-cell">D+13</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189563">
+                            PA-06</a>
+<div class="popup-table-data-cell"> Chrissy Houlahan</div>
+<div class="popup-table-data-cell">D+2</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189617">
+                            PA-18</a>
+<div class="popup-table-data-cell"> Michael Doyle</div>
+<div class="popup-table-data-cell">D+13</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189621">
+                            RI-01</a>
+<div class="popup-table-data-cell"> David Cicilline</div>
+<div class="popup-table-data-cell">D+14</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189626">
+                            RI-02</a>
+<div class="popup-table-data-cell"> Jim Langevin</div>
+<div class="popup-table-data-cell">D+6</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189654">
+                            SC-06</a>
+<div class="popup-table-data-cell"> James Clyburn</div>
+<div class="popup-table-data-cell">D+19</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189685">
+                            TN-05</a>
+<div class="popup-table-data-cell"> Jim Cooper</div>
+<div class="popup-table-data-cell">D+7</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189702">
+                            TN-09</a>
+<div class="popup-table-data-cell"> Steve Cohen</div>
+<div class="popup-table-data-cell">D+28</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189742">
+                            TX-09</a>
+<div class="popup-table-data-cell"> Al Green</div>
+<div class="popup-table-data-cell">D+29</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189771">
+                            TX-15</a>
+<div class="popup-table-data-cell"> Vicente  Gonzalez</div>
+<div class="popup-table-data-cell">D+7</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189775">
+                            TX-16</a>
+<div class="popup-table-data-cell"> Veronica Escobar</div>
+<div class="popup-table-data-cell">D+17</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189784">
+                            TX-18</a>
+<div class="popup-table-data-cell"> Sheila Jackson Lee</div>
+<div class="popup-table-data-cell">D+27</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189793">
+                            TX-20</a>
+<div class="popup-table-data-cell"> Joaquin Castro</div>
+<div class="popup-table-data-cell">D+10</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189832">
+                            TX-28</a>
+<div class="popup-table-data-cell"> Henry Cuellar</div>
+<div class="popup-table-data-cell">D+9</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189837">
+                            TX-29</a>
+<div class="popup-table-data-cell"> Sylvia Garcia</div>
+<div class="popup-table-data-cell">D+19</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189842">
+                            TX-30</a>
+<div class="popup-table-data-cell"> Eddie Johnson</div>
+<div class="popup-table-data-cell">D+29</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189855">
+                            TX-33</a>
+<div class="popup-table-data-cell"> Marc Veasey</div>
+<div class="popup-table-data-cell">D+23</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189860">
+                            TX-34</a>
+<div class="popup-table-data-cell"> Filemon Vela</div>
+<div class="popup-table-data-cell">D+10</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189865">
+                            TX-35</a>
+<div class="popup-table-data-cell"> Lloyd Doggett</div>
+<div class="popup-table-data-cell">D+15</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189905">
+                            VA-03</a>
+<div class="popup-table-data-cell"> Bobby Scott</div>
+<div class="popup-table-data-cell">D+16</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189909">
+                            VA-04</a>
+<div class="popup-table-data-cell"> Donald McEachin</div>
+<div class="popup-table-data-cell">D+10</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189927">
+                            VA-08</a>
+<div class="popup-table-data-cell">Rep. Don Beyer</div>
+<div class="popup-table-data-cell">D+21</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189936">
+                            VA-10</a>
+<div class="popup-table-data-cell"> Jennifer Wexton</div>
+<div class="popup-table-data-cell">D+1</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189940">
+                            VA-11</a>
+<div class="popup-table-data-cell"> Gerald Connolly</div>
+<div class="popup-table-data-cell">D+15</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189892">
+                            VT-00</a>
+<div class="popup-table-data-cell"> Peter Welch</div>
+<div class="popup-table-data-cell">D+15</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189944">
+                            WA-01</a>
+<div class="popup-table-data-cell"> Suzan DelBene</div>
+<div class="popup-table-data-cell">D+6</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189949">
+                            WA-02</a>
+<div class="popup-table-data-cell"> Rick Larsen</div>
+<div class="popup-table-data-cell">D+10</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189969">
+                            WA-06</a>
+<div class="popup-table-data-cell"> Derek Kilmer</div>
+<div class="popup-table-data-cell">D+6</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189974">
+                            WA-07</a>
+<div class="popup-table-data-cell"> Pramila  Jayapal</div>
+<div class="popup-table-data-cell">D+33</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189983">
+                            WA-09</a>
+<div class="popup-table-data-cell"> Adam Smith</div>
+<div class="popup-table-data-cell">D+21</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189988">
+                            WA-10</a>
+<div class="popup-table-data-cell">Open</div>
+<div class="popup-table-data-cell">D+5</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/190011">
+                            WI-02</a>
+<div class="popup-table-data-cell"> Mark Pocan</div>
+<div class="popup-table-data-cell">D+18</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/190020">
+                            WI-04</a>
+<div class="popup-table-data-cell"> Gwen Moore</div>
+<div class="popup-table-data-cell">D+25</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="solid-seats-modal" id="modal-from-table-likely-d">
+<div class="solid-seats-modal-in"><a class="solid-seats-modal-close" title="Close">✕</a>
+<p class="solid-seats-modal-in-title">Likely Democratic</p>
+<div class="scroll-table-block">
+<div class="popup-table-data">
+<div class="popup-table-data-body">
+<div class="popup-table-data-row likely-d">
+<div class="popup-table-data-cell">DISTRICT</div>
+<div class="popup-table-data-cell">REPRESENTATIVE</div>
+<div class="popup-table-data-cell">PVI</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188171">
+                            CA-10</a>
+<div class="popup-table-data-cell"> Josh Harder</div>
+<div class="popup-table-data-cell">EVEN</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188306">
+                            CA-39</a>
+<div class="popup-table-data-cell"> Gil Cisneros</div>
+<div class="popup-table-data-cell">EVEN</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188556">
+                            FL-27</a>
+<div class="popup-table-data-cell"> Donna Shalala</div>
+<div class="popup-table-data-cell">D+5</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188585">
+                            GA-06</a>
+<div class="popup-table-data-cell"> Lucy McBath</div>
+<div class="popup-table-data-cell">R+8</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188708">
+                            IL-14</a>
+<div class="popup-table-data-cell"> Lauren Underwood</div>
+<div class="popup-table-data-cell">R+5</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188867">
+                            ME-02</a>
+<div class="popup-table-data-cell"> Jared Golden</div>
+<div class="popup-table-data-cell">R+2</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189020">
+                            MN-02</a>
+<div class="popup-table-data-cell"> Angie Craig</div>
+<div class="popup-table-data-cell">R+2</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189354">
+                            NC-02</a>
+<div class="popup-table-data-cell">Open</div>
+<div class="popup-table-data-cell">D+9</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189374">
+                            NC-06</a>
+<div class="popup-table-data-cell">Open</div>
+<div class="popup-table-data-cell">D+8</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189140">
+                            NH-01</a>
+<div class="popup-table-data-cell"> Chris Pappas</div>
+<div class="popup-table-data-cell">R+2</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189160">
+                            NJ-03</a>
+<div class="popup-table-data-cell"> Andy Kim</div>
+<div class="popup-table-data-cell">R+2</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189136">
+                            NV-04</a>
+<div class="popup-table-data-cell"> Steven Horsford</div>
+<div class="popup-table-data-cell">D+3</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189307">
+                            NY-19</a>
+<div class="popup-table-data-cell"> Antonio Delgado</div>
+<div class="popup-table-data-cell">R+2</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189568">
+                            PA-07</a>
+<div class="popup-table-data-cell"> Susan Wild</div>
+<div class="popup-table-data-cell">D+1</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189613">
+                            PA-17</a>
+<div class="popup-table-data-cell"> Conor Lamb</div>
+<div class="popup-table-data-cell">R+3</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189733">
+                            TX-07</a>
+<div class="popup-table-data-cell"> Lizzie Pannill  Fletcher</div>
+<div class="popup-table-data-cell">R+7</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189851">
+                            TX-32</a>
+<div class="popup-table-data-cell"> Colin Allred</div>
+<div class="popup-table-data-cell">R+5</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189978">
+                            WA-08</a>
+<div class="popup-table-data-cell"> Kim  Schrier</div>
+<div class="popup-table-data-cell">EVEN</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="solid-seats-modal" id="modal-from-table-lean-d">
+<div class="solid-seats-modal-in"><a class="solid-seats-modal-close" title="Close">✕</a>
+<p class="solid-seats-modal-in-title">Lean Democratic</p>
+<div class="scroll-table-block">
+<div class="popup-table-data">
+<div class="popup-table-data-body">
+<div class="popup-table-data-row likely-d">
+<div class="popup-table-data-cell">DISTRICT</div>
+<div class="popup-table-data-cell">REPRESENTATIVE</div>
+<div class="popup-table-data-cell">PVI</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188005">
+                            AZ-01</a>
+<div class="popup-table-data-cell"> Tom O'Halleran</div>
+<div class="popup-table-data-cell">R+2</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188348">
+                            CA-48</a>
+<div class="popup-table-data-cell"> Harley Rouda</div>
+<div class="popup-table-data-cell">R+4</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188551">
+                            FL-26</a>
+<div class="popup-table-data-cell"> Debbie Mucarsel-Powell</div>
+<div class="popup-table-data-cell">D+6</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188590">
+                            GA-07</a>
+<div class="popup-table-data-cell">Open</div>
+<div class="popup-table-data-cell">R+9</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188782">
+                            IA-03</a>
+<div class="popup-table-data-cell"> Cindy Axne</div>
+<div class="popup-table-data-cell">R+1</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188723">
+                            IL-17</a>
+<div class="popup-table-data-cell"> Cheri Bustos</div>
+<div class="popup-table-data-cell">D+3</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188984">
+                            MI-08</a>
+<div class="popup-table-data-cell"> Elissa Slotkin</div>
+<div class="popup-table-data-cell">R+4</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188998">
+                            MI-11</a>
+<div class="popup-table-data-cell"> Haley Stevens</div>
+<div class="popup-table-data-cell">R+4</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189177">
+                            NJ-07</a>
+<div class="popup-table-data-cell"> Tom  Malinowski</div>
+<div class="popup-table-data-cell">R+3</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189132">
+                            NV-03</a>
+<div class="popup-table-data-cell"> Susie Lee</div>
+<div class="popup-table-data-cell">R+2</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189532">
+                            OR-04</a>
+<div class="popup-table-data-cell"> Peter DeFazio</div>
+<div class="popup-table-data-cell">EVEN</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189573">
+                            PA-08</a>
+<div class="popup-table-data-cell"> Matthew Cartwright</div>
+<div class="popup-table-data-cell">R+1</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189631">
+                            SC-01</a>
+<div class="popup-table-data-cell"> Joe Cunningham</div>
+<div class="popup-table-data-cell">R+10</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189808">
+                            TX-23</a>
+<div class="popup-table-data-cell">Open</div>
+<div class="popup-table-data-cell">R+1</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189813">
+                            TX-24</a>
+<div class="popup-table-data-cell">Open</div>
+<div class="popup-table-data-cell">R+9</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189901">
+                            VA-02</a>
+<div class="popup-table-data-cell"> Elaine Luria</div>
+<div class="popup-table-data-cell">R+3</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189922">
+                            VA-07</a>
+<div class="popup-table-data-cell"> Abigail Spanberger</div>
+<div class="popup-table-data-cell">R+6</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/190016">
+                            WI-03</a>
+<div class="popup-table-data-cell"> Ron Kind</div>
+<div class="popup-table-data-cell">EVEN</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="solid-seats-modal" id="modal-from-table-tossup-d">
+<div class="solid-seats-modal-in"><a class="solid-seats-modal-close" title="Close">✕</a>
+<p class="solid-seats-modal-in-title">Toss Up Democratic</p>
+<div class="scroll-table-block">
+<div class="popup-table-data">
+<div class="popup-table-data-body">
+<div class="popup-table-data-row likely-d">
+<div class="popup-table-data-cell">DISTRICT</div>
+<div class="popup-table-data-cell">REPRESENTATIVE</div>
+<div class="popup-table-data-cell">PVI</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188221">
+                            CA-21</a>
+<div class="popup-table-data-cell"> T.J. Cox</div>
+<div class="popup-table-data-cell">D+5</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188774">
+                            IA-01</a>
+<div class="popup-table-data-cell"> Abby Finkenauer</div>
+<div class="popup-table-data-cell">D+1</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/188778">
+                            IA-02</a>
+<div class="popup-table-data-cell">Open</div>
+<div class="popup-table-data-cell">D+1</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189041">
+                            MN-07</a>
+<div class="popup-table-data-cell"> Collin Peterson</div>
+<div class="popup-table-data-cell">R+12</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189211">
+                            NM-02</a>
+<div class="popup-table-data-cell"> Xochitl Torres Small</div>
+<div class="popup-table-data-cell">R+6</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189270">
+                            NY-11</a>
+<div class="popup-table-data-cell"> Max Rose</div>
+<div class="popup-table-data-cell">R+3</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189322">
+                            NY-22</a>
+<div class="popup-table-data-cell"> Anthony Brindisi</div>
+<div class="popup-table-data-cell">R+6</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189512">
+                            OK-05</a>
+<div class="popup-table-data-cell"> Kendra Horn</div>
+<div class="popup-table-data-cell">R+10</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell dem-li-color" href="/house/race/189887">
+                            UT-04</a>
+<div class="popup-table-data-cell"> Ben McAdams</div>
+<div class="popup-table-data-cell">R+13</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="solid-seats-modal" id="solid-seats-r">
+<div class="solid-seats-modal-in"><a class="solid-seats-modal-close" title="Close">✕</a>
+<p class="solid-seats-modal-in-title">Solid Republican</p>
+<div class="scroll-table-block">
+<div class="popup-table-data">
+<div class="popup-table-data-body">
+<div class="popup-table-data-row likely-r">
+<div class="popup-table-data-cell">DISTRICT</div>
+<div class="popup-table-data-cell">REPRESENTATIVE</div>
+<div class="popup-table-data-cell">PVI</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/187932">
+                            AL-01</a>
+<div class="popup-table-data-cell">Open</div>
+<div class="popup-table-data-cell">R+15</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/187971">
+                            AL-02</a>
+<div class="popup-table-data-cell">Open</div>
+<div class="popup-table-data-cell">R+16</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/187976">
+                            AL-03</a>
+<div class="popup-table-data-cell"> Mike Rogers</div>
+<div class="popup-table-data-cell">R+16</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/187980">
+                            AL-04</a>
+<div class="popup-table-data-cell"> Robert Aderholt</div>
+<div class="popup-table-data-cell">R+30</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/187985">
+                            AL-05</a>
+<div class="popup-table-data-cell"> Mo Brooks</div>
+<div class="popup-table-data-cell">R+18</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/187990">
+                            AL-06</a>
+<div class="popup-table-data-cell"> Gary Palmer</div>
+<div class="popup-table-data-cell">R+26</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188107">
+                            AR-01</a>
+<div class="popup-table-data-cell"> Eric Crawford</div>
+<div class="popup-table-data-cell">R+17</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188116">
+                            AR-03</a>
+<div class="popup-table-data-cell"> Steve Womack</div>
+<div class="popup-table-data-cell">R+19</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188121">
+                            AR-04</a>
+<div class="popup-table-data-cell"> Bruce Westerman</div>
+<div class="popup-table-data-cell">R+17</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188018">
+                            AZ-04</a>
+<div class="popup-table-data-cell"> Paul Gosar</div>
+<div class="popup-table-data-cell">R+21</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188023">
+                            AZ-05</a>
+<div class="popup-table-data-cell"> Andy Biggs</div>
+<div class="popup-table-data-cell">R+15</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188036">
+                            AZ-08</a>
+<div class="popup-table-data-cell"> Debbie Lesko</div>
+<div class="popup-table-data-cell">R+13</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188126">
+                            CA-01</a>
+<div class="popup-table-data-cell"> Doug LaMalfa</div>
+<div class="popup-table-data-cell">R+11</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188161">
+                            CA-08</a>
+<div class="popup-table-data-cell">Open</div>
+<div class="popup-table-data-cell">R+9</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188231">
+                            CA-23</a>
+<div class="popup-table-data-cell"> Kevin McCarthy</div>
+<div class="popup-table-data-cell">R+14</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188321">
+                            CA-42</a>
+<div class="popup-table-data-cell"> Ken Calvert</div>
+<div class="popup-table-data-cell">R+9</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188390">
+                            CO-04</a>
+<div class="popup-table-data-cell"> Ken Buck</div>
+<div class="popup-table-data-cell">R+13</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188395">
+                            CO-05</a>
+<div class="popup-table-data-cell"> Doug Lamborn</div>
+<div class="popup-table-data-cell">R+14</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188438">
+                            FL-01</a>
+<div class="popup-table-data-cell"> Matt Gaetz</div>
+<div class="popup-table-data-cell">R+22</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188443">
+                            FL-02</a>
+<div class="popup-table-data-cell"> Neal  Dunn</div>
+<div class="popup-table-data-cell">R+18</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188447">
+                            FL-03</a>
+<div class="popup-table-data-cell"> Ted Yoho</div>
+<div class="popup-table-data-cell">R+9</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188452">
+                            FL-04</a>
+<div class="popup-table-data-cell"> John Rutherford</div>
+<div class="popup-table-data-cell">R+17</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188460">
+                            FL-06</a>
+<div class="popup-table-data-cell"> Michael Waltz</div>
+<div class="popup-table-data-cell">R+7</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188469">
+                            FL-08</a>
+<div class="popup-table-data-cell"> Bill Posey</div>
+<div class="popup-table-data-cell">R+11</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188482">
+                            FL-11</a>
+<div class="popup-table-data-cell"> Daniel Webster</div>
+<div class="popup-table-data-cell">R+15</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188486">
+                            FL-12</a>
+<div class="popup-table-data-cell"> Gus Bilirakis</div>
+<div class="popup-table-data-cell">R+8</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188509">
+                            FL-17</a>
+<div class="popup-table-data-cell"> Greg Steube</div>
+<div class="popup-table-data-cell">R+13</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188517">
+                            FL-19</a>
+<div class="popup-table-data-cell">Open</div>
+<div class="popup-table-data-cell">R+13</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188546">
+                            FL-25</a>
+<div class="popup-table-data-cell"> Mario Diaz-Balart</div>
+<div class="popup-table-data-cell">R+4</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188561">
+                            GA-01</a>
+<div class="popup-table-data-cell"> Buddy Carter</div>
+<div class="popup-table-data-cell">R+9</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188571">
+                            GA-03</a>
+<div class="popup-table-data-cell"> Drew  Ferguson</div>
+<div class="popup-table-data-cell">R+18</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188595">
+                            GA-08</a>
+<div class="popup-table-data-cell"> Austin Scott</div>
+<div class="popup-table-data-cell">R+15</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188600">
+                            GA-09</a>
+<div class="popup-table-data-cell"> Doug Collins</div>
+<div class="popup-table-data-cell">R+31</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188605">
+                            GA-10</a>
+<div class="popup-table-data-cell"> Jody Hice</div>
+<div class="popup-table-data-cell">R+15</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188610">
+                            GA-11</a>
+<div class="popup-table-data-cell"> Barry Loudermilk</div>
+<div class="popup-table-data-cell">R+17</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188615">
+                            GA-12</a>
+<div class="popup-table-data-cell"> Rick Allen</div>
+<div class="popup-table-data-cell">R+9</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188625">
+                            GA-14</a>
+<div class="popup-table-data-cell">Open</div>
+<div class="popup-table-data-cell">R+27</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188787">
+                            IA-04</a>
+<div class="popup-table-data-cell">Open</div>
+<div class="popup-table-data-cell">R+11</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188640">
+                            ID-01</a>
+<div class="popup-table-data-cell"> Russ Fulcher</div>
+<div class="popup-table-data-cell">R+21</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188645">
+                            ID-02</a>
+<div class="popup-table-data-cell"> Mike Simpson</div>
+<div class="popup-table-data-cell">R+17</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188700">
+                            IL-12</a>
+<div class="popup-table-data-cell"> Mike Bost</div>
+<div class="popup-table-data-cell">R+5</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188713">
+                            IL-15</a>
+<div class="popup-table-data-cell">Open</div>
+<div class="popup-table-data-cell">R+21</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188718">
+                            IL-16</a>
+<div class="popup-table-data-cell"> Adam Kinzinger</div>
+<div class="popup-table-data-cell">R+8</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188728">
+                            IL-18</a>
+<div class="popup-table-data-cell"> Darin LaHood</div>
+<div class="popup-table-data-cell">R+15</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188737">
+                            IN-02</a>
+<div class="popup-table-data-cell"> Jackie Walorski</div>
+<div class="popup-table-data-cell">R+11</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188742">
+                            IN-03</a>
+<div class="popup-table-data-cell"> Jim  Banks</div>
+<div class="popup-table-data-cell">R+18</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188746">
+                            IN-04</a>
+<div class="popup-table-data-cell"> Jim Baird</div>
+<div class="popup-table-data-cell">R+17</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188755">
+                            IN-06</a>
+<div class="popup-table-data-cell"> Greg Pence</div>
+<div class="popup-table-data-cell">R+18</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188765">
+                            IN-08</a>
+<div class="popup-table-data-cell"> Larry Bucshon</div>
+<div class="popup-table-data-cell">R+15</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188770">
+                            IN-09</a>
+<div class="popup-table-data-cell"> Trey  Hollingsworth</div>
+<div class="popup-table-data-cell">R+13</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188791">
+                            KS-01</a>
+<div class="popup-table-data-cell">Open</div>
+<div class="popup-table-data-cell">R+24</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188805">
+                            KS-04</a>
+<div class="popup-table-data-cell"> Ron Estes</div>
+<div class="popup-table-data-cell">R+15</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188809">
+                            KY-01</a>
+<div class="popup-table-data-cell"> James Comer</div>
+<div class="popup-table-data-cell">R+23</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188813">
+                            KY-02</a>
+<div class="popup-table-data-cell"> Brett Guthrie</div>
+<div class="popup-table-data-cell">R+19</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188823">
+                            KY-04</a>
+<div class="popup-table-data-cell"> Thomas Massie</div>
+<div class="popup-table-data-cell">R+18</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188828">
+                            KY-05</a>
+<div class="popup-table-data-cell"> Harold Rogers</div>
+<div class="popup-table-data-cell">R+31</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188837">
+                            LA-01</a>
+<div class="popup-table-data-cell"> Steve Scalise</div>
+<div class="popup-table-data-cell">R+24</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188847">
+                            LA-03</a>
+<div class="popup-table-data-cell"> Clay  Higgins</div>
+<div class="popup-table-data-cell">R+20</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188851">
+                            LA-04</a>
+<div class="popup-table-data-cell"> Mike Johnson</div>
+<div class="popup-table-data-cell">R+13</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188855">
+                            LA-05</a>
+<div class="popup-table-data-cell"> Ralph Abraham</div>
+<div class="popup-table-data-cell">R+15</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188859">
+                            LA-06</a>
+<div class="popup-table-data-cell"> Garret Graves</div>
+<div class="popup-table-data-cell">R+19</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188872">
+                            MD-01</a>
+<div class="popup-table-data-cell"> Andy Harris</div>
+<div class="popup-table-data-cell">R+14</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188951">
+                            MI-01</a>
+<div class="popup-table-data-cell"> Jack  Bergman</div>
+<div class="popup-table-data-cell">R+9</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188955">
+                            MI-02</a>
+<div class="popup-table-data-cell"> Bill Huizenga</div>
+<div class="popup-table-data-cell">R+9</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188965">
+                            MI-04</a>
+<div class="popup-table-data-cell"> John Moolenaar</div>
+<div class="popup-table-data-cell">R+10</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188979">
+                            MI-07</a>
+<div class="popup-table-data-cell"> Tim Walberg</div>
+<div class="popup-table-data-cell">R+7</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188994">
+                            MI-10</a>
+<div class="popup-table-data-cell">Open</div>
+<div class="popup-table-data-cell">R+13</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189037">
+                            MN-06</a>
+<div class="popup-table-data-cell"> Tom Emmer</div>
+<div class="popup-table-data-cell">R+12</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189046">
+                            MN-08</a>
+<div class="popup-table-data-cell"> Pete Stauber</div>
+<div class="popup-table-data-cell">R+4</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189080">
+                            MO-03</a>
+<div class="popup-table-data-cell"> Blaine Luetkemeyer</div>
+<div class="popup-table-data-cell">R+18</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189084">
+                            MO-04</a>
+<div class="popup-table-data-cell"> Vicky Hartzler</div>
+<div class="popup-table-data-cell">R+17</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189093">
+                            MO-06</a>
+<div class="popup-table-data-cell"> Sam Graves</div>
+<div class="popup-table-data-cell">R+16</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189098">
+                            MO-07</a>
+<div class="popup-table-data-cell"> Billy Long</div>
+<div class="popup-table-data-cell">R+23</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189102">
+                            MO-08</a>
+<div class="popup-table-data-cell"> Jason Smith</div>
+<div class="popup-table-data-cell">R+24</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189051">
+                            MS-01</a>
+<div class="popup-table-data-cell"> Trent Kelly</div>
+<div class="popup-table-data-cell">R+16</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189061">
+                            MS-03</a>
+<div class="popup-table-data-cell"> Michael Guest</div>
+<div class="popup-table-data-cell">R+13</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189066">
+                            MS-04</a>
+<div class="popup-table-data-cell"> Steven Palazzo</div>
+<div class="popup-table-data-cell">R+21</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189359">
+                            NC-03</a>
+<div class="popup-table-data-cell"> Greg Murphy</div>
+<div class="popup-table-data-cell">R+12</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189369">
+                            NC-05</a>
+<div class="popup-table-data-cell"> Virginia Foxx</div>
+<div class="popup-table-data-cell">R+18</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189379">
+                            NC-07</a>
+<div class="popup-table-data-cell"> David Rouzer</div>
+<div class="popup-table-data-cell">R+11</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189393">
+                            NC-10</a>
+<div class="popup-table-data-cell"> Patrick McHenry</div>
+<div class="popup-table-data-cell">R+19</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189408">
+                            NC-13</a>
+<div class="popup-table-data-cell"> Ted  Budd </div>
+<div class="popup-table-data-cell">R+19</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189412">
+                            ND-00</a>
+<div class="popup-table-data-cell"> Kelly Armstrong</div>
+<div class="popup-table-data-cell">R+16</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189110">
+                            NE-01</a>
+<div class="popup-table-data-cell"> Jeff Fortenberry</div>
+<div class="popup-table-data-cell">R+11</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189119">
+                            NE-03</a>
+<div class="popup-table-data-cell"> Adrian Smith</div>
+<div class="popup-table-data-cell">R+27</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189164">
+                            NJ-04</a>
+<div class="popup-table-data-cell"> Christopher Smith</div>
+<div class="popup-table-data-cell">R+8</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189128">
+                            NV-02</a>
+<div class="popup-table-data-cell"> Mark Amodei</div>
+<div class="popup-table-data-cell">R+7</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189317">
+                            NY-21</a>
+<div class="popup-table-data-cell"> Elise Stefanik</div>
+<div class="popup-table-data-cell">R+4</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189326">
+                            NY-23</a>
+<div class="popup-table-data-cell"> Tom Reed</div>
+<div class="popup-table-data-cell">R+6</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189345">
+                            NY-27</a>
+<div class="popup-table-data-cell">Vacant</div>
+<div class="popup-table-data-cell">R+11</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189422">
+                            OH-02</a>
+<div class="popup-table-data-cell"> Brad Wenstrup</div>
+<div class="popup-table-data-cell">R+9</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189432">
+                            OH-04</a>
+<div class="popup-table-data-cell"> Jim Jordan</div>
+<div class="popup-table-data-cell">R+14</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189437">
+                            OH-05</a>
+<div class="popup-table-data-cell"> Robert Latta</div>
+<div class="popup-table-data-cell">R+11</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189441">
+                            OH-06</a>
+<div class="popup-table-data-cell"> Bill Johnson</div>
+<div class="popup-table-data-cell">R+16</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189446">
+                            OH-07</a>
+<div class="popup-table-data-cell"> Bob Gibbs</div>
+<div class="popup-table-data-cell">R+12</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189451">
+                            OH-08</a>
+<div class="popup-table-data-cell"> Warren  Davidson</div>
+<div class="popup-table-data-cell">R+17</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189479">
+                            OH-14</a>
+<div class="popup-table-data-cell"> David Joyce</div>
+<div class="popup-table-data-cell">R+5</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189484">
+                            OH-15</a>
+<div class="popup-table-data-cell"> Steve Stivers</div>
+<div class="popup-table-data-cell">R+7</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189489">
+                            OH-16</a>
+<div class="popup-table-data-cell"> Anthony Gonzales</div>
+<div class="popup-table-data-cell">R+8</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189493">
+                            OK-01</a>
+<div class="popup-table-data-cell"> Kevin Hern</div>
+<div class="popup-table-data-cell">R+17</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189498">
+                            OK-02</a>
+<div class="popup-table-data-cell"> Markwayne Mullin</div>
+<div class="popup-table-data-cell">R+24</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189503">
+                            OK-03</a>
+<div class="popup-table-data-cell"> Frank Lucas</div>
+<div class="popup-table-data-cell">R+27</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189507">
+                            OK-04</a>
+<div class="popup-table-data-cell"> Tom Cole</div>
+<div class="popup-table-data-cell">R+20</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189522">
+                            OR-02</a>
+<div class="popup-table-data-cell"> Greg Walden</div>
+<div class="popup-table-data-cell">R+11</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189577">
+                            PA-09</a>
+<div class="popup-table-data-cell"> Dan Meuser</div>
+<div class="popup-table-data-cell">R+14</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189587">
+                            PA-11</a>
+<div class="popup-table-data-cell"> Lloyd  Smucker</div>
+<div class="popup-table-data-cell">R+14</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189591">
+                            PA-12</a>
+<div class="popup-table-data-cell"> Fred  Keller</div>
+<div class="popup-table-data-cell">R+17</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189595">
+                            PA-13</a>
+<div class="popup-table-data-cell"> John Joyce</div>
+<div class="popup-table-data-cell">R+22</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189600">
+                            PA-14</a>
+<div class="popup-table-data-cell"> Guy Reschenthaler</div>
+<div class="popup-table-data-cell">R+14</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189604">
+                            PA-15</a>
+<div class="popup-table-data-cell"> Glenn Thompson</div>
+<div class="popup-table-data-cell">R+20</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189636">
+                            SC-02</a>
+<div class="popup-table-data-cell"> Joe Wilson</div>
+<div class="popup-table-data-cell">R+12</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189641">
+                            SC-03</a>
+<div class="popup-table-data-cell"> Jeff Duncan</div>
+<div class="popup-table-data-cell">R+19</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189646">
+                            SC-04</a>
+<div class="popup-table-data-cell"> William Timmons</div>
+<div class="popup-table-data-cell">R+15</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189650">
+                            SC-05</a>
+<div class="popup-table-data-cell"> Ralph Norman</div>
+<div class="popup-table-data-cell">R+9</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189658">
+                            SC-07</a>
+<div class="popup-table-data-cell"> Tom Rice</div>
+<div class="popup-table-data-cell">R+9</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189663">
+                            SD-00</a>
+<div class="popup-table-data-cell"> Dusty Johnson</div>
+<div class="popup-table-data-cell">R+14</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189668">
+                            TN-01</a>
+<div class="popup-table-data-cell"> David Roe</div>
+<div class="popup-table-data-cell">R+28</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189672">
+                            TN-02</a>
+<div class="popup-table-data-cell"> Tim Burchett</div>
+<div class="popup-table-data-cell">R+20</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189676">
+                            TN-03</a>
+<div class="popup-table-data-cell"> Charles Fleischmann</div>
+<div class="popup-table-data-cell">R+18</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189680">
+                            TN-04</a>
+<div class="popup-table-data-cell"> Scott DesJarlais</div>
+<div class="popup-table-data-cell">R+20</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189689">
+                            TN-06</a>
+<div class="popup-table-data-cell"> John  Rose</div>
+<div class="popup-table-data-cell">R+24</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189694">
+                            TN-07</a>
+<div class="popup-table-data-cell"> Mark Green</div>
+<div class="popup-table-data-cell">R+20</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189698">
+                            TN-08</a>
+<div class="popup-table-data-cell"> David  Kustoff</div>
+<div class="popup-table-data-cell">R+19</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189707">
+                            TX-01</a>
+<div class="popup-table-data-cell"> Louie Gohmert</div>
+<div class="popup-table-data-cell">R+25</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189719">
+                            TX-04</a>
+<div class="popup-table-data-cell"> John Ratcliffe</div>
+<div class="popup-table-data-cell">R+28</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189724">
+                            TX-05</a>
+<div class="popup-table-data-cell"> Lance Gooden</div>
+<div class="popup-table-data-cell">R+16</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189737">
+                            TX-08</a>
+<div class="popup-table-data-cell"> Kevin Brady</div>
+<div class="popup-table-data-cell">R+28</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189751">
+                            TX-11</a>
+<div class="popup-table-data-cell">Open</div>
+<div class="popup-table-data-cell">R+32</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189756">
+                            TX-12</a>
+<div class="popup-table-data-cell"> Kay Granger</div>
+<div class="popup-table-data-cell">R+18</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189761">
+                            TX-13</a>
+<div class="popup-table-data-cell">Open</div>
+<div class="popup-table-data-cell">R+33</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189766">
+                            TX-14</a>
+<div class="popup-table-data-cell"> Randy Weber</div>
+<div class="popup-table-data-cell">R+12</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189779">
+                            TX-17</a>
+<div class="popup-table-data-cell">Open</div>
+<div class="popup-table-data-cell">R+12</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189789">
+                            TX-19</a>
+<div class="popup-table-data-cell"> Jodey  Arrington</div>
+<div class="popup-table-data-cell">R+27</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189823">
+                            TX-26</a>
+<div class="popup-table-data-cell"> Michael Burgess</div>
+<div class="popup-table-data-cell">R+18</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189828">
+                            TX-27</a>
+<div class="popup-table-data-cell"> Michael Cloud</div>
+<div class="popup-table-data-cell">R+13</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189870">
+                            TX-36</a>
+<div class="popup-table-data-cell"> Brian Babin</div>
+<div class="popup-table-data-cell">R+26</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189875">
+                            UT-01</a>
+<div class="popup-table-data-cell">Open</div>
+<div class="popup-table-data-cell">R+26</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189879">
+                            UT-02</a>
+<div class="popup-table-data-cell"> Chris Stewart</div>
+<div class="popup-table-data-cell">R+16</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189883">
+                            UT-03</a>
+<div class="popup-table-data-cell"> John Curtis</div>
+<div class="popup-table-data-cell">R+25</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189897">
+                            VA-01</a>
+<div class="popup-table-data-cell"> Robert Wittman</div>
+<div class="popup-table-data-cell">R+8</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189917">
+                            VA-06</a>
+<div class="popup-table-data-cell"> Ben Cline</div>
+<div class="popup-table-data-cell">R+13</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189931">
+                            VA-09</a>
+<div class="popup-table-data-cell"> Morgan Griffith</div>
+<div class="popup-table-data-cell">R+19</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189959">
+                            WA-04</a>
+<div class="popup-table-data-cell"> Dan Newhouse</div>
+<div class="popup-table-data-cell">R+13</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189964">
+                            WA-05</a>
+<div class="popup-table-data-cell"> Cathy McMorris Rodgers</div>
+<div class="popup-table-data-cell">R+8</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/190006">
+                            WI-01</a>
+<div class="popup-table-data-cell"> Bryan Steil</div>
+<div class="popup-table-data-cell">R+5</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/190025">
+                            WI-05</a>
+<div class="popup-table-data-cell">Open</div>
+<div class="popup-table-data-cell">R+13</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/190030">
+                            WI-06</a>
+<div class="popup-table-data-cell"> Glenn Grothman</div>
+<div class="popup-table-data-cell">R+8</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/190035">
+                            WI-07</a>
+<div class="popup-table-data-cell">Vacant</div>
+<div class="popup-table-data-cell">R+8</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/190039">
+                            WI-08</a>
+<div class="popup-table-data-cell"> Mike  Gallagher</div>
+<div class="popup-table-data-cell">R+7</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189993">
+                            WV-01</a>
+<div class="popup-table-data-cell"> David McKinley</div>
+<div class="popup-table-data-cell">R+19</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189997">
+                            WV-02</a>
+<div class="popup-table-data-cell"> Alex Mooney</div>
+<div class="popup-table-data-cell">R+17</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/190001">
+                            WV-03</a>
+<div class="popup-table-data-cell"> Carol Miller</div>
+<div class="popup-table-data-cell">R+23</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/190043">
+                            WY-00</a>
+<div class="popup-table-data-cell"> Liz Cheney</div>
+<div class="popup-table-data-cell">R+25</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="solid-seats-modal" id="modal-from-table-likely-r">
+<div class="solid-seats-modal-in"><a class="solid-seats-modal-close" title="Close">✕</a>
+<p class="solid-seats-modal-in-title">Likely Republican</p>
+<div class="scroll-table-block">
+<div class="popup-table-data">
+<div class="popup-table-data-body">
+<div class="popup-table-data-row likely-r">
+<div class="popup-table-data-cell">DISTRICT</div>
+<div class="popup-table-data-cell">REPRESENTATIVE</div>
+<div class="popup-table-data-cell">PVI</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188141">
+                            CA-04</a>
+<div class="popup-table-data-cell"> Tom McClintock</div>
+<div class="popup-table-data-cell">R+10</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188226">
+                            CA-22</a>
+<div class="popup-table-data-cell"> Devin Nunes</div>
+<div class="popup-table-data-cell">R+8</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188504">
+                            FL-16</a>
+<div class="popup-table-data-cell"> Vern Buchanan</div>
+<div class="popup-table-data-cell">R+7</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188513">
+                            FL-18</a>
+<div class="popup-table-data-cell"> Brian  Mast</div>
+<div class="popup-table-data-cell">R+5</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188795">
+                            KS-02</a>
+<div class="popup-table-data-cell">Open</div>
+<div class="popup-table-data-cell">R+10</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188832">
+                            KY-06</a>
+<div class="popup-table-data-cell"> Andy Barr</div>
+<div class="popup-table-data-cell">R+9</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189460">
+                            OH-10</a>
+<div class="popup-table-data-cell"> Michael Turner</div>
+<div class="popup-table-data-cell">R+4</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189470">
+                            OH-12</a>
+<div class="popup-table-data-cell"> Troy Balderson</div>
+<div class="popup-table-data-cell">R+7</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189609">
+                            PA-16</a>
+<div class="popup-table-data-cell"> Mike Kelly</div>
+<div class="popup-table-data-cell">R+8</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189711">
+                            TX-02</a>
+<div class="popup-table-data-cell"> Dan Crenshaw</div>
+<div class="popup-table-data-cell">R+11</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189728">
+                            TX-06</a>
+<div class="popup-table-data-cell"> Ron  Wright</div>
+<div class="popup-table-data-cell">R+9</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189818">
+                            TX-25</a>
+<div class="popup-table-data-cell"> Roger Williams</div>
+<div class="popup-table-data-cell">R+11</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="solid-seats-modal" id="modal-from-table-lean-r">
+<div class="solid-seats-modal-in"><a class="solid-seats-modal-close" title="Close">✕</a>
+<p class="solid-seats-modal-in-title">Lean Republican</p>
+<div class="scroll-table-block">
+<div class="popup-table-data">
+<div class="popup-table-data-body">
+<div class="popup-table-data-row likely-r">
+<div class="popup-table-data-cell">DISTRICT</div>
+<div class="popup-table-data-cell">REPRESENTATIVE</div>
+<div class="popup-table-data-cell">PVI</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188000">
+                            AK-00</a>
+<div class="popup-table-data-cell"> Don Young</div>
+<div class="popup-table-data-cell">R+9</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188356">
+                            CA-50</a>
+<div class="popup-table-data-cell">Vacant</div>
+<div class="popup-table-data-cell">R+11</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188385">
+                            CO-03</a>
+<div class="popup-table-data-cell">Open</div>
+<div class="popup-table-data-cell">R+6</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188500">
+                            FL-15</a>
+<div class="popup-table-data-cell">Open</div>
+<div class="popup-table-data-cell">R+6</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188975">
+                            MI-06</a>
+<div class="popup-table-data-cell"> Fred Upton</div>
+<div class="popup-table-data-cell">R+4</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189106">
+                            MT-00</a>
+<div class="popup-table-data-cell">Open</div>
+<div class="popup-table-data-cell">R+11</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189384">
+                            NC-08</a>
+<div class="popup-table-data-cell"> Richard Hudson</div>
+<div class="popup-table-data-cell">R+5</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189389">
+                            NC-09</a>
+<div class="popup-table-data-cell"> Dan Bishop</div>
+<div class="popup-table-data-cell">R+7</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189398">
+                            NC-11</a>
+<div class="popup-table-data-cell">Vacant</div>
+<div class="popup-table-data-cell">R+9</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189221">
+                            NY-01</a>
+<div class="popup-table-data-cell"> Lee Zeldin</div>
+<div class="popup-table-data-cell">R+5</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189542">
+                            PA-01</a>
+<div class="popup-table-data-cell"> Brian   Fitzpatrick</div>
+<div class="popup-table-data-cell">R+1</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189715">
+                            TX-03</a>
+<div class="popup-table-data-cell"> Van Taylor</div>
+<div class="popup-table-data-cell">R+13</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189846">
+                            TX-31</a>
+<div class="popup-table-data-cell"> John Carter</div>
+<div class="popup-table-data-cell">R+10</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189954">
+                            WA-03</a>
+<div class="popup-table-data-cell"> Jaime Herrera Beutler</div>
+<div class="popup-table-data-cell">R+4</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="solid-seats-modal" id="modal-from-table-tossup-r">
+<div class="solid-seats-modal-in"><a class="solid-seats-modal-close" title="Close">✕</a>
+<p class="solid-seats-modal-in-title">Toss Up Republican</p>
+<div class="scroll-table-block">
+<div class="popup-table-data">
+<div class="popup-table-data-body">
+<div class="popup-table-data-row likely-r">
+<div class="popup-table-data-cell">DISTRICT</div>
+<div class="popup-table-data-cell">REPRESENTATIVE</div>
+<div class="popup-table-data-cell">PVI</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188111">
+                            AR-02</a>
+<div class="popup-table-data-cell"> French Hill</div>
+<div class="popup-table-data-cell">R+7</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188027">
+                            AZ-06</a>
+<div class="popup-table-data-cell"> David Schweikert</div>
+<div class="popup-table-data-cell">R+9</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188240">
+                            CA-25</a>
+<div class="popup-table-data-cell"> Mike Garcia</div>
+<div class="popup-table-data-cell">EVEN</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188704">
+                            IL-13</a>
+<div class="popup-table-data-cell"> Rodney Davis</div>
+<div class="popup-table-data-cell">R+3</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/188751">
+                            IN-05</a>
+<div class="popup-table-data-cell">Open</div>
+<div class="popup-table-data-cell">R+9</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell indy-li-color" href="/house/race/188960">
+                            MI-03</a>
+<div class="popup-table-data-cell">Open</div>
+<div class="popup-table-data-cell">R+6</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189016">
+                            MN-01</a>
+<div class="popup-table-data-cell"> Jim Hagedorn</div>
+<div class="popup-table-data-cell">R+5</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189076">
+                            MO-02</a>
+<div class="popup-table-data-cell"> Ann Wagner</div>
+<div class="popup-table-data-cell">R+8</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189115">
+                            NE-02</a>
+<div class="popup-table-data-cell"> Don  Bacon</div>
+<div class="popup-table-data-cell">R+4</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189156">
+                            NJ-02</a>
+<div class="popup-table-data-cell"> Jeff Van Drew</div>
+<div class="popup-table-data-cell">R+1</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189225">
+                            NY-02</a>
+<div class="popup-table-data-cell">Open</div>
+<div class="popup-table-data-cell">R+3</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189331">
+                            NY-24</a>
+<div class="popup-table-data-cell"> John Katko</div>
+<div class="popup-table-data-cell">D+3</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189417">
+                            OH-01</a>
+<div class="popup-table-data-cell"> Steve Chabot</div>
+<div class="popup-table-data-cell">R+5</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189582">
+                            PA-10</a>
+<div class="popup-table-data-cell"> Scott Perry</div>
+<div class="popup-table-data-cell">R+6</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189747">
+                            TX-10</a>
+<div class="popup-table-data-cell"> Michael McCaul</div>
+<div class="popup-table-data-cell">R+9</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189798">
+                            TX-21</a>
+<div class="popup-table-data-cell"> Chip Roy</div>
+<div class="popup-table-data-cell">R+10</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189803">
+                            TX-22</a>
+<div class="popup-table-data-cell">Open</div>
+<div class="popup-table-data-cell">R+10</div>
+</div>
+<div class="popup-table-data-row">
+<a class="popup-table-data-cell rep-li-color" href="/house/race/189913">
+                            VA-05</a>
+<div class="popup-table-data-cell">Open</div>
+<div class="popup-table-data-cell">R+6</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.0/jquery.matchHeight-min.js"></script>
+<script>
+  $(".ratings-detail-page-table-6-column").matchHeight();
+</script>
+<script>
+  $(function() {
+    $('#archive-selector').change(function() {
+      window.location.href = url = '/ratings/house-race-ratings/' + $(this).val();
+    });
+    $('#archive-selector option[value=' + window.location.pathname.substr(window.location.pathname.lastIndexOf('/') + 1) + ']').attr("selected", true);
+  });
+</script>
+</div>
+</div>
+</div>
+</section><!-- /#content -->
+</div><!-- /.container -->
+</div><!-- /#main -->
+<!-- ______________________ FOOTER _______________________ -->
+<footer id="footer">
+<div class="container">
+<div>
+<div class="subscribe-block block block-contact block-sitewidecontactform" id="block-sitewidecontactform">
+<h2>Subscribe For Updates</h2>
+<form accept-charset="UTF-8" action="/ratings/house-race-ratings" class="contact-message-subscribe-for-updates-form contact-message-form contact-form" data-drupal-selector="contact-message-subscribe-for-updates-form" data-user-info-from-browser="" id="contact-message-subscribe-for-updates-form" method="post">
+<div class="field--type-email field--name-field-enter-email-address field--widget-email-default js-form-wrapper form-wrapper" data-drupal-selector="edit-field-enter-email-address-wrapper" id="edit-field-enter-email-address-wrapper"> <div class="js-form-item form-item js-form-type-email form-item-field-enter-email-address-0-value js-form-item-field-enter-email-address-0-value">
+<label class="js-form-required form-required" for="edit-field-enter-email-address-0-value">Enter email address</label>
+<input aria-required="true" class="form-email required" data-drupal-selector="edit-field-enter-email-address-0-value" id="edit-field-enter-email-address-0-value" maxlength="254" name="field_enter_email_address[0][value]" placeholder="" required="required" size="60" type="email" value=""/>
+</div>
+</div>
+<input autocomplete="off" data-drupal-selector="form-4i8vlqfafmyecyh-iflsqjkt-l5loaro2azoy-1lod0" name="form_build_id" type="hidden" value="form-4i8VlQFafMyECYH_IfLsQjKT-L5loARo2azoY-1lOd0"/>
+<input data-drupal-selector="edit-contact-message-subscribe-for-updates-form" name="form_id" type="hidden" value="contact_message_subscribe_for_updates_form"/>
+<div class="form-actions js-form-wrapper form-wrapper" data-drupal-selector="edit-actions" id="edit-actions--3"><input class="button button--primary js-form-submit form-submit" data-drupal-selector="edit-submit" id="edit-submit--3" name="op" type="submit" value="Send message"/>
+<input class="button js-form-submit form-submit" data-drupal-selector="edit-preview" id="edit-preview" name="op" type="submit" value="Preview"/>
+</div>
+</form>
+</div>
+<nav aria-labelledby="block-connectwithus-menu" class="block block-menu navigation menu--connect" id="block-connectwithus" role="navigation">
+<h2 id="block-connectwithus-menu">Connect With Us</h2>
+<ul class="menu">
+<li class="menu-item">
+<a class="facebook" href="https://www.facebook.com/CookPolitical" rel="" target="">Facebook</a>
+</li>
+<li class="menu-item">
+<a class="twitter" href="https://twitter.com/CookPolitical" rel="" target="">Twitter</a>
+</li>
+<li class="menu-item">
+<a class="contact" href="mailto:cookpoliticalreport@cookpolitical.com" rel="" target="_self">Contact</a>
+</li>
+</ul>
+</nav>
+<div class="block block-block-content block-address" id="block-address">
+<div><p><span class="divider address">The Watergate, 600 New Hampshire Avenue NW, Washington, DC 20037</span> <span class="divider">(202) 739-8525</span> <a href="mailto:info@cookpolitical.com">info@cookpolitical.com</a></p>
+</div>
+</div>
+<nav aria-labelledby="block-mainnavigation-2-menu" class="block block-menu navigation menu--main" id="block-mainnavigation-2" role="navigation">
+<h2 class="visually-hidden" id="block-mainnavigation-2-menu">Main navigation</h2>
+<ul class="menu">
+<li class="menu-item menu-item--collapsed">
+<a data-drupal-link-system-path="node/15" href="/about">About Us</a>
+</li>
+<li class="menu-item menu-item--collapsed menu-item--active-trail">
+<a data-drupal-link-system-path="node/58" href="/ratings" rel="" target="">Ratings</a>
+</li>
+<li class="menu-item menu-item--collapsed">
+<a data-drupal-link-system-path="node/28" href="/analysis" title="What we're saying">Analysis</a>
+</li>
+<li class="menu-item menu-item--collapsed">
+<a data-drupal-link-system-path="node/1921" href="/charts">Charts</a>
+</li>
+<li class="menu-item menu-item--collapsed">
+<a data-drupal-link-system-path="node/2386" href="/pvi-0" rel="" target="">PVI</a>
+</li>
+<li class="menu-item">
+<a class="privacy" data-drupal-link-system-path="&lt;front&gt;" href="/" rel="" target="">Privacy Policy</a>
+</li>
+<li class="menu-item menu-item--collapsed">
+<a class="subscribe" data-drupal-link-system-path="node/45" href="/subscribe" rel="" target="">Subscribe</a>
+</li>
+<li class="menu-item">
+<a class="terms" data-drupal-link-system-path="&lt;front&gt;" href="/" rel="" target="">Terms &amp; Conditions</a>
+</li>
+</ul>
+</nav>
+<div class="block block-block-content block-copyright" id="block-copyright">
+<div><p>Copyright © 2018 by Cook Political Report. All Rights Reserved.</p>
+</div>
+</div>
+</div>
+</div>
+</footer><!-- /#footer -->
+</div><!-- /.layout-container -->
+</div>
+<script data-drupal-selector="drupal-settings-json" type="application/json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"ratings\/house-race-ratings","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"google_analytics":{"trackOutbound":true,"trackMailto":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"data":{"extlink":{"extTarget":true,"extTargetNoOverride":false,"extNofollow":false,"extNoreferrer":false,"extFollowNoOverride":false,"extClass":"0","extLabel":"(link is external)","extImgClass":false,"extSubdomains":true,"extExclude":"","extInclude":"","extCssExclude":"","extCssExplicit":"","extAlert":false,"extAlertText":"","mailtoClass":"0","mailtoLabel":"(link sends email)","extUseFontAwesome":false,"extIconPlacement":"append","extFaLinkClasses":"fa fa-external-link","extFaMailtoClasses":"fa fa-envelope-o","whitelistedDomains":null}},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true},"user":{"uid":0,"permissionsHash":"1ec5f58a8dba1bcd302e4f3fc0e786f8103369aaa788d1daf60f53b8cd5607a1"}}</script>
+<script src="/core/assets/vendor/jquery/jquery.min.js?v=3.5.1"></script>
+<script src="/core/assets/vendor/jquery-once/jquery.once.min.js?v=2.2.3"></script>
+<script src="/core/misc/drupalSettingsLoader.js?v=8.9.7"></script>
+<script src="/core/misc/drupal.js?v=8.9.7"></script>
+<script src="/core/misc/drupal.init.js?v=8.9.7"></script>
+<script src="/modules/contrib/google_analytics/js/google_analytics.js?v=8.9.7"></script>
+<script src="/libraries/chosen/chosen.jquery.min.js?v=1.8.7"></script>
+<script src="/themes/custom/cookpolitical/js/modernizr.js?v=8.9.7"></script>
+<script src="/themes/custom/cookpolitical/js/jquery.colorList.min.js?v=8.9.7"></script>
+<script src="/themes/custom/cookpolitical/js/scripts.min.js?v=8.9.7"></script>
+<script src="/themes/custom/cookpolitical/js/jquery.tinycarousel.js?v=8.9.7"></script>
+<script src="/libraries/footable/js/footable.min.js?v=8.9.7"></script>
+<script src="/modules/contrib/extlink/extlink.js?v=8.9.7"></script>
+<script src="/core/misc/debounce.js?v=8.9.7"></script>
+<script src="/core/misc/form.js?v=8.9.7"></script>
+<script src="/modules/custom/cookpolitical_urr/js/cookpolitical_urr.js?v=1"></script>
+<script type="text/javascript">
+        var _sf_async_config = { uid: 63091, domain: 'cookpolitical.com', useCanonical: true };
+        (function() {
+          function loadChartbeat() {
+            window._sf_endpt = (new Date()).getTime();
+            var e = document.createElement('script');
+            e.setAttribute('language', 'javascript');
+            e.setAttribute('type', 'text/javascript');
+            e.setAttribute('src', '//static.chartbeat.com/js/chartbeat.js');
+            document.body.appendChild(e);
+          };
+          var oldonload = window.onload;
+          window.onload = (typeof window.onload != 'function') ?
+            loadChartbeat : function() {
+              oldonload();
+              loadChartbeat();
+            };
+        })();
+
+        </script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"712abd7097","applicationID":"247647440","transactionName":"bgEHYBFRXRJQAkcNC1dLJFcXWVwPHiVBERRYCDlGAkRaD1YSbycLVxAXWw9cVhNtM1IQDVcDN1UAVUApXhRAASdWChFGDFxfBENMDQcLVxAAWhc=","queueTime":0,"applicationTime":1819,"atts":"QkYEFllLThw=","errorBeacon":"bam-cell.nr-data.net","agent":""}</script></body>
+</html>
