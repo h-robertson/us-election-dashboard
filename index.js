@@ -243,7 +243,7 @@ d3.json('data/ec.json').then(function (d) {
         return results16ByState[myKey];
     };
 
-    // http://jsfiddle.net/aZXRM/
+    // Adapted from http://jsfiddle.net/aZXRM/
     function highlightSameClass(className) {
         var classto = d3.selectAll(className)
         var otherDivs = d3.selectAll('.state-votes:not(' + className + ")")
@@ -346,13 +346,13 @@ d3.json('data/ec.json').then(function (d) {
             const path = d3.geoPath()
                 .projection(proj)
 
-            statesFill.selectAll("path") //this week using paths instead of "rects" to create bar charts
-                .data(states.features) //using .features to bind the data this time. GeoJSON that is an object that has two features, features are what we actually want to access the array of objects
-                .enter() //this then propogates into our group
-                .append("path") //path per geoemtry
-                .attr("fill", d => get20ResultCol(d.properties.NAME)) //then applying a fill color. can be hex colors or actual colors
+            statesFill.selectAll("path")
+                .data(states.features)
+                .enter()
+                .append("path")
+                .attr("fill", d => get20ResultCol(d.properties.NAME))
                 .attr("stroke", "#EBEBE8")
-                .attr("stroke-width", "0.3px") //defining the stroke color, in this case black
+                .attr("stroke-width", "0.3px")
                 .attr("d", path)
                 .attr("class", d => `state-votes-${d.properties.NAME.replace(' ', '-')} state-votes`)
 
