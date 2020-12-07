@@ -30,3 +30,6 @@ The 'Methodology' section at the bottom of the project provides information abou
 This repo contains scripts for scraping Cook Political projections of the House and Senate using Python and BeautifulSoup:
 * [House - scraping script](data/house.ipynb)
 * [Senate - scraping script](data/senate.ipynb)
+
+## NYT vote progression data
+A script extracting time series data on vote progressions in six battleground states can be found [here](data/nyt.timeseries.ipynb)
