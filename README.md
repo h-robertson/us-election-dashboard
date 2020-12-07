@@ -32,4 +32,4 @@ This repo contains scripts for scraping Cook Political projections of the House 
 * [Senate - scraping script](data/senate.ipynb)
 
 ## NYT vote progression data
-A script extracting time series data on vote progressions in six battleground states can be found [here](data/nyt.timeseries.ipynb)
+A script extracting time series data on vote progressions in six battleground states can be found [here](data/nyt-timeseries.ipynb)
